@@ -35,56 +35,56 @@
     <FLASHsize>128k</FLASHsize>
   </PROCESSOR>
   <PATHS>
-    <LinkerCommandFile>C:\Users\Gabriel\codewarrior\psi3441-project\Project_Settings\Linker_Files\ProcessorExpert.ld</LinkerCommandFile>
+    <LinkerCommandFile>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Linker_Files\ProcessorExpert.ld</LinkerCommandFile>
     <IncludePaths>
       <Path>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\</Path>
       <Path>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\iofiles\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\</Path>
+      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\</Path>
+      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\</Path>
     </IncludePaths>
     <SourceCodePaths>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-project\Project_Settings\Startup_Code\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\</Path>
+      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\</Path>
+      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\</Path>
+      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\</Path>
     </SourceCodePaths>
   </PATHS>
   <FILES>
     <GeneratedCs>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\AD1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\Cpu.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\DA1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\DMA1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\DMACH1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\PE_LDD.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\TU1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\TU2.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\Vectors.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Project_Settings\Startup_Code\__arm_end.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Project_Settings\Startup_Code\__arm_start.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\ADC.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\DAC.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\Events.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\main.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\sa_mtb.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\AD1.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Cpu.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DA1.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA1.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMACH1.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU1.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU2.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Vectors.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\__arm_end.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\__arm_start.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\ADC.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\DAC.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\Events.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\main.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\sa_mtb.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\AD1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\Cpu.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\DA1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\DMA1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\DMACH1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\PE_Const.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\PE_Error.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\PE_LDD.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\PE_Types.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\TU1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Generated_Code\TU2.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Project_Headers\bme.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\ADC.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\DAC.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-project\Sources\Events.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\AD1.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Cpu.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DA1.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA1.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMACH1.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\IO_Map.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Const.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Error.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Types.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU1.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU2.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Headers\bme.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\ADC.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\DAC.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\Events.h</PathName>
       <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\iofiles\MKL25Z4.h</PathName>
       <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
       <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
