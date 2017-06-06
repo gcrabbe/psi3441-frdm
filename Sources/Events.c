@@ -78,8 +78,8 @@ void Cpu_OnNMIINT(void)
 void DMACH1_OnComplete(LDD_TUserData *UserDataPtr)
 {
   /* Write your code here ... */
-  DMACH1_SetRequestCount(DMACH1, 4096);
-  DMACH1_EnableRequest(DMACH1);
+  DMACH1_SetRequestCount(DMACH1, 256);
+  // DMACH1_EnableRequest(DMACH1);
 }
 
 /*
