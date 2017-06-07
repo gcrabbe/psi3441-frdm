@@ -29,6 +29,8 @@ At this time, the hardware-triggered ADC is filling a buffer in memory through i
 
 ### PWM
 
+**Note:** The `Init_TPM` component, which is the only one that supports center-aligned PWM mode, is buggy. Make sure to set `TPM2_C0SC = (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSA_MASK);`.
+
 
 ## Setup
 

@@ -80,7 +80,7 @@ int main(void)
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
 
   /* PWM initialization */
-  TPM2_Init();
+  TPM2_Init(); /* Center-aligned PWM implementation is buggy */
 
   /* Enable DMA transfers */
   DMACH1_EnableRequest(DMACH1);
