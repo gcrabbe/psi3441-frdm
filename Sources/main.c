@@ -33,9 +33,12 @@
 #include "DA1.h"
 #include "TU1.h"
 #include "DMACH1.h"
+#include "TU3.h"
 #include "DMA1.h"
 #include "TU2.h"
 #include "AD1.h"
+#include "DMACH2.h"
+#include "TPM2.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -75,6 +78,9 @@ int main(void)
   while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
   LDD_ADC_TSample Ch0 = {0};
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
+
+  /* PWM initialization */
+  TPM2_Init();
 
   /* Enable DMA transfers */
   DMACH1_EnableRequest(DMACH1);

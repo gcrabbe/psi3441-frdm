@@ -6,7 +6,7 @@
 **     Component   : DMAController
 **     Version     : Component 01.037, Driver 01.01, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:18, # CodeGen: 0
+**     Date/Time   : 2017-06-06, 21:13, # CodeGen: 2
 **     Abstract    :
 **          This embedded component implements initialization
 **          and runtime handling of an on-chip DMA controller.
@@ -15,7 +15,7 @@
 **          Device                                         : DMA
 **          Channel arbitration type                       : Fixed
 **            Autoset channel priority                     : 
-**          Statically allocated channels                  : 1
+**          Statically allocated channels                  : 2
 **            Channel settings                             : Chan: 0
 **              Channel                                    : DMA_Channel0
 **              Allocate channel                           : no
@@ -27,6 +27,17 @@
 **                Transfer complete interrupt              : 
 **                  Interrupt vector                       : INT_DMA0
 **                  Interrupt priority                     : 2
+**            Channel settings                             : Chan: 1
+**              Channel                                    : DMA_Channel1
+**              Allocate channel                           : no
+**              ChannelShared                              : no
+**              Used by component(s)                       : DMACH2
+**              Arbitration type                           : Fixed
+**                Priority                                 : 1
+**              Interrupt service                          : Enabled
+**                Transfer complete interrupt              : 
+**                  Interrupt vector                       : INT_DMA1
+**                  Interrupt priority                     : medium priority
 **          Dynamically allocatable channels               : 0
 **     Contents    :
 **         Init                      - LDD_TDeviceData* DMA1_Init(void);
@@ -90,9 +101,9 @@
 
 /* {Default RTOS Adapter} No RTOS includes */
 /* Total number of channel supported by DMA device */
-#define DMA1_CHANNEL_COUNT                                  0x01U
+#define DMA1_CHANNEL_COUNT                                  0x02U
 /* Number of statically allocated DMA channels */
-#define DMA1_STATIC_CHANNEL_COUNT                           0x01U
+#define DMA1_STATIC_CHANNEL_COUNT                           0x02U
 /* Number of dynamically allocated DMA channels */
 #define DMA1_DYNAMIC_CHANNEL_COUNT                          0x00U
 
@@ -100,6 +111,9 @@
 #define DMA1_CHN_0_PHY_NUM                                  (0U)
 #define DMA1_CHN_0_TCD_PTR                                  ((DMA1_TTCD*)(void*)&DMA_SAR0)
 #define DMA1_CHN_0_DMAMUX_CFG_REG_PTR                       ((uint8_t*)(void*)&DMAMUX0_CHCFG0)
+#define DMA1_CHN_1_PHY_NUM                                  (1U)
+#define DMA1_CHN_1_TCD_PTR                                  ((DMA1_TTCD*)(void*)&DMA_SAR1)
+#define DMA1_CHN_1_DMAMUX_CFG_REG_PTR                       ((uint8_t*)(void*)&DMAMUX0_CHCFG1)
 
 /* Channel MUX macros */
 #define DMA1__MuxReset(_DMAMUX_CFG_PTR)                     (*_DMAMUX_CFG_PTR = 0U)
@@ -145,6 +159,7 @@ typedef struct DMA1_TChnDevData_stuct {
   DMA1_TTCD                       *TCDPtr;                 /*!< Channel TCD address */
   DMA1_TChnDevConst const         *ChnDevConstPtr;         /*!< Channel device constants structure address */
   bool                             TransferCompleteStatus; /*!< Component TransferCompleteStatus variable */
+  uint32_t                         RWTransactionUint;      /*!< Transaction unit size [bytes] variable */
   LDD_DMA_TErrorFlags              ErrorFlags;             /*!< Channel error flags */
   LDD_TUserData                   *UserDataPtr;            /*!< User data pointer */
   DMA1_TEvents                     Events;                 /*!< Events state variable */
@@ -162,6 +177,11 @@ DMA1_TDevConst const DMA1_DevConst = {
       DMA1_CHN_0_PHY_NUM,                                  /*!< Physical channel number */
       DMA1_CHN_0_TCD_PTR,                                  /*!< TCD registers address */
       DMA1_CHN_0_DMAMUX_CFG_REG_PTR                        /*!< Mux cfg. register address */
+    },
+    { /* Channel 1 (DMA_Channel1) */
+      DMA1_CHN_1_PHY_NUM,                                  /*!< Physical channel number */
+      DMA1_CHN_1_TCD_PTR,                                  /*!< TCD registers address */
+      DMA1_CHN_1_DMAMUX_CFG_REG_PTR                        /*!< Mux cfg. register address */
     }
   }
 };
@@ -178,6 +198,8 @@ uint32_t const DMA1_TrSizeConsts[4] = {
 static DMA1_TDeviceData DevDataPtr__DEFAULT_RTOS_ALLOC;
 /* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
 static DMA1_TDeviceDataPtr INT_DMA0__DEFAULT_RTOS_ISRPARAM;
+/* {Default RTOS Adapter} Global variable used for passing a parameter into ISR */
+static DMA1_TDeviceDataPtr INT_DMA1__DEFAULT_RTOS_ISRPARAM;
 static void HandleInterrupt(DMA1_TChnDevData *ChnDevDataPtr);
 static uint32_t GetTransactionUnitSize(DMA1_TTCD *TCDPtr);
 /*
@@ -224,6 +246,9 @@ LDD_TDeviceData* DMA1_Init(void)
   /* Transfer complete interrupt vector(INT_DMA0) allocation */
   /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
   INT_DMA0__DEFAULT_RTOS_ISRPARAM =  DevDataPtr;
+  /* Transfer complete interrupt vector(INT_DMA1) allocation */
+  /* {Default RTOS Adapter} Set interrupt vector: IVT is static, ISR parameter is passed by the global variable */
+  INT_DMA1__DEFAULT_RTOS_ISRPARAM =  DevDataPtr;
   /* Transfer complete interrupt vector(INT_DMA0) priority setting */
   /* NVIC_IPR0: PRI_0=0x80 */
   NVIC_IPR0 = (uint32_t)((NVIC_IPR0 & (uint32_t)~(uint32_t)(
@@ -233,6 +258,15 @@ LDD_TDeviceData* DMA1_Init(void)
               ));
   /* NVIC_ISER: SETENA|=1 */
   NVIC_ISER |= NVIC_ISER_SETENA(0x01);
+  /* Transfer complete interrupt vector(INT_DMA1) priority setting */
+  /* NVIC_IPR0: PRI_1=0x80 */
+  NVIC_IPR0 = (uint32_t)((NVIC_IPR0 & (uint32_t)~(uint32_t)(
+               NVIC_IP_PRI_1(0x7F)
+              )) | (uint32_t)(
+               NVIC_IP_PRI_1(0x80)
+              ));
+  /* NVIC_ISER: SETENA|=2 */
+  NVIC_ISER |= NVIC_ISER_SETENA(0x02);
   /* Enable clock gates */
   #ifdef SIM_PDD_CLOCK_GATE_DMA
   SIM_PDD_SetClockGate(SIM_BASE_PTR, SIM_PDD_CLOCK_GATE_DMA, PDD_ENABLE);
@@ -298,6 +332,7 @@ LDD_TDeviceData* DMA1_InitChannel(LDD_TDeviceData *DeviceDataPtr, DMA1_TChnInit 
   ChnDevDataPtr->TCDPtr = TCDPtr;                          /* Remember channel TCD address */
   ChnDevDataPtr->UserDataPtr = UserDataPtr;                /* Remember channel User data pointer */
   ChnDevDataPtr->Events = ChIntPtr->Events;                /* Initialize events */
+  ChnDevDataPtr->RWTransactionUint = GetTransactionUnitSize(TCDPtr); /* Initialize RWTransactionUint variable */
   DMA1__MuxSetRequest(DmaMuxCfgPtr,ChIntPtr->MUX_CHCFG_Reg); /* Set channel peripheral request (in the DMAMUX) */
   return ChnDevDataPtr;
 }
@@ -512,7 +547,7 @@ LDD_TError DMA1_SetRequestCount(DMA1_TChanDeviceData *ChanDeviceDataPtr, LDD_DMA
   /* (Byte count register is cleared if DONE flag is cleared). */
   DMA1__ClearDoneFlag(TCDPtr);
   /* Set number of bytes to be transferred */
-  DMA1__SetByteCount(TCDPtr, (RequestCount * 2U));
+  DMA1__SetByteCount(TCDPtr, (RequestCount * ChnDevDataPtr->RWTransactionUint));
   return ERR_OK;
 }
 
@@ -566,6 +601,22 @@ PE_ISR(DMA1_INT_DMA0_TransferComplete_ISR)
   /* {Default RTOS Adapter} ISR parameter is passed through the global variable */
   DMA1_TDeviceDataPtr DevDataPtr = INT_DMA0__DEFAULT_RTOS_ISRPARAM;
   HandleInterrupt(&(DevDataPtr->ChnDevData[0]));
+}
+
+/*
+** ===================================================================
+**     Method      :  DMA1_TransferComplete_ISR (component DMAController)
+**
+**     Description :
+**         Transfer complete ISR
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+PE_ISR(DMA1_INT_DMA1_TransferComplete_ISR)
+{
+  /* {Default RTOS Adapter} ISR parameter is passed through the global variable */
+  DMA1_TDeviceDataPtr DevDataPtr = INT_DMA1__DEFAULT_RTOS_ISRPARAM;
+  HandleInterrupt(&(DevDataPtr->ChnDevData[1]));
 }
 
 /*

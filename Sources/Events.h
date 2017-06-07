@@ -37,9 +37,12 @@
 #include "DA1.h"
 #include "TU1.h"
 #include "DMACH1.h"
+#include "TU3.h"
 #include "DMA1.h"
 #include "TU2.h"
 #include "AD1.h"
+#include "DMACH2.h"
+#include "TPM2.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -121,6 +124,44 @@ void DMACH1_OnError(LDD_TUserData *UserDataPtr);
 */
 /* ===================================================================*/
 void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Event       :  DMACH2_OnComplete (module Events)
+**
+**     Component   :  DMACH2 [DMAChannel_LDD]
+*/
+/*!
+**     @brief
+**         Called at the end of a DMA transfer. If the Half complete
+**         property in initialization section is enabled, this event is
+**         also called when current major iteration count reaches the
+**         halfway point. See SetEventMask() and GetEventMask() methods.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. This pointer is passed
+**                           as the parameter of Init method.
+*/
+/* ===================================================================*/
+void DMACH2_OnComplete(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Event       :  DMACH2_OnError (module Events)
+**
+**     Component   :  DMACH2 [DMAChannel_LDD]
+*/
+/*!
+**     @brief
+**         Called when error in channel settings is detected. See
+**         SetEventMask() and GetEventMask() methods.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. This pointer is passed
+**                           as the parameter of Init method.
+*/
+/* ===================================================================*/
+void DMACH2_OnError(LDD_TUserData *UserDataPtr);
 
 /* END Events */
 
