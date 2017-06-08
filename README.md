@@ -18,7 +18,7 @@ At this time, the DAC is driving a sine wave from memory with the help of the DM
 
 The `DMACH1_OnComplete` ISR restarts the DMA channel after a large number of transfers (it cannot be kept on indefinitely).
 
-**Note:** Stopping the processor in debug mode for too long may cause it to miss the DMA's ISR and generate a configuration error, for some reason.
+**Note:** Stopping the processor in debug mode for too long may cause it to miss the DMA interrupt and generate a configuration error, for some reason.
 
 
 ### ADC
@@ -28,14 +28,16 @@ At this time, the hardware-triggered ADC is filling a buffer in memory through i
 
 ### Signal processing
 
-
-### PWM
-
-At this time, the TPM2 timer is generating a DMA-driven variable duty-cycle center-aligned PWM wave slow enough to be seen on the red LED.
+At this time, the signal processing consists in discarding the LSBs of the ADC to fit the PWM output resolution.
 
 A compromise will have to be reached here between the sawtooth carrier frequency and the output resolution.
 
-**Note:** The `Init_TPM` component, which is the only one that supports center-aligned PWM mode, is buggy. Make sure to call `TPM2_FixPWM` method.
+
+### PWM
+
+At this time, the TPM2 timer is generating a ADC-generated DMA-driven variable duty-cycle center-aligned PWM wave slow enough to be seen on the red LED.
+
+**Note:** The `Init_TPM` component, which is the only one that supports center-aligned PWM mode, is buggy. Make sure to call the `TPM2_FixPWM` method.
 
 
 ### Figure of merit
@@ -52,9 +54,9 @@ Import and build project with CodeWarrior 10.7 or higher.
 
 ### Hardware setup
 
-The DAC's output is available on pin 12 of connector J2.
+The DAC output is available on pin 12 of connector J2. The blue LED (active LOW) is available on pin 11 of connector J10. The ADC input is available on pin 2 of connector J10.
 
-The blue LED (active LOW) is available on pin 11 of connector J10.
+In order for the system to work, the DAC output must be linked to the ADC input with the help of a jumper wire. The DAC output can otherwise be visualized by connecting it to the blue LED pin.
 
 
 ## References

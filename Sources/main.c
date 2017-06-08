@@ -94,9 +94,20 @@ int main(void)
   /* Enable ADC transfers */
   AD1_StartLoopTriggeredMeasurement(AD1);
 
+  /* Local variables */
+  uint8_t i;
+  uint16_t res;
+
   /* Main loop */
   for(;;)
   {
+    /* Sinal processing */
+    if(!isRingEmpty(&ADCRing))
+    {
+      i = removeRing(&ADCRing, &res);
+      res = res >> 6; /* 16 to 10 bits */
+      PWMBuffer[i] = res;
+    }
   }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

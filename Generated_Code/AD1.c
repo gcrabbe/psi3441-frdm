@@ -6,7 +6,7 @@
 **     Component   : ADC_LDD
 **     Version     : Component 01.183, Driver 01.08, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:18, # CodeGen: 0
+**     Date/Time   : 2017-06-08, 18:33, # CodeGen: 17
 **     Abstract    :
 **         This device "ADC_LDD" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -22,7 +22,7 @@
 **            Channel 0                                    : 
 **              Channel mode                               : Single Ended
 **                Input                                    : 
-**                  A/D channel (pin)                      : TempSensor
+**                  A/D channel (pin)                      : ADC0_SE8/TSI0_CH0/PTB0/LLWU_P5/I2C0_SCL/TPM1_CH0
 **                  A/D channel (pin) signal               : 
 **          Static sample groups                           : Disabled
 **          A/D resolution                                 : Autoselect
@@ -135,8 +135,8 @@ extern "C" {
 #define AD1_AVAILABLE_VOLT_REF_PIN_MASK (LDD_ADC_LOW_VOLT_REF_PIN | LDD_ADC_HIGH_VOLT_REF_PIN) /*!< Mask of all allocated voltage reference pins */
 
 static const uint8_t ChannelToPin[] = { /* Channel to pin conversion table */
-  /* ADC0_SC1A: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,COCO=0,AIEN=1,DIFF=0,ADCH=0x1A */
-  0x5AU                                /* Status and control register value */
+  /* ADC0_SC1A: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,COCO=0,AIEN=1,DIFF=0,ADCH=8 */
+  0x48U                                /* Status and control register value */
 };
 
 typedef struct {
@@ -197,6 +197,8 @@ LDD_TDeviceData* AD1_Init(LDD_TUserData *UserDataPtr)
               ));
   /* NVIC_ISER: SETENA|=0x8000 */
   NVIC_ISER |= NVIC_ISER_SETENA(0x8000);
+  /* PORTB_PCR0: ISF=0,MUX=0 */
+  PORTB_PCR0 &= (uint32_t)~(uint32_t)((PORT_PCR_ISF_MASK | PORT_PCR_MUX(0x07)));
   /* SIM_SOPT7: ADC0TRGSEL=8 */
   SIM_SOPT7 = (uint32_t)((SIM_SOPT7 & (uint32_t)~(uint32_t)(
                SIM_SOPT7_ADC0TRGSEL(0x07)

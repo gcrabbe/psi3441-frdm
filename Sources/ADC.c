@@ -26,10 +26,10 @@ LDD_TDeviceData* TU2;
 int initRing(struct ring *R, uint16_t *buffer, uint8_t size)
 {
 	// Struct init
-	R->first   = 0;
-	R->last    = 0;
-	R->count   = 0;
-	R->maxsize = size;
+	R->first = 0;
+	R->last  = 0;
+	R->count = 0;
+	R->size  = size;
 
 	// Memory allocation
 	if(buffer == NULL)
@@ -47,18 +47,17 @@ int isRingEmpty(struct ring *R)
 
 int isRingFull(struct ring *R)
 {
-	return (R->count >= R->maxsize ? 1 : 0);
+	return (R->count >= R->size ? 1 : 0);
 }
 
 int insertRing(struct ring *R, uint16_t item)
 {
-	// Overwrite mode
-	// if(isRingFull(R))
-	//	return -1;
+	if(isRingFull(R))
+		return -1;
 	R->buffer[R->last] = item;
 
 	R->count++;
-	if(++R->last >= R->maxsize)
+	if(++R->last >= R->size)
 		R->last = 0;
 
 	return R->last;
@@ -72,7 +71,7 @@ int removeRing(struct ring *R, uint16_t *item)
 	*item = R->buffer[R->first];
 
 	R->count--;
-	if(++R->first >= R->maxsize)
+	if(++R->first >= R->size)
 		R->first = 0;
 
 	return R->first;

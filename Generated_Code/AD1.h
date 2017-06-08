@@ -6,7 +6,7 @@
 **     Component   : ADC_LDD
 **     Version     : Component 01.183, Driver 01.08, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:18, # CodeGen: 0
+**     Date/Time   : 2017-06-08, 18:33, # CodeGen: 17
 **     Abstract    :
 **         This device "ADC_LDD" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -22,7 +22,7 @@
 **            Channel 0                                    : 
 **              Channel mode                               : Single Ended
 **                Input                                    : 
-**                  A/D channel (pin)                      : TempSensor
+**                  A/D channel (pin)                      : ADC0_SE8/TSI0_CH0/PTB0/LLWU_P5/I2C0_SCL/TPM1_CH0
 **                  A/D channel (pin) signal               : 
 **          Static sample groups                           : Disabled
 **          A/D resolution                                 : Autoselect

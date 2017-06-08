@@ -486,7 +486,7 @@ registers of the peripheral(s) configured by the component.
 **              Clock source                               : TPM counter clock
 **              Prescaler                                  : divide by 1
 **              Counter frequency                          : 24 MHz
-**              Modulo counter                             : 04B0
+**              Modulo counter                             : 1200
 **              Period                                     : 100.000 us
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled

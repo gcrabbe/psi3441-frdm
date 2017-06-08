@@ -15,7 +15,7 @@
 /**
  * uint16_t PWMBuffer[64]
  */
-uint16_t PWMBuffer[64] __attribute__ ((aligned (128))) = {
+uint16_t PWMBuffer[64] __attribute__ ((aligned (128))); /* = {
 		0x400,
 		0x464,
 		0x4C8,
@@ -80,7 +80,7 @@ uint16_t PWMBuffer[64] __attribute__ ((aligned (128))) = {
 		0x2D7,
 		0x338,
 		0x39C
-};
+}; */
 
 
 /**

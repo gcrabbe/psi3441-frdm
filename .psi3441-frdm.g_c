@@ -134,7 +134,7 @@
     </GenFiles>
     <SignalListFile>Documentation\psi3441-frdm_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>58</ProjectModificationStamp>
+    <ProjectModificationStamp>60</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>
@@ -904,8 +904,8 @@
     <GenComponentVersion>01.183</GenComponentVersion>
     <GenDriverVersion>01.08</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1254513233</HeaderAge>
-    <CodeAge>1254513233</CodeAge>
+    <HeaderAge>1254659114</HeaderAge>
+    <CodeAge>1254659114</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <Init>true</Init>
@@ -998,49 +998,49 @@
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
       <LineBeg>149</LineBeg>
-      <LineEnd>227</LineEnd>
+      <LineEnd>229</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos8>StartLoopTriggeredMeasurement</MethodPos8>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>228</LineBeg>
-      <LineEnd>288</LineEnd>
+      <LineBeg>230</LineBeg>
+      <LineEnd>290</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos9>CreateSampleGroup</MethodPos9>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>289</LineBeg>
-      <LineEnd>354</LineEnd>
+      <LineBeg>291</LineBeg>
+      <LineEnd>356</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos10>GetMeasuredValues</MethodPos10>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>355</LineBeg>
-      <LineEnd>399</LineEnd>
+      <LineBeg>357</LineBeg>
+      <LineEnd>401</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos11>StartCalibration</MethodPos11>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>400</LineBeg>
-      <LineEnd>435</LineEnd>
+      <LineBeg>402</LineBeg>
+      <LineEnd>437</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos12>GetCalibrationResultStatus</MethodPos12>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>436</LineBeg>
-      <LineEnd>483</LineEnd>
+      <LineBeg>438</LineBeg>
+      <LineEnd>485</LineEnd>
     </MethodPos>
     <MethodPos>
       <MethodPos13>MeasurementCompleteInterrupt</MethodPos13>
       <MethodType>internal_method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>484</LineBeg>
-      <LineEnd>500</LineEnd>
+      <LineBeg>486</LineBeg>
+      <LineEnd>502</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>1</GenExtraFilesCount>
     <ExtraFile0>Documentation\doxygen\AD1.txt</ExtraFile0>
@@ -1217,8 +1217,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254599116</HeaderAge>
-    <CodeAge>1254599116</CodeAge>
+    <HeaderAge>1254659114</HeaderAge>
+    <CodeAge>1254659114</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>

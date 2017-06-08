@@ -3,8 +3,8 @@
   <Header>
     <Name>psi3441-frdm</Name>
     <SavedBy>Gabriel</SavedBy>
-    <ModificationStamp>59</ModificationStamp>
-    <Date>2017-06-07</Date>
+    <ModificationStamp>60</ModificationStamp>
+    <Date>2017-06-08</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -12219,7 +12219,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>PortAD_Ch0</ItemSymbol>
-        <Value />
+        <Value>PTB</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -12247,7 +12247,7 @@
         <ItemSymbol>InputPin_Ch0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>TempSensor</Value>
+        <Value>ADC0_SE8/TSI0_CH0/PTB0/LLWU_P5/I2C0_SCL/TPM1_CH0</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>

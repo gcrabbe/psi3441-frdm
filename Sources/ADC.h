@@ -12,7 +12,7 @@ struct ring
 {
 	uint16_t *buffer;
 	uint8_t first, last;
-	uint8_t count, maxsize;
+	uint8_t count, size;
 };
 
 extern uint16_t ADCBuffer[64];
