@@ -38,6 +38,7 @@ extern "C" {
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "ADC.h"
 #include "DAC.h"
+#include "PWM.h"
 
 /*
 ** ===================================================================
@@ -79,7 +80,6 @@ void DMACH1_OnComplete(LDD_TUserData *UserDataPtr)
 {
   /* Write your code here ... */
   DMACH1_SetRequestCount(DMACH1, 256);
-  // DMACH1_EnableRequest(DMACH1);
 }
 
 /*
@@ -153,6 +153,7 @@ void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
 void DMACH2_OnComplete(LDD_TUserData *UserDataPtr)
 {
   /* Write your code here ... */
+  DMACH2_SetRequestCount(DMACH2, 256);
 }
 
 /*

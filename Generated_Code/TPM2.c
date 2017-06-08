@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 21:53, # CodeGen: 9
+**     Date/Time   : 2017-06-07, 21:14, # CodeGen: 16
 **     Abstract    :
 **          This file implements the TPM (TPM2) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -14,67 +14,67 @@
 **     Settings    :
 **          Component name                                 : TPM2
 **          Device                                         : TPM2
-**          Settings                                       :
+**          Settings                                       : 
 **            Clock gate                                   : Enabled
-**            Clock settings                               :
+**            Clock settings                               : 
 **              Clock source                               : TPM counter clock
-**              Prescaler                                  : divide by 128
-**              Counter frequency                          : 187.500 kHz
-**              Modulo counter                             : 9375
-**              Period                                     : 100.000 ms
+**              Prescaler                                  : divide by 1
+**              Counter frequency                          : 24 MHz
+**              Modulo counter                             : 04B0
+**              Period                                     : 100.000 us
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled
 **            Counter reload on trigger                    : Disabled
 **            Counter start on trigger                     : Disabled
 **            Counter stop on overflow                     : Disabled
 **            Counter in Doze mode                         : Enabled
-**          Channels                                       :
+**          Channels                                       : 
 **            Channel 0                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : Low-true
+**                PWM polarity                             : High-true
 **                Channel value register                   : 0800
 **              Pin                                        : Enabled
 **                Pin                                      : TSI0_CH11/PTB18/TPM2_CH0
-**                Pin signal                               :
-**              Interrupt/DMA                              :
+**                Pin signal                               : 
+**              Interrupt/DMA                              : 
 **                Interrupt                                : INT_TPM2
 **                Channel interrupt                        : Disabled
 **                DMA request                              : Disabled
 **            Channel 1                                    : Disabled
-**          Pins                                           :
+**          Pins                                           : 
 **            External clock pin                           : Disabled
 **            HW Synchronization trigger                   : Disabled
-**          Interrupts                                     :
-**            Channels / Timer overflow / Fault            :
+**          Interrupts                                     : 
+**            Channels / Timer overflow / Fault            : 
 **              Interrupt                                  : INT_TPM2
 **              Interrupt request                          : Disabled
 **              Interrupt priority                         : 0 (Highest)
-**              ISR Name                                   :
+**              ISR Name                                   : 
 **              Channels interrupt/DMA                     : See the respective Channel settings
 **              Timer overflow DMA                         : Disabled
 **              Timer overflow interrupt                   : Disabled
-**          Initialization                                 :
+**          Initialization                                 : 
 **            Call Init method                             : no
 **     Contents    :
 **         Init - void TPM2_Init(void);
 **
-**     Copyright : 1997 - 2014 Freescale Semiconductor, Inc.
+**     Copyright : 1997 - 2014 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
-**
+**     
 **     Redistribution and use in source and binary forms, with or without modification,
 **     are permitted provided that the following conditions are met:
-**
+**     
 **     o Redistributions of source code must retain the above copyright notice, this list
 **       of conditions and the following disclaimer.
-**
+**     
 **     o Redistributions in binary form must reproduce the above copyright notice, this
 **       list of conditions and the following disclaimer in the documentation and/or
 **       other materials provided with the distribution.
-**
+**     
 **     o Neither the name of Freescale Semiconductor, Inc. nor the names of its
 **       contributors may be used to endorse or promote products derived from this
 **       software without specific prior written permission.
-**
+**     
 **     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 **     ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 **     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -85,7 +85,7 @@
 **     ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 **     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 **     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-**
+**     
 **     http: www.freescale.com
 **     mail: support@freescale.com
 ** ###################################################################*/
@@ -96,11 +96,11 @@
 **          This file implements the TPM (TPM2) module initialization
 **          according to the Peripheral Initialization settings, and
 **          defines interrupt service routines prototypes.
-*/
+*/         
 /*!
 **  @addtogroup TPM2_module TPM2 module documentation
 **  @{
-*/
+*/         
 
 /* MODULE TPM2. */
 
@@ -151,17 +151,16 @@ void TPM2_Init(void)
                 TPM_CONF_DBGMODE(0x03) |
                 TPM_CONF_DOZEEN_MASK
                );
-  /* TPM2_C0SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=0,ELSA=1,??=0,DMA=0 */
-  /* TPM2_C0SC = (uint32_t)((TPM2_C0SC & (uint32_t)~(uint32_t)(
+  /* TPM2_C0SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=1,ELSA=0,??=0,DMA=0 */
+  TPM2_C0SC = (uint32_t)((TPM2_C0SC & (uint32_t)~(uint32_t)(
                TPM_CnSC_CHF_MASK |
                TPM_CnSC_CHIE_MASK |
-               TPM_CnSC_ELSB_MASK |
+               TPM_CnSC_ELSA_MASK |
                TPM_CnSC_DMA_MASK |
                0xFFFFFF02U
               )) | (uint32_t)(
-               TPM_CnSC_ELSA_MASK
-              )); */
-  TPM2_C0SC = (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSA_MASK);
+               TPM_CnSC_ELSB_MASK
+              ));
   /* TPM2_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,MSB=0,MSA=0,ELSB=0,ELSA=0,??=0 */
   TPM2_C1SC &= (uint32_t)~(uint32_t)(
                 TPM_CnSC_CHF_MASK |
@@ -173,24 +172,24 @@ void TPM2_Init(void)
                );
   /* TPM2_C0V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0x0800 */
   TPM2_C0V = TPM_CnV_VAL(0x0800);
-  /* TPM2_MOD: MOD=0x249F */
+  /* TPM2_MOD: MOD=0x04B0 */
   TPM2_MOD = (uint32_t)((TPM2_MOD & (uint32_t)~(uint32_t)(
-              TPM_MOD_MOD(0xDB60)
+              TPM_MOD_MOD(0xFB4F)
              )) | (uint32_t)(
-              TPM_MOD_MOD(0x249F)
+              TPM_MOD_MOD(0x04B0)
              ));
   /* TPM2_CNT: COUNT=0 */
   TPM2_CNT &= (uint32_t)~(uint32_t)(TPM_CNT_COUNT(0xFFFF));
-  /* TPM2_SC: DMA=0,TOF=0,TOIE=0,CPWMS=1,CMOD=1,PS=7 */
+  /* TPM2_SC: DMA=0,TOF=0,TOIE=0,CPWMS=1,CMOD=1,PS=0 */
   TPM2_SC = (uint32_t)((TPM2_SC & (uint32_t)~(uint32_t)(
              TPM_SC_DMA_MASK |
              TPM_SC_TOF_MASK |
              TPM_SC_TOIE_MASK |
-             TPM_SC_CMOD(0x02)
+             TPM_SC_CMOD(0x02) |
+             TPM_SC_PS(0x07)
             )) | (uint32_t)(
              TPM_SC_CPWMS_MASK |
-             TPM_SC_CMOD(0x01) |
-             TPM_SC_PS(0x07)
+             TPM_SC_CMOD(0x01)
             ));
 }
 

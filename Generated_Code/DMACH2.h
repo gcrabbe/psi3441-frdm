@@ -6,7 +6,7 @@
 **     Component   : DMAChannel_LDD
 **     Version     : Component 01.051, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 21:13, # CodeGen: 2
+**     Date/Time   : 2017-06-07, 21:09, # CodeGen: 15
 **     Abstract    :
 **          This embedded component implements
 **          a DMA transfer channel descriptor definition.
@@ -24,24 +24,24 @@
 **            Interrupt service                            : Enabled
 **              Transfer complete interrupt                : 
 **                Interrupt vector                         : INT_DMA1
-**                Interrupt priority                       : medium priority
+**                Interrupt priority                       : 2
 **          External object declaration                    : (string list)
 **          Source transaction settings                    : 
-**            Start address                                : 0
-**            Transaction size                             : 8-bits
-**            Address adjustment                           : 0
-**            Address modulo                               : Buffer disabled
+**            Start address                                : PWMBuffer
+**            Transaction size                             : 16-bits
+**            Address adjustment                           : 2
+**            Address modulo                               : 128 Bytes
 **          Destination transaction settings               : 
-**            Start address                                : 0
-**            Transaction size                             : 8-bits
+**            Start address                                : 0x4003A010
+**            Transaction size                             : 16-bits
 **            Address adjustment                           : 0
 **            Address modulo                               : Buffer disabled
 **          Transfer settings                              : 
 **            Auto-align mode                              : Disabled
 **            Asynchronous requests                        : Disabled
-**            Transaction size                             : 8-bits
+**            Transaction size                             : 16-bits
 **            Transactions count                           : 1
-**            Request count                                : 1
+**            Request count                                : 256
 **            After request complete actions               : 
 **              Channel linking                            : Disabled
 **              Address adjustment                         : Disabled
@@ -59,6 +59,7 @@
 **              OnError                                    : Enabled
 **     Contents    :
 **         Init            - LDD_TDeviceData* DMACH2_Init(LDD_TUserData *UserDataPtr);
+**         EnableRequest   - LDD_TError DMACH2_EnableRequest(LDD_TDeviceData *DeviceDataPtr);
 **         StartTransfer   - LDD_TError DMACH2_StartTransfer(LDD_TDeviceData *DeviceDataPtr);
 **         GetError        - LDD_DMA_TErrorFlags DMACH2_GetError(LDD_TDeviceData *DeviceDataPtr);
 **         SetRequestCount - LDD_TError DMACH2_SetRequestCount(LDD_TDeviceData *DeviceDataPtr,...
@@ -128,6 +129,7 @@
   
 /* Methods configuration constants - generated for all enabled component's methods */
 #define DMACH2_Init_METHOD_ENABLED     /*!< Init method of the component DMACH2 is enabled (generated) */
+#define DMACH2_EnableRequest_METHOD_ENABLED /*!< EnableRequest method of the component DMACH2 is enabled (generated) */
 #define DMACH2_StartTransfer_METHOD_ENABLED /*!< StartTransfer method of the component DMACH2 is enabled (generated) */
 #define DMACH2_GetError_METHOD_ENABLED /*!< GetError method of the component DMACH2 is enabled (generated) */
 #define DMACH2_SetRequestCount_METHOD_ENABLED /*!< SetRequestCount method of the component DMACH2 is enabled (generated) */
@@ -137,7 +139,7 @@
 #define DMACH2_OnError_EVENT_ENABLED   /*!< OnError event of the component DMACH2 is enabled (generated) */
 
 /* Source circular buffer base address mask. Represents required 0-modulo-size mask of base source address when using circular buffer. */
-#define DMACH2_SOURCE_CIRCULAR_BUFFER_ADDRESS_MASK 0U
+#define DMACH2_SOURCE_CIRCULAR_BUFFER_ADDRESS_MASK 127U
 /* Destination circular buffer base address mask. Represents required 0-modulo-size mask of base destination address when using circular buffer. */
 #define DMACH2_DESTINATION_CIRCULAR_BUFFER_ADDRESS_MASK 0U
 
@@ -161,6 +163,26 @@
 */
 /* ===================================================================*/
 LDD_TDeviceData* DMACH2_Init(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Method      :  DMACH2_EnableRequest (component DMAChannel_LDD)
+*/
+/*!
+**     @brief
+**         The method enables request from peripheral. Please note that
+**         this method doesn't start the transfer. The transfer is
+**         started as soon as DMA request from peripheral is asserted.
+**     @param
+**         DeviceDataPtr   - Device data structure
+**                           pointer returned by [Init] method.
+**     @return
+**                         - Error code, possible codes: 
+**                           - ERR_OK - OK. 
+**                           - ERR_DISABLED - Component is disabled.
+*/
+/* ===================================================================*/
+LDD_TError DMACH2_EnableRequest(LDD_TDeviceData *DeviceDataPtr);
 
 /*
 ** ===================================================================

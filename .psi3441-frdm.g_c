@@ -134,7 +134,7 @@
     </GenFiles>
     <SignalListFile>Documentation\psi3441-frdm_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>51</ProjectModificationStamp>
+    <ProjectModificationStamp>58</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>
@@ -521,7 +521,7 @@
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
     <HeaderAge>1254513451</HeaderAge>
-    <CodeAge>1254513451</CodeAge>
+    <CodeAge>1254597452</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <Init>true</Init>
@@ -719,8 +719,8 @@
     <GenComponentVersion>01.037</GenComponentVersion>
     <GenDriverVersion>01.01</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254533540</HeaderAge>
-    <CodeAge>1254533540</CodeAge>
+    <HeaderAge>1254597452</HeaderAge>
+    <CodeAge>1254597452</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>28</GenNumMethods>
     <Init>true</Init>
@@ -1099,8 +1099,8 @@
     <GenComponentVersion>01.051</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1254533540</HeaderAge>
-    <CodeAge>1254533540</CodeAge>
+    <HeaderAge>1254598961</HeaderAge>
+    <CodeAge>1254598961</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <Init>true</Init>
@@ -1109,7 +1109,7 @@
     <Disable>false</Disable>
     <SetEventMask>false</SetEventMask>
     <GetEventMask>false</GetEventMask>
-    <EnableRequest>false</EnableRequest>
+    <EnableRequest>true</EnableRequest>
     <DisableRequest>false</DisableRequest>
     <StartTransfer>true</StartTransfer>
     <CancelTransfer>false</CancelTransfer>
@@ -1138,62 +1138,76 @@
     <GenSmartUserChangesDetected_Header>false</GenSmartUserChangesDetected_Header>
     <GenSmartUserChangesDetected_Code>false</GenSmartUserChangesDetected_Code>
     <GenSmartUserChangesDetected_Asembl>false</GenSmartUserChangesDetected_Asembl>
-    <GenMethodPos>8</GenMethodPos>
+    <GenMethodPos>10</GenMethodPos>
     <MethodPos>
       <MethodPos0>Init</MethodPos0>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>143</LineBeg>
-      <LineEnd>163</LineEnd>
+      <LineBeg>145</LineBeg>
+      <LineEnd>165</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos1>StartTransfer</MethodPos1>
+      <MethodPos1>EnableRequest</MethodPos1>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>164</LineBeg>
-      <LineEnd>184</LineEnd>
+      <LineBeg>166</LineBeg>
+      <LineEnd>185</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos2>GetError</MethodPos2>
+      <MethodPos2>StartTransfer</MethodPos2>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>185</LineBeg>
-      <LineEnd>200</LineEnd>
+      <LineBeg>186</LineBeg>
+      <LineEnd>206</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos3>SetRequestCount</MethodPos3>
+      <MethodPos3>GetError</MethodPos3>
       <MethodType>method</MethodType>
       <ModuleType>Header</ModuleType>
-      <LineBeg>201</LineBeg>
-      <LineEnd>221</LineEnd>
+      <LineBeg>207</LineBeg>
+      <LineEnd>222</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos4>Init</MethodPos4>
+      <MethodPos4>SetRequestCount</MethodPos4>
       <MethodType>method</MethodType>
-      <ModuleType>Code</ModuleType>
-      <LineBeg>148</LineBeg>
-      <LineEnd>186</LineEnd>
+      <ModuleType>Header</ModuleType>
+      <LineBeg>223</LineBeg>
+      <LineEnd>243</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos5>StartTransfer</MethodPos5>
+      <MethodPos5>Init</MethodPos5>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>187</LineBeg>
-      <LineEnd>210</LineEnd>
+      <LineBeg>150</LineBeg>
+      <LineEnd>191</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos6>GetError</MethodPos6>
+      <MethodPos6>EnableRequest</MethodPos6>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>211</LineBeg>
-      <LineEnd>229</LineEnd>
+      <LineBeg>192</LineBeg>
+      <LineEnd>214</LineEnd>
     </MethodPos>
     <MethodPos>
-      <MethodPos7>SetRequestCount</MethodPos7>
+      <MethodPos7>StartTransfer</MethodPos7>
       <MethodType>method</MethodType>
       <ModuleType>Code</ModuleType>
-      <LineBeg>230</LineBeg>
-      <LineEnd>253</LineEnd>
+      <LineBeg>215</LineBeg>
+      <LineEnd>238</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos8>GetError</MethodPos8>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>239</LineBeg>
+      <LineEnd>257</LineEnd>
+    </MethodPos>
+    <MethodPos>
+      <MethodPos9>SetRequestCount</MethodPos9>
+      <MethodType>method</MethodType>
+      <ModuleType>Code</ModuleType>
+      <LineBeg>258</LineBeg>
+      <LineEnd>281</LineEnd>
     </MethodPos>
     <GenExtraFilesCount>0</GenExtraFilesCount>
   </ComponentID_63>
@@ -1203,8 +1217,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254534842</HeaderAge>
-    <CodeAge>1254534842</CodeAge>
+    <HeaderAge>1254599116</HeaderAge>
+    <CodeAge>1254599116</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>

@@ -31,9 +31,11 @@ At this time, the hardware-triggered ADC is filling a buffer in memory through i
 
 ### PWM
 
-At this time, the TPM2 timer is generating a constant duty-cycle center-aligned PWM wave slow enough to be seen on the red LED.
+At this time, the TPM2 timer is generating a DMA-driven variable duty-cycle center-aligned PWM wave slow enough to be seen on the red LED.
 
-**Note:** The `Init_TPM` component, which is the only one that supports center-aligned PWM mode, is buggy. Make sure to set `TPM2_C0SC = (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSA_MASK);`.
+A compromise will have to be reached here between the sawtooth carrier frequency and the output resolution.
+
+**Note:** The `Init_TPM` component, which is the only one that supports center-aligned PWM mode, is buggy. Make sure to call `TPM2_FixPWM` method.
 
 
 ### Figure of merit
@@ -56,3 +58,5 @@ The blue LED (active LOW) is available on pin 11 of connector J10.
 
 
 ## References
+
+D. Kastha, D. Prasad, N. K. De, S. Sengupta. Lesson 37: Sine PWM and its Realization. *Power Electronics (Web Course): Lecture Notes*. Indian Institute of Technology Kharagpur. http://nptel.ac.in/downloads/108105066/ (2017-06-07).

@@ -3,8 +3,8 @@
   <Header>
     <Name>psi3441-frdm</Name>
     <SavedBy>Gabriel</SavedBy>
-    <ModificationStamp>51</ModificationStamp>
-    <Date>2017-06-06</Date>
+    <ModificationStamp>59</ModificationStamp>
+    <Date>2017-06-07</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>77</ProjectCompNumb>
+    <ProjectCompNumb>80</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -8474,7 +8474,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>0</Value>
+        <Value>1</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -9572,7 +9572,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloInt</ItemSymbol>
-        <Value />
+        <Value>INT_PIT</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloInitPriority</ItemSymbol>
@@ -10456,7 +10456,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelComponentsNameString0</ItemSymbol>
-        <Value>DMACH1</Value>
+        <Value>DMACH2</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelArbitrationType0</ItemSymbol>
@@ -10469,7 +10469,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>0</Value>
+        <Value>1</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -10511,7 +10511,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelTransferCompleteInterruptVector0</ItemSymbol>
-        <Value>INT_DMA0</Value>
+        <Value>INT_DMA1</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelTransferCompleteInterruptPriority0</ItemSymbol>
@@ -10648,7 +10648,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelComponentsNameString1</ItemSymbol>
-        <Value>DMACH2</Value>
+        <Value>DMACH1</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelArbitrationType1</ItemSymbol>
@@ -10661,7 +10661,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>1</Value>
+        <Value>0</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -10684,8 +10684,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-        <Index>0</Index>
-        <Value>true</Value>
+        <Index>1</Index>
+        <Value>false</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelInterruptService1</ItemSymbol>
@@ -10703,14 +10703,14 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelTransferCompleteInterruptVector1</ItemSymbol>
-        <Value>INT_DMA1</Value>
+        <Value>INT_DMA0</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelTransferCompleteInterruptPriority1</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>medium priority</Value>
+        <Value>2</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>StaticChannelTransferCompleteInterruptVectorISRHandleGrp1</ItemSymbol>
@@ -13638,7 +13638,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>1</Value>
+        <Value>0</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -13697,7 +13697,7 @@
       <ItemState>
         <ItemSymbol>TransferCompleteIntPriority</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>medium priority</Value>
+        <Value>2</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferCompleteIntISRHandleGrp</ItemSymbol>
@@ -13793,7 +13793,7 @@
         <ItemSymbol>SrcStartAddress</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>0</Value>
+        <Value>PWMBuffer</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>SrcTransactionSize</ItemSymbol>
@@ -13801,15 +13801,15 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeTransferSize</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>1</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>2</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>SrcAddressAdjustment</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>0</Value>
+        <Value>2</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -13818,8 +13818,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeAddressModulo</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>0</EnumSymbVal>
+        <Index>7</Index>
+        <EnumSymbVal>128</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>DstTransactionSettingsGrp</ItemSymbol>
@@ -13837,7 +13837,7 @@
         <ItemSymbol>DstStartAddress</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>0</Value>
+        <Value>0x4003A010</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>DstTransactionSize</ItemSymbol>
@@ -13845,8 +13845,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeTransferSize</TypeSpecNameState>
-        <Index>0</Index>
-        <EnumSymbVal>1</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>2</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>DstAddressAdjustment</ItemSymbol>
@@ -13914,8 +13914,8 @@
       <ItemState>
         <ItemSymbol>RWTransactionSize</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <EnumSymbVal>1</EnumSymbVal>
+        <Index>1</Index>
+        <EnumSymbVal>2</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>RWTransactionCount</ItemSymbol>
@@ -13928,7 +13928,7 @@
       <ItemState>
         <ItemSymbol>RequestSize</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>1</Value>
+        <Value>2</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -13936,13 +13936,13 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>1</Value>
+        <Value>256</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>1</Value>
+        <Value>512</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -14192,10 +14192,10 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
         <LastSelection>true</LastSelection>
-        <LastUserSel>no</LastUserSel>
+        <LastUserSel>yes</LastUserSel>
         <UsrMethodName>EnableRequest</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -14504,24 +14504,24 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typePrescaler</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>7</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>187.500 kHz</Value>
+        <Value>24 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloCounter</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>9375</Value>
+        <Value>1200</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>100.000 ms</Value>
+        <Value>100.000 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>
@@ -14697,8 +14697,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typePWMPolarity</TypeSpecNameState>
-        <Index>1</Index>
-        <EnumSymbVal>lowTrue</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>highTrue</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>ChannelValReg0</ItemSymbol>

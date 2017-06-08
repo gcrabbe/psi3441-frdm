@@ -808,6 +808,21 @@ PE_DEBUGHALT();
       </enumgroup>
       <list name="Statically allocated channels" v="2">
         <group name="Channel settings">
+          <Channel v="DMA_Channel1" />
+          <Allocate_channel v="no" />
+          <Channel_shared v="no" />
+          <Used_by_component_s_ v="DMACH2" />
+          <enumgroup name="Arbitration type" v="Fixed">
+            <Priority v="1" />
+          </enumgroup>
+          <boolgroup name="Interrupt service" v="Enabled">
+            <group name="Transfer complete interrupt">
+              <Interrupt_vector v="INT_DMA1" />
+              <Interrupt_priority v="2" />
+            </group>
+          </boolgroup>
+        </group>
+        <group name="Channel settings">
           <Channel v="DMA_Channel0" />
           <Allocate_channel v="no" />
           <Channel_shared v="no" />
@@ -819,21 +834,6 @@ PE_DEBUGHALT();
             <group name="Transfer complete interrupt">
               <Interrupt_vector v="INT_DMA0" />
               <Interrupt_priority v="2" />
-            </group>
-          </boolgroup>
-        </group>
-        <group name="Channel settings">
-          <Channel v="DMA_Channel1" />
-          <Allocate_channel v="no" />
-          <Channel_shared v="no" />
-          <Used_by_component_s_ v="DMACH2" />
-          <enumgroup name="Arbitration type" v="Fixed">
-            <Priority v="1" />
-          </enumgroup>
-          <boolgroup name="Interrupt service" v="Enabled">
-            <group name="Transfer complete interrupt">
-              <Interrupt_vector v="INT_DMA1" />
-              <Interrupt_priority v="medium priority" />
             </group>
           </boolgroup>
         </group>
@@ -985,7 +985,7 @@ Autoselect
         <boolgroup name="Interrupt service" v="Enabled">
           <group name="Transfer complete interrupt">
             <Interrupt_vector v="INT_DMA1" />
-            <Interrupt_priority v="medium priority" />
+            <Interrupt_priority v="2" />
           </group>
         </boolgroup>
       </enumgroup>
@@ -994,23 +994,23 @@ Autoselect
 ]]></StrgList>
       </External_object_declaration>
       <group name="Source transaction settings">
-        <Start_address v="0" />
-        <Transaction_size v="8-bits" />
-        <Address_adjustment v="0" />
-        <Address_modulo v="Buffer disabled" />
+        <Start_address v="PWMBuffer" />
+        <Transaction_size v="16-bits" />
+        <Address_adjustment v="2" />
+        <Address_modulo v="128 Bytes" />
       </group>
       <group name="Destination transaction settings">
-        <Start_address v="0" />
-        <Transaction_size v="8-bits" />
+        <Start_address v="0x4003A010" />
+        <Transaction_size v="16-bits" />
         <Address_adjustment v="0" />
         <Address_modulo v="Buffer disabled" />
       </group>
       <group name="Transfer settings">
         <Auto_align_mode v="Disabled" />
         <Asynchronous_requests v="Disabled" />
-        <Transaction_size v="8-bits" />
+        <Transaction_size v="16-bits" />
         <Transactions_count v="1" />
-        <Request_count v="1" />
+        <Request_count v="256" />
         <group name="After request complete actions">
           <boolgroup name="Channel linking" v="Disabled" />
           <boolgroup name="Address adjustment" v="Disabled" />
@@ -1041,7 +1041,7 @@ Autoselect
       <Disable v="don&amp;apos;t generate code" />
       <SetEventMask v="don&amp;apos;t generate code" />
       <GetEventMask v="don&amp;apos;t generate code" />
-      <EnableRequest v="don&amp;apos;t generate code" />
+      <EnableRequest v="generate code" />
       <DisableRequest v="don&amp;apos;t generate code" />
       <StartTransfer v="generate code" />
       <CancelTransfer v="don&amp;apos;t generate code" />
@@ -1078,10 +1078,10 @@ Autoselect
         <Clock_gate v="Enabled" />
         <group name="Clock settings">
           <Clock_source v="TPM counter clock" />
-          <Prescaler v="divide by 128" />
-          <Counter_frequency v="187.500 kHz" />
-          <Modulo_counter v="9375" />
-          <Period v="100.000 ms" />
+          <Prescaler v="divide by 16" />
+          <Counter_frequency v="1.500 MHz" />
+          <Modulo_counter v="75" />
+          <Period v="100.000 us" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />

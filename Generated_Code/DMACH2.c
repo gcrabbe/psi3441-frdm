@@ -6,7 +6,7 @@
 **     Component   : DMAChannel_LDD
 **     Version     : Component 01.051, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 21:13, # CodeGen: 2
+**     Date/Time   : 2017-06-07, 21:09, # CodeGen: 15
 **     Abstract    :
 **          This embedded component implements
 **          a DMA transfer channel descriptor definition.
@@ -24,24 +24,24 @@
 **            Interrupt service                            : Enabled
 **              Transfer complete interrupt                : 
 **                Interrupt vector                         : INT_DMA1
-**                Interrupt priority                       : medium priority
+**                Interrupt priority                       : 2
 **          External object declaration                    : (string list)
 **          Source transaction settings                    : 
-**            Start address                                : 0
-**            Transaction size                             : 8-bits
-**            Address adjustment                           : 0
-**            Address modulo                               : Buffer disabled
+**            Start address                                : PWMBuffer
+**            Transaction size                             : 16-bits
+**            Address adjustment                           : 2
+**            Address modulo                               : 128 Bytes
 **          Destination transaction settings               : 
-**            Start address                                : 0
-**            Transaction size                             : 8-bits
+**            Start address                                : 0x4003A010
+**            Transaction size                             : 16-bits
 **            Address adjustment                           : 0
 **            Address modulo                               : Buffer disabled
 **          Transfer settings                              : 
 **            Auto-align mode                              : Disabled
 **            Asynchronous requests                        : Disabled
-**            Transaction size                             : 8-bits
+**            Transaction size                             : 16-bits
 **            Transactions count                           : 1
-**            Request count                                : 1
+**            Request count                                : 256
 **            After request complete actions               : 
 **              Channel linking                            : Disabled
 **              Address adjustment                         : Disabled
@@ -59,6 +59,7 @@
 **              OnError                                    : Enabled
 **     Contents    :
 **         Init            - LDD_TDeviceData* DMACH2_Init(LDD_TUserData *UserDataPtr);
+**         EnableRequest   - LDD_TError DMACH2_EnableRequest(LDD_TDeviceData *DeviceDataPtr);
 **         StartTransfer   - LDD_TError DMACH2_StartTransfer(LDD_TDeviceData *DeviceDataPtr);
 **         GetError        - LDD_DMA_TErrorFlags DMACH2_GetError(LDD_TDeviceData *DeviceDataPtr);
 **         SetRequestCount - LDD_TError DMACH2_SetRequestCount(LDD_TDeviceData *DeviceDataPtr,...
@@ -122,16 +123,17 @@
 /* Channel configuration structure */
 DMA1_TChnInit const DMACH2_ChInit = {
   /* Logical channel number */
-  DMA1_STATIC_CHANNEL_1,               /* Phy channel: DMA_Channel1 */
+  DMA1_STATIC_CHANNEL_0,               /* Phy channel: DMA_Channel1 */
   { /* TCD initial settings */
-    DMA_SAR_SAR(0x00),                 /* SAR register initial value */
-    DMA_DAR_DAR(0x00),                 /* DAR register initial value */
-    DMA_DSR_BCR_BCR(0x01),             /* DSR_BCR register initial value */
+    DMA_SAR_SAR(0x00),                 /* Initial value is not constant expresion. See Init() method to see initial value. */
+    DMA_DAR_DAR(0x4003A010),           /* DAR register initial value */
+    DMA_DSR_BCR_BCR(0x0200),           /* DSR_BCR register initial value */
     ( DMA_DCR_EINT_MASK |
       DMA_DCR_CS_MASK |
-      DMA_DCR_SSIZE(0x01) |
-      DMA_DCR_DSIZE(0x01) |
-      DMA_DCR_SMOD(0x00) |
+      DMA_DCR_SINC_MASK |
+      DMA_DCR_SSIZE(0x02) |
+      DMA_DCR_DSIZE(0x02) |
+      DMA_DCR_SMOD(0x04) |
       DMA_DCR_DMOD(0x00) |
       DMA_DCR_LINKCC(0x00) |
       DMA_DCR_LCH1(0x00) |
@@ -169,6 +171,7 @@ LDD_TDeviceData* DMACH2_Init(LDD_TUserData *UserDataPtr)
 {
   LDD_TDeviceData                 *DevDataPtr; /* DMA device data structure pointer */
   LDD_TDeviceData                 *ChnDevDataPtr; /* DMA channel device data structure pointer */
+  DMA1_TChnInit                    ChnInit;
 
   DevDataPtr = PE_LDD_DeviceDataList[PE_LDD_COMPONENT_DMA1_ID]; /* Get DMA peripheral handle */
   if (DevDataPtr == NULL) {            /* Is DMA peripheral initialized? */
@@ -177,12 +180,37 @@ LDD_TDeviceData* DMACH2_Init(LDD_TUserData *UserDataPtr)
       return NULL;                     /* Yes, return NULL */
     }
   }
+  ChnInit = DMACH2_ChInit;             /* Initialize local copy of init. structure */
+  ChnInit.TCD.DMA_SAR_Reg = DMA_SAR_SAR(PWMBuffer); /* SAR register initial value */
   /* Initialize DMA channel device and get DMA channel handle */
-  ChnDevDataPtr = DMA1_InitChannel(DevDataPtr, (DMA1_TChnInit *)(void *)&DMACH2_ChInit, UserDataPtr);
+  ChnDevDataPtr = DMA1_InitChannel(DevDataPtr, (DMA1_TChnInit *)(void *)&ChnInit, UserDataPtr);
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_DMACH2_ID,ChnDevDataPtr);
   /* Return pointer to the channel data structure */
   return (ChnDevDataPtr);
+}
+
+/*
+** ===================================================================
+**     Method      :  DMACH2_EnableRequest (component DMAChannel_LDD)
+*/
+/*!
+**     @brief
+**         The method enables request from peripheral. Please note that
+**         this method doesn't start the transfer. The transfer is
+**         started as soon as DMA request from peripheral is asserted.
+**     @param
+**         DeviceDataPtr   - Device data structure
+**                           pointer returned by [Init] method.
+**     @return
+**                         - Error code, possible codes: 
+**                           - ERR_OK - OK. 
+**                           - ERR_DISABLED - Component is disabled.
+*/
+/* ===================================================================*/
+LDD_TError DMACH2_EnableRequest(LDD_TDeviceData *DeviceDataPtr)
+{
+  return DMA1_EnableRequest((DMA1_TChanDeviceData *)DeviceDataPtr);
 }
 
 /*

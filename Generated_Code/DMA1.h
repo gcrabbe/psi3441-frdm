@@ -6,7 +6,7 @@
 **     Component   : DMAController
 **     Version     : Component 01.037, Driver 01.01, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 21:13, # CodeGen: 2
+**     Date/Time   : 2017-06-07, 20:26, # CodeGen: 10
 **     Abstract    :
 **          This embedded component implements initialization
 **          and runtime handling of an on-chip DMA controller.
@@ -16,6 +16,17 @@
 **          Channel arbitration type                       : Fixed
 **            Autoset channel priority                     : 
 **          Statically allocated channels                  : 2
+**            Channel settings                             : Chan: 1
+**              Channel                                    : DMA_Channel1
+**              Allocate channel                           : no
+**              ChannelShared                              : no
+**              Used by component(s)                       : DMACH2
+**              Arbitration type                           : Fixed
+**                Priority                                 : 1
+**              Interrupt service                          : Enabled
+**                Transfer complete interrupt              : 
+**                  Interrupt vector                       : INT_DMA1
+**                  Interrupt priority                     : 2
 **            Channel settings                             : Chan: 0
 **              Channel                                    : DMA_Channel0
 **              Allocate channel                           : no
@@ -27,17 +38,6 @@
 **                Transfer complete interrupt              : 
 **                  Interrupt vector                       : INT_DMA0
 **                  Interrupt priority                     : 2
-**            Channel settings                             : Chan: 1
-**              Channel                                    : DMA_Channel1
-**              Allocate channel                           : no
-**              ChannelShared                              : no
-**              Used by component(s)                       : DMACH2
-**              Arbitration type                           : Fixed
-**                Priority                                 : 1
-**              Interrupt service                          : Enabled
-**                Transfer complete interrupt              : 
-**                  Interrupt vector                       : INT_DMA1
-**                  Interrupt priority                     : medium priority
 **          Dynamically allocatable channels               : 0
 **     Contents    :
 **         Init                      - LDD_TDeviceData* DMA1_Init(void);
@@ -391,7 +391,7 @@ void DMA1_Main(DMA1_TChanDeviceData *ChanDeviceDataPtr);
 ** ===================================================================
 */
 /* {Default RTOS Adapter} ISR function prototype */
-PE_ISR(DMA1_INT_DMA0_TransferComplete_ISR);
+PE_ISR(DMA1_INT_DMA1_TransferComplete_ISR);
 /*
 ** ===================================================================
 **     Method      :  DMA1_TransferComplete_ISR (component DMAController)
@@ -402,7 +402,7 @@ PE_ISR(DMA1_INT_DMA0_TransferComplete_ISR);
 ** ===================================================================
 */
 /* {Default RTOS Adapter} ISR function prototype */
-PE_ISR(DMA1_INT_DMA1_TransferComplete_ISR);
+PE_ISR(DMA1_INT_DMA0_TransferComplete_ISR);
 /* END DMA1. */
 
 #endif

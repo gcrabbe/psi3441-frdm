@@ -6,7 +6,7 @@
 **     Component   : DMAChannel_LDD
 **     Version     : Component 01.051, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:25, # CodeGen: 1
+**     Date/Time   : 2017-06-07, 20:26, # CodeGen: 10
 **     Abstract    :
 **          This embedded component implements
 **          a DMA transfer channel descriptor definition.
@@ -123,7 +123,7 @@
 /* Channel configuration structure */
 DMA1_TChnInit const DMACH1_ChInit = {
   /* Logical channel number */
-  DMA1_STATIC_CHANNEL_0,               /* Phy channel: DMA_Channel0 */
+  DMA1_STATIC_CHANNEL_1,               /* Phy channel: DMA_Channel0 */
   { /* TCD initial settings */
     DMA_SAR_SAR(0x00),                 /* Initial value is not constant expresion. See Init() method to see initial value. */
     DMA_DAR_DAR(0x4003F000),           /* DAR register initial value */

@@ -48,6 +48,7 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "DAC.h"
 #include "ADC.h"
+#include "PWM.h"
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
@@ -64,8 +65,8 @@ int main(void)
 
   /* DAC initialization */
   DA1 = DA1_Init(NULL);
-  DMACH1 = DMACH1_Init(NULL);
   TU1 = TU1_Init(NULL);
+  DMACH1 = DMACH1_Init(NULL);
 
   /* ADC initialization */
   struct ring ADCRing;
@@ -80,10 +81,15 @@ int main(void)
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
 
   /* PWM initialization */
-  TPM2_Init(); /* Center-aligned PWM implementation is buggy */
+  /* Note: TPM2_Init implementation is buggy */
+  TPM2_Init();
+  TPM2_FixPWM();
+  TU3 = TU3_Init(NULL);
+  DMACH2 = DMACH2_Init(NULL);
 
   /* Enable DMA transfers */
   DMACH1_EnableRequest(DMACH1);
+  DMACH2_EnableRequest(DMACH2);
 
   /* Enable ADC transfers */
   AD1_StartLoopTriggeredMeasurement(AD1);

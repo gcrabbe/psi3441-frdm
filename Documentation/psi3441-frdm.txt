@@ -87,6 +87,8 @@ Module "DMACH2"    (component DMAChannel_LDD)
    - DMACH2_Init -Initializes the DMAChannel_LDD component. This method allocates no memory. Memory for all DMA used channles 
                 is allocated by DMAController componet .  This method can be called only once. Before the second call of Init() 
                 the Deinit() must be called first.
+   - DMACH2_EnableRequest -The method enables request from peripheral. Please note that this method doesn't start the transfer. 
+                The transfer is started as soon as DMA request from peripheral is asserted.
    - DMACH2_StartTransfer -The method starts DMA transfer on the selected DMA channel. This methods initiates explicit SW 
                 transfer request. Please note that call of this method if peripheral request is enabled can cause unpredictable 
                 behaviour.

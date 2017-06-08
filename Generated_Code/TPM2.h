@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 21:53, # CodeGen: 9
+**     Date/Time   : 2017-06-07, 21:14, # CodeGen: 16
 **     Abstract    :
 **          This file implements the TPM (TPM2) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -18,10 +18,10 @@
 **            Clock gate                                   : Enabled
 **            Clock settings                               : 
 **              Clock source                               : TPM counter clock
-**              Prescaler                                  : divide by 128
-**              Counter frequency                          : 187.500 kHz
-**              Modulo counter                             : 9375
-**              Period                                     : 100.000 ms
+**              Prescaler                                  : divide by 1
+**              Counter frequency                          : 24 MHz
+**              Modulo counter                             : 04B0
+**              Period                                     : 100.000 us
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled
 **            Counter reload on trigger                    : Disabled
@@ -31,7 +31,7 @@
 **          Channels                                       : 
 **            Channel 0                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : Low-true
+**                PWM polarity                             : High-true
 **                Channel value register                   : 0800
 **              Pin                                        : Enabled
 **                Pin                                      : TSI0_CH11/PTB18/TPM2_CH0
