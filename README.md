@@ -54,7 +54,7 @@ Import and build project with CodeWarrior 10.7 or higher.
 
 ### Hardware setup
 
-The DAC output is available on pin 12 of connector J2. The blue LED (active LOW) is available on pin 11 of connector J10. The ADC input is available on pin 2 of connector J10.
+The DAC output is available on pin 11 of connector J10. The blue LED (active LOW) is available on pin 12 of connector J2. The ADC input is available on pin 2 of connector J10.
 
 In order for the system to work, the DAC output must be linked to the ADC input with the help of a jumper wire. The DAC output can otherwise be visualized by connecting it to the blue LED pin.
 
