@@ -27,7 +27,7 @@ by the component.
     0x00000001
  </td><td>PIT_TFLG0 register, peripheral TU1.</td></tr>
 <tr><td>0x40037100</td><td>PIT_LDVAL0</td><td>
-    0x00249EFF
+    0x0004C4B2
  </td><td>PIT_LDVAL0 register, peripheral TU1.</td></tr>
 </table>
 <br/>
@@ -291,7 +291,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40037100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00249EFF</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0004C4B2</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>TSV</td><td>0x00</td><td>Timer Start Value</td>
@@ -310,7 +310,7 @@ registers of the peripheral(s) configured by the component.
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : PIT_LDVAL0
-**            Period                                       : 100 ms
+**            Period                                       : 13020.8 µs
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
 **          Initialization                                 : 

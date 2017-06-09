@@ -6,7 +6,7 @@
 **     Component   : DMAChannel_LDD
 **     Version     : Component 01.051, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:25, # CodeGen: 1
+**     Date/Time   : 2017-06-08, 22:51, # CodeGen: 24
 **     Abstract    :
 **          This embedded component implements
 **          a DMA transfer channel descriptor definition.
@@ -30,7 +30,7 @@
 **            Start address                                : DACBuffer
 **            Transaction size                             : 16-bits
 **            Address adjustment                           : 2
-**            Address modulo                               : 128 Bytes
+**            Address modulo                               : 256 Bytes
 **          Destination transaction settings               : 
 **            Start address                                : 0x4003F000
 **            Transaction size                             : 16-bits
@@ -41,7 +41,7 @@
 **            Asynchronous requests                        : Disabled
 **            Transaction size                             : 16-bits
 **            Transactions count                           : 1
-**            Request count                                : 256
+**            Request count                                : 262144
 **            After request complete actions               : 
 **              Channel linking                            : Disabled
 **              Address adjustment                         : Disabled
@@ -139,7 +139,7 @@
 #define DMACH1_OnError_EVENT_ENABLED   /*!< OnError event of the component DMACH1 is enabled (generated) */
 
 /* Source circular buffer base address mask. Represents required 0-modulo-size mask of base source address when using circular buffer. */
-#define DMACH1_SOURCE_CIRCULAR_BUFFER_ADDRESS_MASK 127U
+#define DMACH1_SOURCE_CIRCULAR_BUFFER_ADDRESS_MASK 255U
 /* Destination circular buffer base address mask. Represents required 0-modulo-size mask of base destination address when using circular buffer. */
 #define DMACH1_DESTINATION_CIRCULAR_BUFFER_ADDRESS_MASK 0U
 

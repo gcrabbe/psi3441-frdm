@@ -15,7 +15,7 @@ struct ring
 	uint8_t count, size;
 };
 
-extern uint16_t ADCBuffer[64];
+extern uint16_t ADCBuffer[128];
 
 extern LDD_TDeviceData* AD1;
 extern LDD_TDeviceData* TU2;

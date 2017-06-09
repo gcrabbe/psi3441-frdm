@@ -447,7 +447,7 @@ PE_DEBUGHALT();
       </enumgroup>
       <enumgroup name="Counter restart" v="On-match">
         <Period_device v="PIT_LDVAL0" />
-        <Period v="100 ms" />
+        <Period v="13020.8 &amp;#181;s" />
         <boolgroup name="Interrupt" v="Disabled" />
       </enumgroup>
       <list name="Channel list" v="0">
@@ -534,7 +534,7 @@ PE_DEBUGHALT();
       </enumgroup>
       <enumgroup name="Counter restart" v="On-match">
         <Period_device v="TPM0_MOD" />
-        <Period v="1 ms" />
+        <Period v="208.333 ms" />
         <boolgroup name="Interrupt" v="Disabled" />
       </enumgroup>
       <list name="Channel list" v="0">
@@ -639,7 +639,7 @@ PE_DEBUGHALT();
         <Start_address v="DACBuffer" />
         <Transaction_size v="16-bits" />
         <Address_adjustment v="2" />
-        <Address_modulo v="128 Bytes" />
+        <Address_modulo v="256 Bytes" />
       </group>
       <group name="Destination transaction settings">
         <Start_address v="0x4003F000" />
@@ -652,7 +652,7 @@ PE_DEBUGHALT();
         <Asynchronous_requests v="Disabled" />
         <Transaction_size v="16-bits" />
         <Transactions_count v="1" />
-        <Request_count v="256" />
+        <Request_count v="262144" />
         <group name="After request complete actions">
           <boolgroup name="Channel linking" v="Disabled" />
           <boolgroup name="Address adjustment" v="Disabled" />
@@ -725,7 +725,7 @@ PE_DEBUGHALT();
       </enumgroup>
       <enumgroup name="Counter restart" v="On-match">
         <Period_device v="PIT_LDVAL1" />
-        <Period v="100 ms" />
+        <Period v="208.333 ms" />
         <boolgroup name="Interrupt" v="Disabled" />
       </enumgroup>
       <list name="Channel list" v="0">
@@ -997,7 +997,7 @@ Autoselect
         <Start_address v="PWMBuffer" />
         <Transaction_size v="16-bits" />
         <Address_adjustment v="2" />
-        <Address_modulo v="128 Bytes" />
+        <Address_modulo v="256 Bytes" />
       </group>
       <group name="Destination transaction settings">
         <Start_address v="0x4003A010" />
@@ -1010,7 +1010,7 @@ Autoselect
         <Asynchronous_requests v="Disabled" />
         <Transaction_size v="16-bits" />
         <Transactions_count v="1" />
-        <Request_count v="256" />
+        <Request_count v="262144" />
         <group name="After request complete actions">
           <boolgroup name="Channel linking" v="Disabled" />
           <boolgroup name="Address adjustment" v="Disabled" />
@@ -1080,8 +1080,8 @@ Autoselect
           <Clock_source v="TPM counter clock" />
           <Prescaler v="divide by 1" />
           <Counter_frequency v="24 MHz" />
-          <Modulo_counter v="1200" />
-          <Period v="100.000 us" />
+          <Modulo_counter v="1023" />
+          <Period v="85.250 us" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />

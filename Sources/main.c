@@ -70,7 +70,7 @@ int main(void)
 
   /* ADC initialization */
   struct ring ADCRing;
-  initRing(&ADCRing, ADCBuffer, 64);
+  initRing(&ADCRing, ADCBuffer, 128);
 
   AD1 = AD1_Init((LDD_TUserData *) &ADCRing);
   AD1_StartCalibration(AD1);

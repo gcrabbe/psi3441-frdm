@@ -8,7 +8,7 @@
 #ifndef DAC_H_
 #define DAC_H_
 
-extern const uint16_t DACBuffer[64];
+extern const uint16_t DACBuffer[128];
 
 extern LDD_TDeviceData* DA1;
 extern LDD_TDeviceData* DMACH1;

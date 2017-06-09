@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:18, # CodeGen: 0
+**     Date/Time   : 2017-06-08, 21:19, # CodeGen: 18
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -21,7 +21,7 @@
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : TPM0_MOD
-**            Period                                       : 1 ms
+**            Period                                       : 208.333 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
 **          Initialization                                 : 
@@ -116,10 +116,10 @@ extern "C" {
 #define __BWUserType_TU2_TValueType
   typedef uint32_t TU2_TValueType ;    /* Type for data parameters of methods */
 #endif
-#define TU2_CNT_INP_FREQ_U_0 0x016E3600UL /* Counter input frequency in Hz */
-#define TU2_CNT_INP_FREQ_R_0 23999808.00153599F /* Counter input frequency in Hz */
+#define TU2_CNT_INP_FREQ_U_0 0x0002DC6CUL /* Counter input frequency in Hz */
+#define TU2_CNT_INP_FREQ_R_0 187500.01171875076F /* Counter input frequency in Hz */
 #define TU2_CNT_INP_FREQ_COUNT 0U      /* Count of predefined counter input frequencies */
-#define TU2_PERIOD_TICKS   0x5DC0UL    /* Initialization value of period in 'counter ticks' */
+#define TU2_PERIOD_TICKS   0x9896UL    /* Initialization value of period in 'counter ticks' */
 #define TU2_NUMBER_OF_CHANNELS 0x00U   /* Count of predefined channels */
 #define TU2_COUNTER_WIDTH  0x10U       /* Counter width in bits  */
 #define TU2_COUNTER_DIR    DIR_UP      /* Direction of counting */

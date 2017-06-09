@@ -6,7 +6,7 @@
 **     Component   : DMAChannel_LDD
 **     Version     : Component 01.051, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-07, 20:26, # CodeGen: 10
+**     Date/Time   : 2017-06-08, 22:51, # CodeGen: 24
 **     Abstract    :
 **          This embedded component implements
 **          a DMA transfer channel descriptor definition.
@@ -30,7 +30,7 @@
 **            Start address                                : DACBuffer
 **            Transaction size                             : 16-bits
 **            Address adjustment                           : 2
-**            Address modulo                               : 128 Bytes
+**            Address modulo                               : 256 Bytes
 **          Destination transaction settings               : 
 **            Start address                                : 0x4003F000
 **            Transaction size                             : 16-bits
@@ -41,7 +41,7 @@
 **            Asynchronous requests                        : Disabled
 **            Transaction size                             : 16-bits
 **            Transactions count                           : 1
-**            Request count                                : 256
+**            Request count                                : 262144
 **            After request complete actions               : 
 **              Channel linking                            : Disabled
 **              Address adjustment                         : Disabled
@@ -127,13 +127,13 @@ DMA1_TChnInit const DMACH1_ChInit = {
   { /* TCD initial settings */
     DMA_SAR_SAR(0x00),                 /* Initial value is not constant expresion. See Init() method to see initial value. */
     DMA_DAR_DAR(0x4003F000),           /* DAR register initial value */
-    DMA_DSR_BCR_BCR(0x0200),           /* DSR_BCR register initial value */
+    DMA_DSR_BCR_BCR(0x00080000),       /* DSR_BCR register initial value */
     ( DMA_DCR_EINT_MASK |
       DMA_DCR_CS_MASK |
       DMA_DCR_SINC_MASK |
       DMA_DCR_SSIZE(0x02) |
       DMA_DCR_DSIZE(0x02) |
-      DMA_DCR_SMOD(0x04) |
+      DMA_DCR_SMOD(0x05) |
       DMA_DCR_DMOD(0x00) |
       DMA_DCR_LINKCC(0x00) |
       DMA_DCR_LCH1(0x00) |

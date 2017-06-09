@@ -3,7 +3,7 @@
   <Header>
     <Name>psi3441-frdm</Name>
     <SavedBy>Gabriel</SavedBy>
-    <ModificationStamp>60</ModificationStamp>
+    <ModificationStamp>69</ModificationStamp>
     <Date>2017-06-08</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>80</ProjectCompNumb>
+    <ProjectCompNumb>83</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -6731,7 +6731,7 @@
         <ItemSymbol>Tmg_Period</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>100 ms</Value>
+        <Value>13020.8 µs</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -6757,13 +6757,13 @@
         <ReqSrcClkPrescSpeedMode5>-1</ReqSrcClkPrescSpeedMode5>
         <ReqSrcClkPrescSpeedMode6>-1</ReqSrcClkPrescSpeedMode6>
         <ReqSrcClkPrescSpeedMode7>-1</ReqSrcClkPrescSpeedMode7>
-        <InitValue>100 ms</InitValue>
+        <InitValue>13020.8 us</InitValue>
         <Precision>5.0</Precision>
         <PrecInProc>true</PrecInProc>
         <LowLimit />
         <HighLimit />
         <List lines_count="0" />
-        <UnitText>ms</UnitText>
+        <UnitText>us</UnitText>
         <MinCounterTicks>0</MinCounterTicks>
       </ItemState>
       <ItemState>
@@ -7657,7 +7657,7 @@
         <ItemSymbol>Tmg_Period</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>1 ms</Value>
+        <Value>208.333 ms</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -7683,7 +7683,7 @@
         <ReqSrcClkPrescSpeedMode5>-1</ReqSrcClkPrescSpeedMode5>
         <ReqSrcClkPrescSpeedMode6>-1</ReqSrcClkPrescSpeedMode6>
         <ReqSrcClkPrescSpeedMode7>-1</ReqSrcClkPrescSpeedMode7>
-        <InitValue>1 ms</InitValue>
+        <InitValue>208.333 ms</InitValue>
         <Precision>5.0</Precision>
         <PrecInProc>true</PrecInProc>
         <LowLimit />
@@ -8654,8 +8654,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeAddressModulo</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>128</EnumSymbVal>
+        <Index>8</Index>
+        <EnumSymbVal>256</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>DstTransactionSettingsGrp</ItemSymbol>
@@ -8772,13 +8772,13 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>256</Value>
+        <Value>262144</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>512</Value>
+        <Value>524288</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -9477,7 +9477,7 @@
         <ItemSymbol>Tmg_Period</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>100 ms</Value>
+        <Value>208.333 ms</Value>
         <RuntimeSetting>0</RuntimeSetting>
         <ReqDevPrescHigh>-1</ReqDevPrescHigh>
         <ReqDevPrescLow>-1</ReqDevPrescLow>
@@ -9503,7 +9503,7 @@
         <ReqSrcClkPrescSpeedMode5>-1</ReqSrcClkPrescSpeedMode5>
         <ReqSrcClkPrescSpeedMode6>-1</ReqSrcClkPrescSpeedMode6>
         <ReqSrcClkPrescSpeedMode7>-1</ReqSrcClkPrescSpeedMode7>
-        <InitValue>100 ms</InitValue>
+        <InitValue>208.333 ms</InitValue>
         <Precision>5.0</Precision>
         <PrecInProc>true</PrecInProc>
         <LowLimit />
@@ -13818,8 +13818,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeAddressModulo</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>128</EnumSymbVal>
+        <Index>8</Index>
+        <EnumSymbVal>256</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>DstTransactionSettingsGrp</ItemSymbol>
@@ -13936,13 +13936,13 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>256</Value>
+        <Value>262144</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>TransferSize</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>512</Value>
+        <Value>524288</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -14516,12 +14516,12 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>1200</Value>
+        <Value>1023</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>100.000 us</Value>
+        <Value>85.250 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>

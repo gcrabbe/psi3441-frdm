@@ -18,7 +18,7 @@ by the component.
     0x81800000
  </td><td>SIM_SCGC6 register, peripheral TU2.</td></tr>
 <tr><td>0x40038000</td><td>TPM0_SC</td><td>
-    0x00000008
+    0x0000000F
  </td><td>TPM0_SC register, peripheral TU2.</td></tr>
 <tr><td>0x40038004</td><td>TPM0_CNT</td><td>
     0x00000000
@@ -156,7 +156,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40038000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000008</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000F</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>8</td><td>DMA</td><td>0x00</td><td>DMA Enable</td>
@@ -164,7 +164,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>6</td><td>TOIE</td><td>0x00</td><td>Timer Overflow Interrupt Enable</td>
 <tr><td>5</td><td>CPWMS</td><td>0x00</td><td>Center-aligned PWM Select</td>
 <tr><td>3 - 4</td><td>CMOD</td><td>0x00</td><td>Clock Mode Selection</td>
-<tr><td>0 - 2</td><td>PS</td><td>0x00</td><td>Prescale Factor Selection</td>
+<tr><td>0 - 2</td><td>PS</td><td>0x04</td><td>Prescale Factor Selection</td>
 </tr></table>
 <div class="reghdr1">TPM0_CNT</div>
 <div class="regdiag">
@@ -622,7 +622,7 @@ registers of the peripheral(s) configured by the component.
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : TPM0_MOD
-**            Period                                       : 1 ms
+**            Period                                       : 208.333 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
 **          Initialization                                 : 

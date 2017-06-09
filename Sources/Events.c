@@ -79,7 +79,7 @@ void Cpu_OnNMIINT(void)
 void DMACH1_OnComplete(LDD_TUserData *UserDataPtr)
 {
   /* Write your code here ... */
-  DMACH1_SetRequestCount(DMACH1, 256);
+  DMACH1_SetRequestCount(DMACH1, 262144);
 }
 
 /*
@@ -153,7 +153,7 @@ void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
 void DMACH2_OnComplete(LDD_TUserData *UserDataPtr)
 {
   /* Write your code here ... */
-  DMACH2_SetRequestCount(DMACH2, 256);
+  DMACH2_SetRequestCount(DMACH2, 262144);
 }
 
 /*

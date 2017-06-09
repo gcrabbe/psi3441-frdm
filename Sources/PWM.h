@@ -8,7 +8,7 @@
 #ifndef PWM_H_
 #define PWM_H_
 
-extern uint16_t PWMBuffer[64];
+extern uint16_t PWMBuffer[128];
 
 extern LDD_TDeviceData* DMACH2;
 extern LDD_TDeviceData* TU3;
