@@ -26,11 +26,11 @@ int TPM0_FixPWM()
 {
 	/* Reset channel mode and clear channel flag */
 	TPM0_C1SC = (uint32_t) (TPM_CnSC_CHF_MASK);
-	/* Re-set channel value */
+	/* Re-set channel default value */
 	TPM0_C1V = TPM_CnV_VAL(0x03FF);
 
 	/* Set center-aligned PWM */
-	/* Note: Time between TPM2_C0SC accesses must be respected */
+	/* Note: Time between TPMx_CnSC accesses must be respected */
 	TPM0_C1SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK
 			| TPM_CnSC_DMA_MASK);
 

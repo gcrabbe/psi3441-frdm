@@ -6,7 +6,7 @@
 **     Component   : ADC_LDD
 **     Version     : Component 01.183, Driver 01.08, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 11:40, # CodeGen: 46
+**     Date/Time   : 2017-06-10, 18:02, # CodeGen: 64
 **     Abstract    :
 **         This device "ADC_LDD" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -29,22 +29,22 @@
 **          Low-power mode                                 : Disabled
 **          High-speed conversion mode                     : Disabled
 **          Asynchro clock output                          : Disabled
-**          Sample time                                    : 4 clock periods
-**          Number of conversions                          : 1
-**          Conversion time                                : 12.5 µs
-**          ADC clock                                      : 2 MHz (500 ns)
-**          Single conversion time - Single-ended          : 15.208 us
-**          Single conversion time - Differential          : 19.708 us
-**          Additional conversion time - Single-ended      : 12.5 us
-**          Additional conversion time - Differential      : 17 us
-**          Result type                                    : signed/unsigned 16 bits, right justified
+**          Sample time                                    : 24 clock periods
+**          Number of conversions                          : 4
+**          Conversion time                                : 30 µs
+**          ADC clock                                      : 5.999 MHz (166.667 ns)
+**          Single conversion time - Single-ended          : 30.708 us
+**          Single conversion time - Differential          : 36.708 us
+**          Additional conversion time - Single-ended      : 30 us
+**          Additional conversion time - Differential      : 36 us
+**          Result type                                    : unsigned 16 bits, right justified
 **          Trigger                                        : Enabled
 **            Trigger signal list                          : 1
 **              Trigger signal 0                           : Enabled
 **                Trigger input                            : TPM2_Overflow
 **                Trigger input signal                     : 
 **                Trigger type                             : Internal
-**                  Source component                       : TU2
+**                  Source component                       : TPM2
 **            Trigger active state                         : Rising edge
 **          Voltage reference                              : 
 **            High voltage reference                       : 
@@ -209,10 +209,11 @@ LDD_TDeviceData* AD1_Init(LDD_TUserData *UserDataPtr)
   SIM_SOPT7 &= (uint32_t)~(uint32_t)(SIM_SOPT7_ADC0PRETRGSEL_MASK);
   /* SIM_SOPT7: ADC0ALTTRGEN=1 */
   SIM_SOPT7 |= SIM_SOPT7_ADC0ALTTRGEN_MASK;
-  /* ADC0_CFG1: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,ADLPC=0,ADIV=2,ADLSMP=0,MODE=3,ADICLK=2 */
+  /* ADC0_CFG1: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,ADLPC=0,ADIV=2,ADLSMP=1,MODE=3,ADICLK=0 */
   ADC0_CFG1 = ADC_CFG1_ADIV(0x02) |
+              ADC_CFG1_ADLSMP_MASK |
               ADC_CFG1_MODE(0x03) |
-              ADC_CFG1_ADICLK(0x02);
+              ADC_CFG1_ADICLK(0x00);
   /* ADC0_CFG2: ADACKEN=0,ADHSC=0,ADLSTS=0 */
   ADC0_CFG2 &= (uint32_t)~(uint32_t)(
                 ADC_CFG2_ADACKEN_MASK |
@@ -221,8 +222,8 @@ LDD_TDeviceData* AD1_Init(LDD_TUserData *UserDataPtr)
                );
   /* ADC0_SC2: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,ADACT=0,ADTRG=0,ACFE=0,ACFGT=0,ACREN=0,DMAEN=0,REFSEL=0 */
   ADC0_SC2 = ADC_SC2_REFSEL(0x00);
-  /* ADC0_SC3: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CAL=0,CALF=1,??=0,??=0,ADCO=0,AVGE=0,AVGS=0 */
-  ADC0_SC3 = (ADC_SC3_CALF_MASK | ADC_SC3_AVGS(0x00));
+  /* ADC0_SC3: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CAL=0,CALF=1,??=0,??=0,ADCO=0,AVGE=1,AVGS=0 */
+  ADC0_SC3 = (ADC_SC3_CALF_MASK | ADC_SC3_AVGE_MASK | ADC_SC3_AVGS(0x00));
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_AD1_ID,DeviceDataPrv);
   return ((LDD_TDeviceData *)DeviceDataPrv); /* Return pointer to the data data structure */

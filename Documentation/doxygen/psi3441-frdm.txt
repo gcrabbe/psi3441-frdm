@@ -28,12 +28,11 @@
 
 \page page_components Components 
 
-- \subpage DA1
-- \subpage TU1
-- \subpage TU2
-- \subpage TU3
-- \subpage AD1
+- \subpage TPM1
+- \subpage TPM2
 - \subpage TPM0
+- \subpage DA1
+- \subpage AD1
 - \subpage DMA
 
 

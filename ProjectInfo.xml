@@ -56,9 +56,8 @@
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM0.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU2.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU3.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM1.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM2.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Vectors.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\__arm_end.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\__arm_start.c</PathName>
@@ -80,9 +79,8 @@
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Types.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM0.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU2.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU3.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM1.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM2.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Headers\bme.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\ADC.h</PathName>

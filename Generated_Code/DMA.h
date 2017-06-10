@@ -6,7 +6,7 @@
 **     Component   : Init_DMA
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 12:15, # CodeGen: 52
+**     Date/Time   : 2017-06-10, 18:05, # CodeGen: 65
 **     Abstract    :
 **          This file implements the DMA (DMA) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -25,8 +25,47 @@
 **                Auto align                               : Disabled
 **                Channel links settings                   : 
 **                  Link channel control                   : No link
-**                  Link channel 1 (LCH1)                  : DMA channel 2
-**                  Link channel 2 (LCH2)                  : DMA channel 2
+**                  Link channel 1 (LCH1)                  : DMA channel 1
+**                  Link channel 2 (LCH2)                  : DMA channel 1
+**                Data source                              : 
+**                  External object declaration            : #include "PWM.h"
+**                  Address                                : PWMBuffer
+**                  Address increment                      : Enabled
+**                  Transfer size                          : 16-bit
+**                  Address modulo                         : 256 Bytes
+**                Data destination                         : 
+**                  External object declaration            : 
+**                  Address                                : 0x40038018
+**                  Address increment                      : Disabled
+**                  Transfer size                          : 16-bit
+**                  Address modulo                         : Buffer disabled
+**                Byte count                               : 524288
+**              Pins/Signals                               : 
+**                DMA MUX settings                         : 
+**                  Channel state                          : Enabled
+**                  Channel periodic trigger               : Disabled
+**                  Channel request                        : TPM0_Overflow_DMA_Request
+**                  Channel request signal                 : 
+**              Interrupts                                 : 
+**                DMA transfer done interrupt              : 
+**                  Interrupt                              : INT_DMA0
+**                  Interrupt request                      : Enabled
+**                  Interrupt priority                     : 0 (Highest)
+**                  ISR Name                               : DMA0_IRQHandler
+**                  DMA transfer interrupt                 : Enabled
+**              Initialization                             : 
+**                External request                         : Disabled
+**                Start DMA transfer                       : No
+**            Channel 1                                    : Initialize
+**              Settings                                   : 
+**                Transfer mode                            : Cycle-steal
+**                Auto disable external request            : Disabled
+**                Asynchronous request                     : Disabled
+**                Auto align                               : Disabled
+**                Channel links settings                   : 
+**                  Link channel control                   : No link
+**                  Link channel 1 (LCH1)                  : DMA channel 0
+**                  Link channel 2 (LCH2)                  : DMA channel 0
 **                Data source                              : 
 **                  External object declaration            : #include "DAC.h"
 **                  Address                                : DACBuffer
@@ -34,31 +73,28 @@
 **                  Transfer size                          : 16-bit
 **                  Address modulo                         : 256 Bytes
 **                Data destination                         : 
-**                  External object declaration            : #include "PWM.h"
-**                  Address                                : PWMBuffer
-**                  Address increment                      : Enabled
+**                  External object declaration            : 
+**                  Address                                : 0x4003F000
+**                  Address increment                      : Disabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 256 Bytes
-**                Byte count                               : 256
+**                  Address modulo                         : Buffer disabled
+**                Byte count                               : 524288
 **              Pins/Signals                               : 
 **                DMA MUX settings                         : 
 **                  Channel state                          : Enabled
-**                  Channel periodic trigger               : Enabled
-**                    Channel periodic trigger pin         : PIT_trigger_0
-**                    Channel periodic trigger pin signal  : 
-**                  Channel request                        : TPM0_CH1_DMA_Request
+**                  Channel periodic trigger               : Disabled
+**                  Channel request                        : TPM1_Overflow_DMA_Request
 **                  Channel request signal                 : 
 **              Interrupts                                 : 
 **                DMA transfer done interrupt              : 
-**                  Interrupt                              : INT_DMA0
+**                  Interrupt                              : INT_DMA1
 **                  Interrupt request                      : Enabled
 **                  Interrupt priority                     : 0 (Highest)
-**                  ISR Name                               : DMA0_OnComplete
+**                  ISR Name                               : DMA1_IRQHandler
 **                  DMA transfer interrupt                 : Enabled
 **              Initialization                             : 
 **                External request                         : Disabled
 **                Start DMA transfer                       : No
-**            Channel 1                                    : Do not initialize
 **            Channel 2                                    : Do not initialize
 **            Channel 3                                    : Do not initialize
 **          Initialization                                 : 
@@ -146,7 +182,14 @@ void DMA_Init(void);
 ** of the user modules (see DMA.c file for more information).
 ** ===================================================================
 */
-PE_ISR(DMA0_OnComplete);
+PE_ISR(DMA0_IRQHandler);
+/*
+** ===================================================================
+** The interrupt service routine must be implemented by user in one
+** of the user modules (see DMA.c file for more information).
+** ===================================================================
+*/
+PE_ISR(DMA1_IRQHandler);
 
 
 /* END DMA. */

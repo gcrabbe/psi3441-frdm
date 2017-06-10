@@ -6,7 +6,7 @@
 **     Component   : ADC_LDD
 **     Version     : Component 01.183, Driver 01.08, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 11:40, # CodeGen: 46
+**     Date/Time   : 2017-06-10, 18:02, # CodeGen: 64
 **     Abstract    :
 **         This device "ADC_LDD" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -29,22 +29,22 @@
 **          Low-power mode                                 : Disabled
 **          High-speed conversion mode                     : Disabled
 **          Asynchro clock output                          : Disabled
-**          Sample time                                    : 4 clock periods
-**          Number of conversions                          : 1
-**          Conversion time                                : 12.5 µs
-**          ADC clock                                      : 2 MHz (500 ns)
-**          Single conversion time - Single-ended          : 15.208 us
-**          Single conversion time - Differential          : 19.708 us
-**          Additional conversion time - Single-ended      : 12.5 us
-**          Additional conversion time - Differential      : 17 us
-**          Result type                                    : signed/unsigned 16 bits, right justified
+**          Sample time                                    : 24 clock periods
+**          Number of conversions                          : 4
+**          Conversion time                                : 30 µs
+**          ADC clock                                      : 5.999 MHz (166.667 ns)
+**          Single conversion time - Single-ended          : 30.708 us
+**          Single conversion time - Differential          : 36.708 us
+**          Additional conversion time - Single-ended      : 30 us
+**          Additional conversion time - Differential      : 36 us
+**          Result type                                    : unsigned 16 bits, right justified
 **          Trigger                                        : Enabled
 **            Trigger signal list                          : 1
 **              Trigger signal 0                           : Enabled
 **                Trigger input                            : TPM2_Overflow
 **                Trigger input signal                     : 
 **                Trigger type                             : Internal
-**                  Source component                       : TU2
+**                  Source component                       : TPM2
 **            Trigger active state                         : Rising edge
 **          Voltage reference                              : 
 **            High voltage reference                       : 
@@ -130,7 +130,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "TU2.h"
+#include "TPM2.h"
 
 #include "IO_Map.h"
 #include "Cpu.h"
@@ -195,7 +195,7 @@ extern "C" {
 #define AD1_RESULT_WIDTH_BYTES          2U
 
 /* This parameter informs about the type of results. */
-#define AD1_RESULT_TYPE_UNSIGNED_SIGNED
+#define AD1_RESULT_TYPE_UNSIGNED
 
 /* Measurement result data type. Definition of the type depends
    on "Result type" property value. */

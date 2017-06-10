@@ -5,7 +5,7 @@
 **     Processor   : MKL25Z128VLK4
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 11:40, # CodeGen: 46
+**     Date/Time   : 2017-06-10, 17:43, # CodeGen: 61
 **     Abstract    :
 **
 **     Settings    :
@@ -54,12 +54,11 @@
 */         
 
   #include "Cpu.h"
-  #include "DA1.h"
-  #include "TU1.h"
-  #include "TU2.h"
-  #include "TU3.h"
-  #include "AD1.h"
+  #include "TPM1.h"
+  #include "TPM2.h"
   #include "TPM0.h"
+  #include "DA1.h"
+  #include "AD1.h"
   #include "DMA.h"
   #include "Events.h"
 
@@ -96,8 +95,8 @@
     (tIsrFunc)&Cpu_Interrupt,          /* 0x0D  0x00000034   -   ivINT_Reserved13              unused by PE */
     (tIsrFunc)&Cpu_Interrupt,          /* 0x0E  0x00000038   -   ivINT_PendableSrvReq          unused by PE */
     (tIsrFunc)&Cpu_Interrupt,          /* 0x0F  0x0000003C   -   ivINT_SysTick                 unused by PE */
-    (tIsrFunc)&DMA0_OnComplete,        /* 0x10  0x00000040   0   ivINT_DMA0                    used by PE */
-    (tIsrFunc)&Cpu_Interrupt,          /* 0x11  0x00000044   -   ivINT_DMA1                    unused by PE */
+    (tIsrFunc)&DMA0_IRQHandler,        /* 0x10  0x00000040   0   ivINT_DMA0                    used by PE */
+    (tIsrFunc)&DMA1_IRQHandler,        /* 0x11  0x00000044   0   ivINT_DMA1                    used by PE */
     (tIsrFunc)&Cpu_Interrupt,          /* 0x12  0x00000048   -   ivINT_DMA2                    unused by PE */
     (tIsrFunc)&Cpu_Interrupt,          /* 0x13  0x0000004C   -   ivINT_DMA3                    unused by PE */
     (tIsrFunc)&Cpu_Interrupt,          /* 0x14  0x00000050   -   ivINT_Reserved20              unused by PE */

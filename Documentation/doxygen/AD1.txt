@@ -18,7 +18,7 @@ by the component.
     0x0000005F
  </td><td>ADC0_SC1A register, peripheral AD1.</td></tr>
 <tr><td>0x4004803C</td><td>SIM_SCGC6</td><td>
-    0x8C800000
+    0x8F000000
  </td><td>SIM_SCGC6 register, peripheral AD1.</td></tr>
 <tr><td>0xE000E40C</td><td>NVIC_IPR3</td><td>
     0x80000000
@@ -33,7 +33,7 @@ by the component.
     0x0000008A
  </td><td>SIM_SOPT7 register, peripheral AD1.</td></tr>
 <tr><td>0x4003B008</td><td>ADC0_CFG1</td><td>
-    0x0000004E
+    0x0000005C
  </td><td>ADC0_CFG1 register, peripheral AD1.</td></tr>
 <tr><td>0x4003B00C</td><td>ADC0_CFG2</td><td>
     0x00000000
@@ -42,7 +42,7 @@ by the component.
     0x00000000
  </td><td>ADC0_SC2 register, peripheral AD1.</td></tr>
 <tr><td>0x4003B024</td><td>ADC0_SC3</td><td>
-    0x00000040
+    0x00000044
  </td><td>ADC0_SC3 register, peripheral AD1.</td></tr>
 </table>
 <br/>
@@ -151,16 +151,16 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004803C</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x8C800000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x8F000000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000001</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>31</td><td>DAC0</td><td>0x01</td><td>DAC0 Clock Gate Control</td>
 <tr><td>29</td><td>RTC</td><td>0x00</td><td>RTC Access Control</td>
 <tr><td>27</td><td>ADC0</td><td>0x01</td><td>ADC0 Clock Gate Control</td>
 <tr><td>26</td><td>TPM2</td><td>0x01</td><td>TPM2 Clock Gate Control</td>
-<tr><td>25</td><td>TPM1</td><td>0x00</td><td>TPM1 Clock Gate Control</td>
-<tr><td>24</td><td>TPM0</td><td>0x00</td><td>TPM0 Clock Gate Control</td>
-<tr><td>23</td><td>PIT</td><td>0x01</td><td>PIT Clock Gate Control</td>
+<tr><td>25</td><td>TPM1</td><td>0x01</td><td>TPM1 Clock Gate Control</td>
+<tr><td>24</td><td>TPM0</td><td>0x01</td><td>TPM0 Clock Gate Control</td>
+<tr><td>23</td><td>PIT</td><td>0x00</td><td>PIT Clock Gate Control</td>
 <tr><td>1</td><td>DMAMUX</td><td>0x00</td><td>DMA Mux Clock Gate Control</td>
 <tr><td>0</td><td>FTF</td><td>0x00</td><td>Flash Memory Clock Gate Control</td>
 </tr></table>
@@ -407,14 +407,14 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003B008</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000004E</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000005C</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>7</td><td>ADLPC</td><td>0x00</td><td>Low-Power Configuration</td>
 <tr><td>5 - 6</td><td>ADIV</td><td>0x02</td><td>Clock Divide Select</td>
-<tr><td>4</td><td>ADLSMP</td><td>0x00</td><td>Sample time configuration</td>
+<tr><td>4</td><td>ADLSMP</td><td>0x01</td><td>Sample time configuration</td>
 <tr><td>2 - 3</td><td>MODE</td><td>0x02</td><td>Conversion mode selection</td>
-<tr><td>0 - 1</td><td>ADICLK</td><td>0x02</td><td>Input Clock Select</td>
+<tr><td>0 - 1</td><td>ADICLK</td><td>0x00</td><td>Input Clock Select</td>
 </tr></table>
 <div class="reghdr1">ADC0_CFG2</div>
 <div class="regdiag">
@@ -575,13 +575,13 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003B024</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000040</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000044</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>7</td><td>CAL</td><td>0x00</td><td>Calibration</td>
 <tr><td>6</td><td>CALF</td><td>0x01</td><td>Calibration Failed Flag</td>
 <tr><td>3</td><td>ADCO</td><td>0x00</td><td>Continuous Conversion Enable</td>
-<tr><td>2</td><td>AVGE</td><td>0x00</td><td>Hardware Average Enable</td>
+<tr><td>2</td><td>AVGE</td><td>0x01</td><td>Hardware Average Enable</td>
 <tr><td>0 - 1</td><td>AVGS</td><td>0x00</td><td>Hardware Average Select</td>
 </tr></table>
 */
@@ -606,22 +606,22 @@ registers of the peripheral(s) configured by the component.
 **          Low-power mode                                 : Disabled
 **          High-speed conversion mode                     : Disabled
 **          Asynchro clock output                          : Disabled
-**          Sample time                                    : 4 clock periods
-**          Number of conversions                          : 1
-**          Conversion time                                : 12.5 µs
-**          ADC clock                                      : 2 MHz (500 ns)
-**          Single conversion time - Single-ended          : 15.208 us
-**          Single conversion time - Differential          : 19.708 us
-**          Additional conversion time - Single-ended      : 12.5 us
-**          Additional conversion time - Differential      : 17 us
-**          Result type                                    : signed/unsigned 16 bits, right justified
+**          Sample time                                    : 24 clock periods
+**          Number of conversions                          : 4
+**          Conversion time                                : 30 µs
+**          ADC clock                                      : 5.999 MHz (166.667 ns)
+**          Single conversion time - Single-ended          : 30.708 us
+**          Single conversion time - Differential          : 36.708 us
+**          Additional conversion time - Single-ended      : 30 us
+**          Additional conversion time - Differential      : 36 us
+**          Result type                                    : unsigned 16 bits, right justified
 **          Trigger                                        : Enabled
 **            Trigger signal list                          : 1
 **              Trigger signal 0                           : Enabled
 **                Trigger input                            : TPM2_Overflow
 **                Trigger input signal                     : 
 **                Trigger type                             : Internal
-**                  Source component                       : TU2
+**                  Source component                       : TPM2
 **            Trigger active state                         : Rising edge
 **          Voltage reference                              : 
 **            High voltage reference                       : 

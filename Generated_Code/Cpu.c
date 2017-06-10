@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 12:15, # CodeGen: 52
+**     Date/Time   : 2017-06-10, 17:59, # CodeGen: 63
 **     Abstract    :
 **
 **     Settings    :
@@ -60,12 +60,11 @@
 /* MODULE Cpu. */
 
 /* {Default RTOS Adapter} No RTOS includes */
-#include "DA1.h"
-#include "TU1.h"
-#include "TU2.h"
-#include "TU3.h"
-#include "AD1.h"
+#include "TPM1.h"
+#include "TPM2.h"
 #include "TPM0.h"
+#include "DA1.h"
+#include "AD1.h"
 #include "DMA.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -132,9 +131,9 @@ void __init_hardware(void)
   /* System clock initialization */
   /* SIM_CLKDIV1: OUTDIV1=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,OUTDIV4=3,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0 */
   SIM_CLKDIV1 = (SIM_CLKDIV1_OUTDIV1(0x00) | SIM_CLKDIV1_OUTDIV4(0x03)); /* Set the system prescalers to safe value */
-  /* SIM_SCGC5: PORTE=1,PORTC=1,PORTB=1,PORTA=1 */
+  /* SIM_SCGC5: PORTE=1,PORTD=1,PORTB=1,PORTA=1 */
   SIM_SCGC5 |= SIM_SCGC5_PORTE_MASK |
-               SIM_SCGC5_PORTC_MASK |
+               SIM_SCGC5_PORTD_MASK |
                SIM_SCGC5_PORTB_MASK |
                SIM_SCGC5_PORTA_MASK;   /* Enable clock gate for ports to enable pin routing */
   if ((PMC_REGSC & PMC_REGSC_ACKISO_MASK) != 0x0U) {
@@ -251,19 +250,26 @@ void PE_low_level_init(void)
   /* SMC_PMPROT: ??=0,??=0,AVLP=0,??=0,ALLS=0,??=0,AVLLS=0,??=0 */
   SMC_PMPROT = 0x00U;                  /* Setup Power mode protection register */
   /* Common initialization of the CPU registers */
-  /* PORTC_PCR2: ISF=0,MUX=4 */
-  PORTC_PCR2 = (uint32_t)((PORTC_PCR2 & (uint32_t)~(uint32_t)(
+  /* NVIC_IPR4: PRI_19=0,PRI_18=0,PRI_17=0 */
+  NVIC_IPR4 &= (uint32_t)~(uint32_t)(
+                NVIC_IP_PRI_19(0xFF) |
+                NVIC_IP_PRI_18(0xFF) |
+                NVIC_IP_PRI_17(0xFF)
+               );
+  /* PORTD_PCR1: ISF=0,MUX=4 */
+  PORTD_PCR1 = (uint32_t)((PORTD_PCR1 & (uint32_t)~(uint32_t)(
                 PORT_PCR_ISF_MASK |
                 PORT_PCR_MUX(0x03)
                )) | (uint32_t)(
                 PORT_PCR_MUX(0x04)
                ));
-  /* NVIC_IPR4: PRI_17=0 */
-  NVIC_IPR4 &= (uint32_t)~(uint32_t)(NVIC_IP_PRI_17(0xFF));
-  /* NVIC_ISER: SETENA|=1 */
-  NVIC_ISER |= NVIC_ISER_SETENA(0x01);
-  /* NVIC_IPR0: PRI_0=0 */
-  NVIC_IPR0 &= (uint32_t)~(uint32_t)(NVIC_IP_PRI_0(0xFF));
+  /* NVIC_ISER: SETENA|=3 */
+  NVIC_ISER |= NVIC_ISER_SETENA(0x03);
+  /* NVIC_IPR0: PRI_1=0,PRI_0=0 */
+  NVIC_IPR0 &= (uint32_t)~(uint32_t)(
+                NVIC_IP_PRI_1(0xFF) |
+                NVIC_IP_PRI_0(0xFF)
+               );
   /* PORTA_PCR20: ISF=0,MUX=7 */
   PORTA_PCR20 = (uint32_t)((PORTA_PCR20 & (uint32_t)~(uint32_t)(
                  PORT_PCR_ISF_MASK
@@ -272,6 +278,14 @@ void PE_low_level_init(void)
                 ));
   /* NVIC_IPR1: PRI_6=0 */
   NVIC_IPR1 &= (uint32_t)~(uint32_t)(NVIC_IP_PRI_6(0xFF));
+  /* ### Init_TPM "TPM1" init code ... */
+  /* ### Call "TPM1_Init();" init method in a user code, i.e. in the main code */
+
+  /* ### Note:   To enable automatic calling of the "TPM1" init code here,
+                 the 'Call Init method' property must be set to 'yes'.
+   */
+  /* ### Init_TPM "TPM2" init code ... */
+  TPM2_Init();
   /* ### Init_TPM "TPM0" init code ... */
   /* ### Call "TPM0_Init();" init method in a user code, i.e. in the main code */
 

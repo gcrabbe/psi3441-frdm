@@ -30,10 +30,9 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
+#include "TPM1.h"
+#include "TPM2.h"
 #include "DA1.h"
-#include "TU1.h"
-#include "TU3.h"
-#include "TU2.h"
 #include "AD1.h"
 #include "TPM0.h"
 #include "DMA.h"
@@ -44,10 +43,10 @@
 #include "IO_Map.h"
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
-#include "DMA_PDD.h"
 #include "DAC.h"
 #include "ADC.h"
 #include "PWM.h"
+#include "DMA_PDD.h"
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
@@ -66,8 +65,8 @@ int main(void)
   DMA_Init();
 
   /* DAC initialization */
-  DA1 = DA1_Init(NULL);
-  TU1 = TU1_Init(NULL);
+  DA1_Init(NULL);
+  TPM1_Init();
 
   /* ADC initialization */
   struct ring ADCRing;
@@ -75,9 +74,8 @@ int main(void)
 
   AD1 = AD1_Init((LDD_TUserData *) &ADCRing);
   AD1_StartCalibration(AD1);
-  TU2 = TU2_Init(NULL);
+  TPM2_Init();
 
-  while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
   LDD_ADC_TSample Ch0 = {0};
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
 
@@ -85,14 +83,14 @@ int main(void)
   /* Note: TPM0_Init implementation is buggy */
   TPM0_Init();
   TPM0_FixPWM();
-  TU3 = TU3_Init(NULL);
 
   /* Enable DMA transfers */
   DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, PDD_ENABLE);
-  // DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, PDD_ENABLE);
+  DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, PDD_ENABLE);
 
   /* Enable ADC transfers */
-  // AD1_StartLoopTriggeredMeasurement(AD1);
+  while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
+  while(AD1_StartLoopTriggeredMeasurement(AD1) != ERR_OK);
 
   /* Local variables */
   uint8_t i;
@@ -106,7 +104,7 @@ int main(void)
     {
       i = removeRing(&ADCRing, &res);
       res = res >> 6; /* 16 to 10 bits */
-      // PWMBuffer[i] = res;
+      PWMBuffer[i] = res;
     }
   }
 

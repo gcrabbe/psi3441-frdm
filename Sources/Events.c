@@ -36,10 +36,8 @@ extern "C" {
 
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
-#include "DMA_PDD.h"
 #include "ADC.h"
-#include "DAC.h"
-#include "PWM.h"
+#include "DMA_PDD.h"
 
 /*
 ** ===================================================================
@@ -88,11 +86,26 @@ void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
   insertRing(UserDataPtr, val);
 }
 
-void DMA0_OnComplete()
+/**
+ * DMA_IRQHandler()
+ * IRQ Handler for DMA Channel 0.
+ * Re-sets BCR register.
+ */
+void DMA0_IRQHandler()
 {
   /* Write your code here ... */
-  DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, 0x000100);
+  DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, 0x080000);
+}
 
+/**
+ * DMA1_IRQHandler()
+ * IRQ Handler for DMA Channel 1.
+ * Re-sets BCR register.
+ */
+void DMA1_IRQHandler()
+{
+  /* Write your code here ... */
+  DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, 0x080000);
 }
 
 /* END Events */

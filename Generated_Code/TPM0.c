@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 12:15, # CodeGen: 52
+**     Date/Time   : 2017-06-10, 17:59, # CodeGen: 63
 **     Abstract    :
 **          This file implements the TPM (TPM0) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -35,12 +35,12 @@
 **                PWM polarity                             : High-true
 **                Channel value register                   : 1023
 **              Pin                                        : Enabled
-**                Pin                                      : ADC0_SE11/TSI0_CH15/PTC2/I2C1_SDA/TPM0_CH1
+**                Pin                                      : ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1
 **                Pin signal                               : 
 **              Interrupt/DMA                              : 
 **                Interrupt                                : INT_TPM0
 **                Channel interrupt                        : Disabled
-**                DMA request                              : Enabled
+**                DMA request                              : Disabled
 **            Channel 2                                    : Disabled
 **            Channel 3                                    : Disabled
 **            Channel 4                                    : Disabled
@@ -55,7 +55,7 @@
 **              Interrupt priority                         : 0 (Highest)
 **              ISR Name                                   : 
 **              Channels interrupt/DMA                     : See the respective Channel settings
-**              Timer overflow DMA                         : Disabled
+**              Timer overflow DMA                         : Enabled
 **              Timer overflow interrupt                   : Disabled
 **          Initialization                                 : 
 **            Call Init method                             : no
@@ -172,15 +172,15 @@ void TPM0_Init(void)
                 TPM_CnSC_ELSA_MASK |
                 0xFFFFFF02U
                );
-  /* TPM0_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=1,ELSA=0,??=0,DMA=1 */
+  /* TPM0_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=1,ELSA=0,??=0,DMA=0 */
   TPM0_C1SC = (uint32_t)((TPM0_C1SC & (uint32_t)~(uint32_t)(
                TPM_CnSC_CHF_MASK |
                TPM_CnSC_CHIE_MASK |
                TPM_CnSC_ELSA_MASK |
+               TPM_CnSC_DMA_MASK |
                0xFFFFFF02U
               )) | (uint32_t)(
-               TPM_CnSC_ELSB_MASK |
-               TPM_CnSC_DMA_MASK
+               TPM_CnSC_ELSB_MASK
               ));
   /* TPM0_C2SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,MSB=0,MSA=0,ELSB=0,ELSA=0,??=0 */
   TPM0_C2SC &= (uint32_t)~(uint32_t)(
@@ -228,14 +228,14 @@ void TPM0_Init(void)
              ));
   /* TPM0_CNT: COUNT=0 */
   TPM0_CNT &= (uint32_t)~(uint32_t)(TPM_CNT_COUNT(0xFFFF));
-  /* TPM0_SC: DMA=0,TOF=0,TOIE=0,CPWMS=1,CMOD=1,PS=0 */
+  /* TPM0_SC: DMA=1,TOF=0,TOIE=0,CPWMS=1,CMOD=1,PS=0 */
   TPM0_SC = (uint32_t)((TPM0_SC & (uint32_t)~(uint32_t)(
-             TPM_SC_DMA_MASK |
              TPM_SC_TOF_MASK |
              TPM_SC_TOIE_MASK |
              TPM_SC_CMOD(0x02) |
              TPM_SC_PS(0x07)
             )) | (uint32_t)(
+             TPM_SC_DMA_MASK |
              TPM_SC_CPWMS_MASK |
              TPM_SC_CMOD(0x01)
             ));
