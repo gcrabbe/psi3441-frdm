@@ -426,8 +426,8 @@ PE_DEBUGHALT();
           <Clock_source v="TPM counter clock" />
           <Prescaler v="divide by 128" />
           <Counter_frequency v="187.500 kHz" />
-          <Modulo_counter v="50000" />
-          <Period v="266.672 ms" />
+          <Modulo_counter v="25000" />
+          <Period v="133.339 ms" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />
@@ -758,7 +758,7 @@ Autoselect
             <group name="DMA MUX settings">
               <Channel_state v="Enabled" />
               <boolgroup name="Channel periodic trigger" v="Disabled" />
-              <Channel_request v="TPM0_Overflow_DMA_Request" />
+              <Channel_request v="TPM1_Overflow_DMA_Request" />
             </group>
           </group>
           <group name="Interrupts">

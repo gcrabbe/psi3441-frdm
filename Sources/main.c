@@ -76,6 +76,9 @@ int main(void)
   AD1_StartCalibration(AD1);
   TPM2_Init();
 
+  while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
+  initRing(&ADCRing, ADCBuffer, 128); /* Discard calibration readings */
+
   LDD_ADC_TSample Ch0 = {0};
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
 
@@ -84,13 +87,14 @@ int main(void)
   TPM0_Init();
   TPM0_FixPWM();
 
-  /* Enable DMA transfers */
-  DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, PDD_ENABLE);
+  /* Enable DAC transfers */
   DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, PDD_ENABLE);
 
   /* Enable ADC transfers */
-  while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
-  while(AD1_StartLoopTriggeredMeasurement(AD1) != ERR_OK);
+  AD1_StartLoopTriggeredMeasurement(AD1);
+
+  /* Enable PWM transfers */
+  DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, PDD_ENABLE);
 
   /* Local variables */
   uint8_t i;

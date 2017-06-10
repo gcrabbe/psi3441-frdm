@@ -3,7 +3,7 @@
   <Header>
     <Name>psi3441-frdm</Name>
     <SavedBy>Gabriel</SavedBy>
-    <ModificationStamp>105</ModificationStamp>
+    <ModificationStamp>109</ModificationStamp>
     <Date>2017-06-10</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>122</ProjectCompNumb>
+    <ProjectCompNumb>125</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -5738,12 +5738,12 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>50000</Value>
+        <Value>25000</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>266.672 ms</Value>
+        <Value>133.339 ms</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>
@@ -10922,7 +10922,7 @@
         <ItemSymbol>Ch0_ChannelSource</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>TPM0_Overflow_DMA_Request</Value>
+        <Value>TPM1_Overflow_DMA_Request</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>

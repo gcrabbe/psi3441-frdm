@@ -94,6 +94,7 @@ void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
 void DMA0_IRQHandler()
 {
   /* Write your code here ... */
+  DMA_PDD_ClearDoneFlag(DMA_BASE_PTR, DMA_PDD_CHANNEL_0);
   DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, 0x080000);
 }
 
@@ -105,6 +106,7 @@ void DMA0_IRQHandler()
 void DMA1_IRQHandler()
 {
   /* Write your code here ... */
+  DMA_PDD_ClearDoneFlag(DMA_BASE_PTR, DMA_PDD_CHANNEL_1);
   DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, 0x080000);
 }
 

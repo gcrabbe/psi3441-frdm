@@ -6,7 +6,7 @@
 **     Component   : Init_DMA
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 18:05, # CodeGen: 65
+**     Date/Time   : 2017-06-10, 19:06, # CodeGen: 69
 **     Abstract    :
 **          This file implements the DMA (DMA) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -44,7 +44,7 @@
 **                DMA MUX settings                         : 
 **                  Channel state                          : Enabled
 **                  Channel periodic trigger               : Disabled
-**                  Channel request                        : TPM0_Overflow_DMA_Request
+**                  Channel request                        : TPM1_Overflow_DMA_Request
 **                  Channel request signal                 : 
 **              Interrupts                                 : 
 **                DMA transfer done interrupt              : 
@@ -227,8 +227,8 @@ void DMA_Init(void)
              DMA_DCR_LINKCC(0x00) |
              DMA_DCR_LCH1(0x00) |
              DMA_DCR_LCH2(0x00);
-  /* DMAMUX0_CHCFG0: ENBL=1,TRIG=0,SOURCE=0x36 */
-  DMAMUX0_CHCFG0 = (DMAMUX_CHCFG_ENBL_MASK | DMAMUX_CHCFG_SOURCE(0x36));
+  /* DMAMUX0_CHCFG0: ENBL=1,TRIG=0,SOURCE=0x37 */
+  DMAMUX0_CHCFG0 = (DMAMUX_CHCFG_ENBL_MASK | DMAMUX_CHCFG_SOURCE(0x37));
   /* DMAMUX0_CHCFG1: ENBL=1,TRIG=0,SOURCE=0x37 */
   DMAMUX0_CHCFG1 = (DMAMUX_CHCFG_ENBL_MASK | DMAMUX_CHCFG_SOURCE(0x37));
 }

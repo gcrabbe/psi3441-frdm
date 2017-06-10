@@ -451,7 +451,7 @@ PE_DEBUGHALT();
           <Interrupt_priority v="0 (Highest)" />
           <ISR_Name v="" />
           <Channels_interrupt_DMA v="See the respective Channel settings" />
-          <Timer_overflow_DMA v="Enabled" />
+          <Timer_overflow_DMA v="Disabled" />
           <Timer_overflow_interrupt v="Disabled" />
         </group>
       </group>
@@ -758,7 +758,7 @@ Autoselect
             <group name="DMA MUX settings">
               <Channel_state v="Enabled" />
               <boolgroup name="Channel periodic trigger" v="Disabled" />
-              <Channel_request v="TPM0_Overflow_DMA_Request" />
+              <Channel_request v="TPM1_Overflow_DMA_Request" />
             </group>
           </group>
           <group name="Interrupts">

@@ -18,7 +18,7 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
-      <ShrdHeaderAge0>1254785582</ShrdHeaderAge0>
+      <ShrdHeaderAge0>1254790401</ShrdHeaderAge0>
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
       <ShrdHeaderAge1>1254513233</ShrdHeaderAge1>
@@ -48,9 +48,9 @@
         <Line>Generated_Code\Vectors.c</Line>
       </GenExtraFiles>
       <GenExtraFileSrcDir9>lib\doxygen\</GenExtraFileSrcDir9>
-      <XtraAge11>1254785582</XtraAge11>
-      <XtraAge12>1254788475</XtraAge12>
-      <XtraAge14>1254788475</XtraAge14>
+      <XtraAge11>1254790401</XtraAge11>
+      <XtraAge12>1254790401</XtraAge12>
+      <XtraAge14>1254790401</XtraAge14>
       <GenExtraFileType14>4</GenExtraFileType14>
       <GenExtraFileType13>4</GenExtraFileType13>
       <GenExtraFileType12>4</GenExtraFileType12>
@@ -124,7 +124,7 @@
     </GenFiles>
     <SignalListFile>Documentation\psi3441-frdm_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>105</ProjectModificationStamp>
+    <ProjectModificationStamp>108</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>
@@ -133,7 +133,7 @@
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
     <HeaderAge>1254513233</HeaderAge>
-    <CodeAge>1254788980</CodeAge>
+    <CodeAge>1254790401</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -223,8 +223,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254787722</HeaderAge>
-    <CodeAge>1254787722</CodeAge>
+    <HeaderAge>1254790401</HeaderAge>
+    <CodeAge>1254790401</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -256,8 +256,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254789450</HeaderAge>
-    <CodeAge>1254789450</CodeAge>
+    <HeaderAge>1254791737</HeaderAge>
+    <CodeAge>1254791737</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -289,8 +289,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254788980</HeaderAge>
-    <CodeAge>1254788980</CodeAge>
+    <HeaderAge>1254790401</HeaderAge>
+    <CodeAge>1254790401</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -322,8 +322,8 @@
     <GenComponentVersion>01.084</GenComponentVersion>
     <GenDriverVersion>01.09</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1254788747</HeaderAge>
-    <CodeAge>1254788747</CodeAge>
+    <HeaderAge>1254790401</HeaderAge>
+    <CodeAge>1254790401</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>18</GenNumMethods>
     <Init>true</Init>
@@ -398,8 +398,8 @@
     <GenComponentVersion>01.183</GenComponentVersion>
     <GenDriverVersion>01.08</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1254789203</HeaderAge>
-    <CodeAge>1254789203</CodeAge>
+    <HeaderAge>1254790401</HeaderAge>
+    <CodeAge>1254790401</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>25</GenNumMethods>
     <Init>true</Init>
@@ -545,8 +545,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1254789301</HeaderAge>
-    <CodeAge>1254789301</CodeAge>
+    <HeaderAge>1254791374</HeaderAge>
+    <CodeAge>1254791374</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
