@@ -6,7 +6,7 @@
 **     Component   : DAC_LDD
 **     Version     : Component 01.084, Driver 01.09, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:18, # CodeGen: 0
+**     Date/Time   : 2017-06-09, 17:20, # CodeGen: 27
 **     Abstract    :
 **         This component implements an internal D/A converter of the MCU.
 **         It contains settings for converting various format of a values
@@ -19,7 +19,7 @@
 **          Output pin                                     : yes
 **            D/A channel (pin)                            : DAC0_OUT/ADC0_SE23/CMP0_IN4/PTE30/TPM0_CH3/TPM_CLKIN1
 **            D/A channel (pin) signal                     : 
-**          Init value                                     : 00D
+**          Init value                                     : 0
 **          D/A resolution                                 : Autoselect
 **          Data mode                                      : unsigned 16 bits, right justified
 **          Low power mode                                 : Disabled

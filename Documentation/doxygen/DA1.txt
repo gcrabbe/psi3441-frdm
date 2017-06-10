@@ -26,7 +26,7 @@ by the component.
     0x00000000
  </td><td>DAC0_DAT0H register, peripheral DA1.</td></tr>
 <tr><td>0x4003F000</td><td>DAC0_DAT0L</td><td>
-    0x0000000D
+    0x00000000
  </td><td>DAC0_DAT0L register, peripheral DA1.</td></tr>
 <tr><td>0x4003F023</td><td>DAC0_C2</td><td>
     0x0000000F
@@ -207,7 +207,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003F000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000D</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 7</td><td>DATA0</td><td>0x00</td><td>When the DAC buffer is not enabled, DATA[11:0] controls the output voltage based on the following formula: V out = V in * (1 + DACDAT0[11:0])/4096 When the DAC buffer is enabled, DATA is mapped to the 16-word buffer</td>
@@ -337,7 +337,7 @@ registers of the peripheral(s) configured by the component.
 **          Output pin                                     : yes
 **            D/A channel (pin)                            : DAC0_OUT/ADC0_SE23/CMP0_IN4/PTE30/TPM0_CH3/TPM_CLKIN1
 **            D/A channel (pin) signal                     : 
-**          Init value                                     : 00D
+**          Init value                                     : 0
 **          D/A resolution                                 : Autoselect
 **          Data mode                                      : unsigned 16 bits, right justified
 **          Low power mode                                 : Disabled

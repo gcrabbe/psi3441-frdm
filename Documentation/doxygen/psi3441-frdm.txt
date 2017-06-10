@@ -33,7 +33,8 @@
 - \subpage TU2
 - \subpage TU3
 - \subpage AD1
-- \subpage TPM2
+- \subpage TPM0
+- \subpage DMA
 
 
 */

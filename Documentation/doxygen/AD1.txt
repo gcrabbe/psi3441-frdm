@@ -18,19 +18,19 @@ by the component.
     0x0000005F
  </td><td>ADC0_SC1A register, peripheral AD1.</td></tr>
 <tr><td>0x4004803C</td><td>SIM_SCGC6</td><td>
-    0x89800000
+    0x8C800000
  </td><td>SIM_SCGC6 register, peripheral AD1.</td></tr>
 <tr><td>0xE000E40C</td><td>NVIC_IPR3</td><td>
     0x80000000
  </td><td>NVIC_IPR3 register, peripheral AD1.</td></tr>
 <tr><td>0xE000E100</td><td>NVIC_ISER</td><td>
-    0x00008003
+    0x00008000
  </td><td>NVIC_ISER register, peripheral AD1.</td></tr>
 <tr><td>0x4004A000</td><td>PORTB_PCR0</td><td>
     0x00000000
  </td><td>PORTB_PCR0 register, peripheral AD1.</td></tr>
 <tr><td>0x40048018</td><td>SIM_SOPT7</td><td>
-    0x00000088
+    0x0000008A
  </td><td>SIM_SOPT7 register, peripheral AD1.</td></tr>
 <tr><td>0x4003B008</td><td>ADC0_CFG1</td><td>
     0x0000004E
@@ -151,15 +151,15 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004803C</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x89800000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x8C800000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000001</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>31</td><td>DAC0</td><td>0x01</td><td>DAC0 Clock Gate Control</td>
 <tr><td>29</td><td>RTC</td><td>0x00</td><td>RTC Access Control</td>
 <tr><td>27</td><td>ADC0</td><td>0x01</td><td>ADC0 Clock Gate Control</td>
-<tr><td>26</td><td>TPM2</td><td>0x00</td><td>TPM2 Clock Gate Control</td>
+<tr><td>26</td><td>TPM2</td><td>0x01</td><td>TPM2 Clock Gate Control</td>
 <tr><td>25</td><td>TPM1</td><td>0x00</td><td>TPM1 Clock Gate Control</td>
-<tr><td>24</td><td>TPM0</td><td>0x01</td><td>TPM0 Clock Gate Control</td>
+<tr><td>24</td><td>TPM0</td><td>0x00</td><td>TPM0 Clock Gate Control</td>
 <tr><td>23</td><td>PIT</td><td>0x01</td><td>PIT Clock Gate Control</td>
 <tr><td>1</td><td>DMAMUX</td><td>0x00</td><td>DMA Mux Clock Gate Control</td>
 <tr><td>0</td><td>FTF</td><td>0x00</td><td>Flash Memory Clock Gate Control</td>
@@ -246,7 +246,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0xE000E100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00008003</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00008000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>SETENA</td><td>0x00</td><td>Interrupt set enable bits</td>
@@ -354,7 +354,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048018</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000088</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000008A</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>7</td><td>ADC0ALTTRGEN</td><td>0x01</td><td>ADC0 alternate trigger enable</td>
@@ -618,7 +618,7 @@ registers of the peripheral(s) configured by the component.
 **          Trigger                                        : Enabled
 **            Trigger signal list                          : 1
 **              Trigger signal 0                           : Enabled
-**                Trigger input                            : TPM0_Overflow
+**                Trigger input                            : TPM2_Overflow
 **                Trigger input signal                     : 
 **                Trigger type                             : Internal
 **                  Source component                       : TU2

@@ -22,16 +22,17 @@ uint16_t PWMBuffer[128] __attribute__ ((aligned (256)));
  * TPM2_FixPWM
  * Fixes buggy center-aligned PWM implementation
  */
-int TPM2_FixPWM()
+int TPM0_FixPWM()
 {
 	/* Reset channel mode and clear channel flag */
-	TPM2_C0SC = (uint32_t) (TPM_CnSC_CHF_MASK);
+	TPM0_C1SC = (uint32_t) (TPM_CnSC_CHF_MASK);
 	/* Re-set channel value */
-	TPM2_C0V = TPM_CnV_VAL(0x0800);
+	TPM0_C1V = TPM_CnV_VAL(0x03FF);
 
 	/* Set center-aligned PWM */
 	/* Note: Time between TPM2_C0SC accesses must be respected */
-	TPM2_C0SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK);
+	TPM0_C1SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK
+			| TPM_CnSC_DMA_MASK);
 
 	return 0;
 }
@@ -39,5 +40,5 @@ int TPM2_FixPWM()
 /**
  * Devices
  **/
-LDD_TDeviceData* DMACH2;
+LDD_TDeviceData* DMAT2;
 LDD_TDeviceData* TU3;

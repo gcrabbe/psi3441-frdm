@@ -6,21 +6,21 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-08, 21:19, # CodeGen: 18
+**     Date/Time   : 2017-06-10, 11:40, # CodeGen: 46
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
 **     Settings    :
 **          Component name                                 : TU2
-**          Module name                                    : TPM0
-**          Counter                                        : TPM0_CNT
+**          Module name                                    : TPM2
+**          Counter                                        : TPM2_CNT
 **          Counter direction                              : Up
 **          Counter width                                  : 16 bits
 **          Value type                                     : Optimal
 **          Input clock source                             : Internal
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
-**            Period device                                : TPM0_MOD
+**            Period device                                : TPM2_MOD
 **            Period                                       : 208.333 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
@@ -124,7 +124,7 @@ extern "C" {
 #define TU2_COUNTER_WIDTH  0x10U       /* Counter width in bits  */
 #define TU2_COUNTER_DIR    DIR_UP      /* Direction of counting */
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
-#define TU2_PRPH_BASE_ADDRESS  0x40038000U
+#define TU2_PRPH_BASE_ADDRESS  0x4003A000U
   
 /* Methods configuration constants - generated for all enabled component's methods */
 #define TU2_Init_METHOD_ENABLED        /*!< Init method of the component TU2 is enabled (generated) */

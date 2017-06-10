@@ -27,26 +27,12 @@ Module "TU2"       (component TimerUnit_LDD)
                 <Enable> method is not necessary and needn't to be generated. This method can be called only once. Before the 
                 second call of Init the <Deinit> must be called first.
 
-Module "DMACH1"    (component DMAChannel_LDD)
-   - DMACH1_Init -Initializes the DMAChannel_LDD component. This method allocates no memory. Memory for all DMA used channles 
-                is allocated by DMAController componet .  This method can be called only once. Before the second call of Init() 
-                the Deinit() must be called first.
-   - DMACH1_EnableRequest -The method enables request from peripheral. Please note that this method doesn't start the transfer. 
-                The transfer is started as soon as DMA request from peripheral is asserted.
-   - DMACH1_StartTransfer -The method starts DMA transfer on the selected DMA channel. This methods initiates explicit SW 
-                transfer request. Please note that call of this method if peripheral request is enabled can cause unpredictable 
-                behaviour.
-   - DMACH1_GetError -Returns channel error flags and clears these flags.
-   - DMACH1_SetRequestCount -Sets number of requests required to complete transfer.
-
 Module "TU3"       (component TimerUnit_LDD)
    - TU3_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
                 interrupt priority, sets pin routing, sets timing, etc. If the property <"Enable in init. code"> is set to 
                 "yes" value then the device is also enabled (see the description of the <Enable> method). In this case the 
                 <Enable> method is not necessary and needn't to be generated. This method can be called only once. Before the 
                 second call of Init the <Deinit> must be called first.
-
-Module "DMA1"      (component DMAController)
 
 Module "AD1"       (component ADC_LDD)
    - AD1_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
@@ -83,20 +69,13 @@ Module "AD1"       (component ADC_LDD)
    - AD1_GetCalibrationResultStatus -This method should be used for check the last calibration result. If calibration completed 
                 normally the method finish calibration process by writing gain calibration values.
 
-Module "DMACH2"    (component DMAChannel_LDD)
-   - DMACH2_Init -Initializes the DMAChannel_LDD component. This method allocates no memory. Memory for all DMA used channles 
-                is allocated by DMAController componet .  This method can be called only once. Before the second call of Init() 
-                the Deinit() must be called first.
-   - DMACH2_EnableRequest -The method enables request from peripheral. Please note that this method doesn't start the transfer. 
-                The transfer is started as soon as DMA request from peripheral is asserted.
-   - DMACH2_StartTransfer -The method starts DMA transfer on the selected DMA channel. This methods initiates explicit SW 
-                transfer request. Please note that call of this method if peripheral request is enabled can cause unpredictable 
-                behaviour.
-   - DMACH2_GetError -Returns channel error flags and clears these flags.
-   - DMACH2_SetRequestCount -Sets number of requests required to complete transfer.
+Module "TPM0"      (component Init_TPM_VAR0)
+   - TPM0_Init -This method initializes registers of the TPM module according to the Peripheral Initialization settings. Call 
+                this method in user code to initialize the module. By default, the method is called by PE automatically; see 
+                "Call Init method" property of the component for more details.
 
-Module "TPM2"      (component Init_TPM_VAR0)
-   - TPM2_Init -This method initializes registers of the TPM module according to the Peripheral Initialization settings. Call 
+Module "DMA"       (component Init_DMA_VAR0)
+   - DMA_Init -This method initializes registers of the DMA module according to the Peripheral Initialization settings. Call 
                 this method in user code to initialize the module. By default, the method is called by PE automatically; see 
                 "Call Init method" property of the component for more details.
 

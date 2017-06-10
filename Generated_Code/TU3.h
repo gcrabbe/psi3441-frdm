@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-08, 21:19, # CodeGen: 18
+**     Date/Time   : 2017-06-09, 17:20, # CodeGen: 27
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -21,7 +21,7 @@
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : PIT_LDVAL1
-**            Period                                       : 208.333 ms
+**            Period                                       : 2083.33 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
 **          Initialization                                 : 
@@ -119,7 +119,7 @@ extern "C" {
 #define TU3_CNT_INP_FREQ_U_0 0x016E3600UL /* Counter input frequency in Hz */
 #define TU3_CNT_INP_FREQ_R_0 23999808.00153599F /* Counter input frequency in Hz */
 #define TU3_CNT_INP_FREQ_COUNT 0U      /* Count of predefined counter input frequencies */
-#define TU3_PERIOD_TICKS   0x004C4B38UL /* Initialization value of period in 'counter ticks' */
+#define TU3_PERIOD_TICKS   0x02FAF030UL /* Initialization value of period in 'counter ticks' */
 #define TU3_NUMBER_OF_CHANNELS 0x00U   /* Count of predefined channels */
 #define TU3_COUNTER_WIDTH  0x20U       /* Counter width in bits  */
 #define TU3_COUNTER_DIR    DIR_DOWN    /* Direction of counting */

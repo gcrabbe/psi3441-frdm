@@ -6,7 +6,7 @@
 **     Component   : ADC_LDD
 **     Version     : Component 01.183, Driver 01.08, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-08, 18:33, # CodeGen: 17
+**     Date/Time   : 2017-06-10, 11:40, # CodeGen: 46
 **     Abstract    :
 **         This device "ADC_LDD" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -41,7 +41,7 @@
 **          Trigger                                        : Enabled
 **            Trigger signal list                          : 1
 **              Trigger signal 0                           : Enabled
-**                Trigger input                            : TPM0_Overflow
+**                Trigger input                            : TPM2_Overflow
 **                Trigger input signal                     : 
 **                Trigger type                             : Internal
 **                  Source component                       : TU2
@@ -199,11 +199,11 @@ LDD_TDeviceData* AD1_Init(LDD_TUserData *UserDataPtr)
   NVIC_ISER |= NVIC_ISER_SETENA(0x8000);
   /* PORTB_PCR0: ISF=0,MUX=0 */
   PORTB_PCR0 &= (uint32_t)~(uint32_t)((PORT_PCR_ISF_MASK | PORT_PCR_MUX(0x07)));
-  /* SIM_SOPT7: ADC0TRGSEL=8 */
+  /* SIM_SOPT7: ADC0TRGSEL=0x0A */
   SIM_SOPT7 = (uint32_t)((SIM_SOPT7 & (uint32_t)~(uint32_t)(
-               SIM_SOPT7_ADC0TRGSEL(0x07)
+               SIM_SOPT7_ADC0TRGSEL(0x05)
               )) | (uint32_t)(
-               SIM_SOPT7_ADC0TRGSEL(0x08)
+               SIM_SOPT7_ADC0TRGSEL(0x0A)
               ));
   /* SIM_SOPT7: ADC0PRETRGSEL=0 */
   SIM_SOPT7 &= (uint32_t)~(uint32_t)(SIM_SOPT7_ADC0PRETRGSEL_MASK);

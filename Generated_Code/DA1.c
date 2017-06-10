@@ -6,7 +6,7 @@
 **     Component   : DAC_LDD
 **     Version     : Component 01.084, Driver 01.09, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-06, 11:18, # CodeGen: 0
+**     Date/Time   : 2017-06-09, 17:20, # CodeGen: 27
 **     Abstract    :
 **         This component implements an internal D/A converter of the MCU.
 **         It contains settings for converting various format of a values
@@ -19,7 +19,7 @@
 **          Output pin                                     : yes
 **            D/A channel (pin)                            : DAC0_OUT/ADC0_SE23/CMP0_IN4/PTE30/TPM0_CH3/TPM_CLKIN1
 **            D/A channel (pin) signal                     : 
-**          Init value                                     : 00D
+**          Init value                                     : 0
 **          D/A resolution                                 : Autoselect
 **          Data mode                                      : unsigned 16 bits, right justified
 **          Low power mode                                 : Disabled
@@ -150,8 +150,8 @@ LDD_TDeviceData* DA1_Init(LDD_TUserData *UserDataPtr)
   PORTE_PCR30 &= (uint32_t)~(uint32_t)((PORT_PCR_ISF_MASK | PORT_PCR_MUX(0x07)));
   /* DAC0_DAT0H: ??=0,??=0,??=0,??=0,DATA1=0 */
   DAC0_DAT0H = DAC_DATH_DATA1(0x00);
-  /* DAC0_DAT0L: DATA0=0x0D */
-  DAC0_DAT0L = DAC_DATL_DATA0(0x0D);
+  /* DAC0_DAT0L: DATA0=0 */
+  DAC0_DAT0L = DAC_DATL_DATA0(0x00);
   /* DAC0_C2: ??=0,??=0,??=0,DACBFRP=0,??=1,??=1,??=1,DACBFUP=1 */
   DAC0_C2 = (DAC_C2_DACBFUP_MASK | 0x0EU);
   /* DAC0_C1: DMAEN=0,??=0,??=0,??=0,??=0,DACBFMD=0,??=0,DACBFEN=0 */

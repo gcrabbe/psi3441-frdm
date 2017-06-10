@@ -32,13 +32,11 @@
 #include "Events.h"
 #include "DA1.h"
 #include "TU1.h"
-#include "DMACH1.h"
 #include "TU3.h"
-#include "DMA1.h"
 #include "TU2.h"
 #include "AD1.h"
-#include "DMACH2.h"
-#include "TPM2.h"
+#include "TPM0.h"
+#include "DMA.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -46,6 +44,7 @@
 #include "IO_Map.h"
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "DMA_PDD.h"
 #include "DAC.h"
 #include "ADC.h"
 #include "PWM.h"
@@ -63,10 +62,12 @@ int main(void)
   /* Write your code here */
   /* For example: for(;;) { } */
 
+  /* DMA initialization */
+  DMA_Init();
+
   /* DAC initialization */
   DA1 = DA1_Init(NULL);
   TU1 = TU1_Init(NULL);
-  DMACH1 = DMACH1_Init(NULL);
 
   /* ADC initialization */
   struct ring ADCRing;
@@ -81,18 +82,17 @@ int main(void)
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
 
   /* PWM initialization */
-  /* Note: TPM2_Init implementation is buggy */
-  TPM2_Init();
-  TPM2_FixPWM();
+  /* Note: TPM0_Init implementation is buggy */
+  TPM0_Init();
+  TPM0_FixPWM();
   TU3 = TU3_Init(NULL);
-  DMACH2 = DMACH2_Init(NULL);
 
   /* Enable DMA transfers */
-  DMACH1_EnableRequest(DMACH1);
-  DMACH2_EnableRequest(DMACH2);
+  DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, PDD_ENABLE);
+  // DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, PDD_ENABLE);
 
   /* Enable ADC transfers */
-  AD1_StartLoopTriggeredMeasurement(AD1);
+  // AD1_StartLoopTriggeredMeasurement(AD1);
 
   /* Local variables */
   uint8_t i;
@@ -106,7 +106,7 @@ int main(void)
     {
       i = removeRing(&ADCRing, &res);
       res = res >> 6; /* 16 to 10 bits */
-      PWMBuffer[i] = res;
+      // PWMBuffer[i] = res;
     }
   }
 

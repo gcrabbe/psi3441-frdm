@@ -36,13 +36,11 @@
 #include "IO_Map.h"
 #include "DA1.h"
 #include "TU1.h"
-#include "DMACH1.h"
 #include "TU3.h"
-#include "DMA1.h"
 #include "TU2.h"
 #include "AD1.h"
-#include "DMACH2.h"
-#include "TPM2.h"
+#include "TPM0.h"
+#include "DMA.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -83,24 +81,6 @@ void Cpu_OnNMIINT(void);
 */
 /* ===================================================================*/
 void DMACH1_OnComplete(LDD_TUserData *UserDataPtr);
-
-/*
-** ===================================================================
-**     Event       :  DMACH1_OnError (module Events)
-**
-**     Component   :  DMACH1 [DMAChannel_LDD]
-*/
-/*!
-**     @brief
-**         Called when error in channel settings is detected. See
-**         SetEventMask() and GetEventMask() methods.
-**     @param
-**         UserDataPtr     - Pointer to the user or
-**                           RTOS specific data. This pointer is passed
-**                           as the parameter of Init method.
-*/
-/* ===================================================================*/
-void DMACH1_OnError(LDD_TUserData *UserDataPtr);
 
 /*
 ** ===================================================================
@@ -147,21 +127,25 @@ void DMACH2_OnComplete(LDD_TUserData *UserDataPtr);
 
 /*
 ** ===================================================================
-**     Event       :  DMACH2_OnError (module Events)
+**     Event       :  DMAT2_OnComplete (module Events)
 **
-**     Component   :  DMACH2 [DMAChannel_LDD]
+**     Component   :  DMAT2 [DMATransfer_LDD]
 */
 /*!
 **     @brief
-**         Called when error in channel settings is detected. See
-**         SetEventMask() and GetEventMask() methods.
+**         Called at the end of a DMA transfer. If the Half complete
+**         property in initialization section is anabled, this event is
+**         also called when current major iteration count reaches the
+**         halfway point. See SetEventMask() and GetEventMask() methods.
+**         This event is enabled only if Interrupts property in Channel
+**         select section is enabled.
 **     @param
 **         UserDataPtr     - Pointer to the user or
 **                           RTOS specific data. This pointer is passed
 **                           as the parameter of Init method.
 */
 /* ===================================================================*/
-void DMACH2_OnError(LDD_TUserData *UserDataPtr);
+void DMAT2_OnComplete(LDD_TUserData *UserDataPtr);
 
 /* END Events */
 

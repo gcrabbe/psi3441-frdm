@@ -6,7 +6,7 @@
 **     Component   : ADC_LDD
 **     Version     : Component 01.183, Driver 01.08, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-08, 18:33, # CodeGen: 17
+**     Date/Time   : 2017-06-10, 11:40, # CodeGen: 46
 **     Abstract    :
 **         This device "ADC_LDD" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -41,7 +41,7 @@
 **          Trigger                                        : Enabled
 **            Trigger signal list                          : 1
 **              Trigger signal 0                           : Enabled
-**                Trigger input                            : TPM0_Overflow
+**                Trigger input                            : TPM2_Overflow
 **                Trigger input signal                     : 
 **                Trigger type                             : Internal
 **                  Source component                       : TU2

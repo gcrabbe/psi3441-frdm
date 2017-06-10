@@ -11,7 +11,7 @@
 extern const uint16_t DACBuffer[128];
 
 extern LDD_TDeviceData* DA1;
-extern LDD_TDeviceData* DMACH1;
+extern LDD_TDeviceData* DMAT1;
 extern LDD_TDeviceData* TU1;
 
 

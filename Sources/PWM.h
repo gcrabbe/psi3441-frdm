@@ -10,10 +10,10 @@
 
 extern uint16_t PWMBuffer[128];
 
-extern LDD_TDeviceData* DMACH2;
+extern LDD_TDeviceData* DMAT2;
 extern LDD_TDeviceData* TU3;
 
 
-int TPM2_FixPWM();
+int TPM0_FixPWM();
 
 #endif /* PWM_H_ */

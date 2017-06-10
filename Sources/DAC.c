@@ -151,5 +151,5 @@ const uint16_t DACBuffer[128] __attribute__ ((aligned (256))) = {
  * Devices
  **/
 LDD_TDeviceData* DA1;
-LDD_TDeviceData* DMACH1;
+LDD_TDeviceData* DMAT1;
 LDD_TDeviceData* TU1;

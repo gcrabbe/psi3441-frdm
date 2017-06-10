@@ -6,7 +6,7 @@
 **     Component   : TimerUnit_LDD
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-08, 21:19, # CodeGen: 18
+**     Date/Time   : 2017-06-09, 17:20, # CodeGen: 27
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -21,7 +21,7 @@
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : PIT_LDVAL1
-**            Period                                       : 208.333 ms
+**            Period                                       : 2083.33 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
 **          Initialization                                 : 
@@ -153,8 +153,8 @@ LDD_TDeviceData* TU3_Init(LDD_TUserData *UserDataPtr)
   PIT_TCTRL1 = 0x00U;                  /* Clear control register */
   /* PIT_TFLG1: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,TIF=1 */
   PIT_TFLG1 = PIT_TFLG_TIF_MASK;       /* Clear timer flag register */
-  /* PIT_LDVAL1: TSV=0x004C4B37 */
-  PIT_LDVAL1 = PIT_LDVAL_TSV(0x004C4B37); /* Set up load register */
+  /* PIT_LDVAL1: TSV=0x02FAF02F */
+  PIT_LDVAL1 = PIT_LDVAL_TSV(0x02FAF02F); /* Set up load register */
   /* PIT_TCTRL1: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHN=0,TIE=0,TEN=1 */
   PIT_TCTRL1 = PIT_TCTRL_TEN_MASK;     /* Set up control register */
   /* Registration of the device structure */

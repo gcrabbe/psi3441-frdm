@@ -15,7 +15,7 @@ by the component.
 <tr><td colspan="4" class="ttitle1">TU3 Initialization</td></tr>
 <tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
 <tr><td>0x4004803C</td><td>SIM_SCGC6</td><td>
-    0x81800000
+    0x84800000
  </td><td>SIM_SCGC6 register, peripheral TU3.</td></tr>
 <tr><td>0x40037000</td><td>PIT_MCR</td><td>
     0x00000002
@@ -27,7 +27,7 @@ by the component.
     0x00000001
  </td><td>PIT_TFLG0 register, peripheral TU3.</td></tr>
 <tr><td>0x40037100</td><td>PIT_LDVAL0</td><td>
-    0x0004C4B2
+    0x05D75C2F
  </td><td>PIT_LDVAL0 register, peripheral TU3.</td></tr>
 <tr><td>0x40037118</td><td>PIT_TCTRL1</td><td>
     0x00000001
@@ -36,7 +36,7 @@ by the component.
     0x00000001
  </td><td>PIT_TFLG1 register, peripheral TU3.</td></tr>
 <tr><td>0x40037110</td><td>PIT_LDVAL1</td><td>
-    0x004C4B37
+    0x02FAF02F
  </td><td>PIT_LDVAL1 register, peripheral TU3.</td></tr>
 </table>
 <br/>
@@ -91,15 +91,15 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4004803C</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x81800000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x84800000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000001</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>31</td><td>DAC0</td><td>0x01</td><td>DAC0 Clock Gate Control</td>
 <tr><td>29</td><td>RTC</td><td>0x00</td><td>RTC Access Control</td>
 <tr><td>27</td><td>ADC0</td><td>0x00</td><td>ADC0 Clock Gate Control</td>
-<tr><td>26</td><td>TPM2</td><td>0x00</td><td>TPM2 Clock Gate Control</td>
+<tr><td>26</td><td>TPM2</td><td>0x01</td><td>TPM2 Clock Gate Control</td>
 <tr><td>25</td><td>TPM1</td><td>0x00</td><td>TPM1 Clock Gate Control</td>
-<tr><td>24</td><td>TPM0</td><td>0x01</td><td>TPM0 Clock Gate Control</td>
+<tr><td>24</td><td>TPM0</td><td>0x00</td><td>TPM0 Clock Gate Control</td>
 <tr><td>23</td><td>PIT</td><td>0x01</td><td>PIT Clock Gate Control</td>
 <tr><td>1</td><td>DMAMUX</td><td>0x00</td><td>DMA Mux Clock Gate Control</td>
 <tr><td>0</td><td>FTF</td><td>0x00</td><td>Flash Memory Clock Gate Control</td>
@@ -300,7 +300,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40037100</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0004C4B2</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x05D75C2F</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>TSV</td><td>0x00</td><td>Timer Start Value</td>
@@ -448,7 +448,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40037110</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x004C4B37</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x02FAF02F</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>TSV</td><td>0x00</td><td>Timer Start Value</td>
@@ -467,7 +467,7 @@ registers of the peripheral(s) configured by the component.
 **            Counter frequency                            : Auto select
 **          Counter restart                                : On-match
 **            Period device                                : PIT_LDVAL1
-**            Period                                       : 208.333 ms
+**            Period                                       : 2083.33 ms
 **            Interrupt                                    : Disabled
 **          Channel list                                   : 0
 **          Initialization                                 : 

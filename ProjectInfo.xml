@@ -53,11 +53,9 @@
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\AD1.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Cpu.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DA1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMACH1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMACH2.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM2.c</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM0.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU1.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU2.c</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU3.c</PathName>
@@ -75,15 +73,13 @@
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\AD1.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DA1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMACH1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMACH2.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\IO_Map.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Const.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Error.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Types.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM2.h</PathName>
+      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM0.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU1.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU2.h</PathName>
       <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TU3.h</PathName>
