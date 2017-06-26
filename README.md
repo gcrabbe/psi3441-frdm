@@ -65,7 +65,7 @@ The `DMA0_IRQHandler` ISR restarts the DMA channel after a large number of trans
 
 ### Figure of merit
 
-An additional pin will, in time, be used to output the processor load state: whenever the processor enters an ISR or leaves its idle loop, the blue LED is set. Measuring the pin's duty cycle with the help of an oscilloscope provides a simple, yet effective, figure of merit.
+Pin 10 of connector J2 (PTD3) is used to output the processor load state: whenever the processor enters an ISR or leaves its idle loop, the output is set. Measuring the pin's duty cycle with the help of an oscilloscope provides a simple, yet effective, figure of merit.
 
 
 ## Setup
@@ -77,7 +77,7 @@ Import and build project with CodeWarrior 10.7 or higher.
 
 ### Hardware setup
 
-The DAC output is available on pin 11 of connector J10. The blue LED (active LOW) is available on pin 12 of connector J2. The ADC input is available on pin 2 of connector J10.
+The DAC output is available on pin 11 of connector J10. The blue LED (active LOW) is available on pin 12 of connector J2. The ADC input is available on pin 2 of connector J10. The FoM indicator is available on pin 10 of connector J2.
 
 In order for the system to work, the DAC output must be linked to the ADC input with the help of a jumper wire. The DAC output can otherwise be visualized by connecting it to the blue LED pin. Care must be taken to redirect PWM output in this case, as it is currently routed to the blue LED.
 
