@@ -12,9 +12,9 @@
 #include "ADC.h"
 
 /**
- * uint16_t ADCBuffer[128]
+ * uint16_t ADCBuffer[16]
  */
-uint16_t ADCBuffer[128] __attribute__ ((aligned (256)));
+uint16_t ADCBuffer[16] __attribute__ ((aligned (32)));
 
 /**
  * Devices

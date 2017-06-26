@@ -35,81 +35,81 @@
     <FLASHsize>128k</FLASHsize>
   </PROCESSOR>
   <PATHS>
-    <LinkerCommandFile>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Linker_Files\ProcessorExpert.ld</LinkerCommandFile>
+    <LinkerCommandFile>C:\Users\Gabriel\workspace\psi3441-frdm\Project_Settings\Linker_Files\ProcessorExpert.ld</LinkerCommandFile>
     <IncludePaths>
-      <Path>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\</Path>
-      <Path>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\iofiles\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\</Path>
+      <Path>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\</Path>
+      <Path>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\iofiles\</Path>
+      <Path>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\</Path>
+      <Path>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\</Path>
     </IncludePaths>
     <SourceCodePaths>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\</Path>
-      <Path>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\</Path>
+      <Path>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\</Path>
+      <Path>C:\Users\Gabriel\workspace\psi3441-frdm\Project_Settings\Startup_Code\</Path>
+      <Path>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\</Path>
     </SourceCodePaths>
   </PATHS>
   <FILES>
     <GeneratedCs>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\AD1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Cpu.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DA1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM0.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM1.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM2.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Vectors.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\__arm_end.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\__arm_start.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\ADC.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\DAC.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\Events.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\PWM.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\main.c</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\sa_mtb.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\AD1.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\Cpu.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\DA1.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\DMA.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\PE_LDD.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\TPM0.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\TPM1.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\TPM2.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\Vectors.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Project_Settings\Startup_Code\__arm_end.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Project_Settings\Startup_Code\__arm_start.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\ADC.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\DAC.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\Events.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\PWM.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\main.c</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\sa_mtb.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\AD1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\Cpu.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DA1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\DMA.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Const.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Error.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_LDD.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\PE_Types.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM0.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM1.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Generated_Code\TPM2.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Headers\bme.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\ADC.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\DAC.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\Events.h</PathName>
-      <PathName>C:\Users\Gabriel\codewarrior\psi3441-frdm\Sources\PWM.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\iofiles\MKL25Z4.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\COP_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\DAC_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\DMAMUX_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\DMA_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\FTFA_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\GPIO_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\I2C_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\LPTMR_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\MCM_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\PDD_Types.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\PIT_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\PORT_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\RTC_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SIM_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SPI_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SysTick_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\TPM_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\UART0_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\UART_PDD.h</PathName>
-      <PathName>C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\USB_PDD.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\AD1.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\Cpu.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\DA1.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\DMA.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\IO_Map.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\PE_Const.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\PE_Error.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\PE_LDD.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\PE_Types.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\TPM0.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\TPM1.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Generated_Code\TPM2.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Project_Headers\bme.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Project_Settings\Startup_Code\runtime_configuration.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\ADC.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\DAC.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\Events.h</PathName>
+      <PathName>C:\Users\Gabriel\workspace\psi3441-frdm\Sources\PWM.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\iofiles\MKL25Z4.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\CMP_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\COP_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\DAC_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\DMAMUX_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\DMA_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\FTFA_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\GPIO_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\I2C_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\LPTMR_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\MCM_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\PDD_Types.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\PIT_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\PORT_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\RTC_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SIM_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SPI_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\SysTick_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\TPM_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\UART0_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\UART_PDD.h</PathName>
+      <PathName>C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd\inc\USB_PDD.h</PathName>
     </GeneratedHs>
   </FILES>
   <OPTIONS>

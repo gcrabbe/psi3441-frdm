@@ -13,9 +13,9 @@
 #include "PWM.h"
 
 /**
- * uint16_t PWMBuffer[128]
+ * uint16_t PWMBuffer[16]
  */
-uint16_t PWMBuffer[128] __attribute__ ((aligned (256)));
+uint16_t PWMBuffer[16] __attribute__ ((aligned (32)));
 
 
 /**

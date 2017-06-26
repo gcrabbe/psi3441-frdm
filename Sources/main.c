@@ -70,14 +70,14 @@ int main(void)
 
   /* ADC initialization */
   struct ring ADCRing;
-  initRing(&ADCRing, ADCBuffer, 128);
+  initRing(&ADCRing, ADCBuffer, 16);
 
   AD1 = AD1_Init((LDD_TUserData *) &ADCRing);
   AD1_StartCalibration(AD1);
   TPM2_Init();
 
   while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
-  initRing(&ADCRing, ADCBuffer, 128); /* Discard calibration readings */
+  initRing(&ADCRing, ADCBuffer, 16); /* Discard calibration readings */
 
   LDD_ADC_TSample Ch0 = {0};
   AD1_CreateSampleGroup(AD1, &Ch0, 1);

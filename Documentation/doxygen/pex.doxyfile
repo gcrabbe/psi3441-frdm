@@ -651,8 +651,8 @@ WARN_LOGFILE           =
 INPUT                  += ../../sources 
 INPUT                  += ../../Generated_Code
 INPUT                  += ../doxygen
-INPUT                  += "C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd2\MKL25Z128LK4\peripherals"
-INPUT                  += "C:\Program Files\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd2\MKL25Z128LK4\system"
+INPUT                  += "C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd2\MKL25Z128LK4\peripherals"
+INPUT                  += "C:\Program Files (x86)\Freescale\CodeWarrior\MCU\ProcessorExpert\lib\Kinetis\pdd2\MKL25Z128LK4\system"
 
 
 # This tag can be used to specify the character encoding of the source files

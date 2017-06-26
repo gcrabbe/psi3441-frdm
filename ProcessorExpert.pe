@@ -3,8 +3,8 @@
   <Header>
     <Name>psi3441-frdm</Name>
     <SavedBy>Gabriel</SavedBy>
-    <ModificationStamp>109</ModificationStamp>
-    <Date>2017-06-10</Date>
+    <ModificationStamp>111</ModificationStamp>
+    <Date>2017-06-26</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>125</ProjectCompNumb>
+    <ProjectCompNumb>128</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -4595,24 +4595,24 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typePrescaler</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>7</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>187.500 kHz</Value>
+        <Value>24 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloCounter</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>3124</Value>
+        <Value>25000</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>16.667 ms</Value>
+        <Value>1.042 ms</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>
@@ -5726,12 +5726,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typePrescaler</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>7</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>187.500 kHz</Value>
+        <Value>24 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloCounter</ItemSymbol>
@@ -5743,7 +5743,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>133.339 ms</Value>
+        <Value>1.042 ms</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>
@@ -10786,8 +10786,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCh_SourceAddressModulo</TypeSpecNameState>
-        <Index>5</Index>
-        <EnumSymbVal>256_B</EnumSymbVal>
+        <Index>2</Index>
+        <EnumSymbVal>32_B</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>Ch0_DestinationGrp</ItemSymbol>
@@ -11172,8 +11172,8 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typeCh_SourceAddressModulo</TypeSpecNameState>
-        <Index>5</Index>
-        <EnumSymbVal>256_B</EnumSymbVal>
+        <Index>2</Index>
+        <EnumSymbVal>32_B</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>Ch1_DestinationGrp</ItemSymbol>

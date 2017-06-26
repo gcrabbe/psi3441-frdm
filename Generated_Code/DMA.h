@@ -6,7 +6,7 @@
 **     Component   : Init_DMA
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 19:06, # CodeGen: 69
+**     Date/Time   : 2017-06-26, 08:59, # CodeGen: 71
 **     Abstract    :
 **          This file implements the DMA (DMA) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -32,7 +32,7 @@
 **                  Address                                : PWMBuffer
 **                  Address increment                      : Enabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 256 Bytes
+**                  Address modulo                         : 32 Bytes
 **                Data destination                         : 
 **                  External object declaration            : 
 **                  Address                                : 0x40038018
@@ -71,7 +71,7 @@
 **                  Address                                : DACBuffer
 **                  Address increment                      : Enabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 256 Bytes
+**                  Address modulo                         : 32 Bytes
 **                Data destination                         : 
 **                  External object declaration            : 
 **                  Address                                : 0x4003F000
