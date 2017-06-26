@@ -106,8 +106,22 @@ int main(void)
     /* Sinal processing */
     if(!isRingEmpty(&ADCRing))
     {
+      /* Read from input buffer */
       i = removeRing(&ADCRing, &res);
+
+      /* Signal processing */
+      /* At this time, only word size conversion is effected.
+       * No suitable FIR has been found that respects both performance and delay
+       * constraints. */
       res = res >> 6; /* 16 to 10 bits */
+
+      /* Phase delay */
+      /* The phase delay is nominally 120 degrees (5.33 samples).
+       * Note that 1 sample is automatically lost due to processing. */
+      i += 4;   /* 4+1 = 5 sample delay */
+      i &= 0xF; /* Output index modulo 16 */
+
+      /* Write to output buffer */
       PWMBuffer[i] = res;
     }
   }
