@@ -36,6 +36,7 @@
 #include "AD1.h"
 #include "TPM0.h"
 #include "DMA.h"
+#include "PTD.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -47,6 +48,8 @@
 #include "ADC.h"
 #include "PWM.h"
 #include "DMA_PDD.h"
+#include "GPIO_PDD.h"
+#include "PORT_PDD.h"
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
@@ -87,6 +90,10 @@ int main(void)
   TPM0_Init();
   TPM0_FixPWM();
 
+  /* GPIO initialization */
+  PTD_Init();
+  PORT_PDD_SetPinMuxControl(PORTD_BASE_PTR, 3, PORT_PDD_MUX_CONTROL_ALT1);
+
   /* Enable DAC transfers */
   DMA_PDD_EnablePeripheralRequest(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, PDD_ENABLE);
 
@@ -106,6 +113,9 @@ int main(void)
     /* Sinal processing */
     if(!isRingEmpty(&ADCRing))
     {
+      /* Set FoM */
+      GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x8);
+
       /* Read from input buffer */
       i = removeRing(&ADCRing, &res);
 
@@ -123,6 +133,9 @@ int main(void)
 
       /* Write to output buffer */
       PWMBuffer[i] = res;
+
+      /* Reset FoM */
+      GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x0);
     }
   }
 

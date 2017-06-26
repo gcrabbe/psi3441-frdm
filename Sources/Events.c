@@ -38,6 +38,7 @@ extern "C" {
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "ADC.h"
 #include "DMA_PDD.h"
+#include "GPIO_PDD.h"
 
 /*
 ** ===================================================================
@@ -80,10 +81,16 @@ void Cpu_OnNMIINT(void)
 /* ===================================================================*/
 void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
 {
+  /* Set FoM */
+  GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x8);
+
   /* Write your code here ... */
   uint16_t val;
   AD1_GetMeasuredValues(AD1, &val);
   insertRing(UserDataPtr, val);
+
+  /* Reset FoM */
+  GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x0);
 }
 
 /**
@@ -93,9 +100,15 @@ void AD1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
  */
 void DMA0_IRQHandler()
 {
+  /* Set FoM */
+  GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x8);
+
   /* Write your code here ... */
   DMA_PDD_ClearDoneFlag(DMA_BASE_PTR, DMA_PDD_CHANNEL_0);
   DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_0, 0x080000);
+
+  /* Reset FoM */
+  GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x0);
 }
 
 /**
@@ -105,9 +118,15 @@ void DMA0_IRQHandler()
  */
 void DMA1_IRQHandler()
 {
+  /* Set FoM */
+  GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x8);
+
   /* Write your code here ... */
   DMA_PDD_ClearDoneFlag(DMA_BASE_PTR, DMA_PDD_CHANNEL_1);
   DMA_PDD_SetByteCount(DMA_BASE_PTR, DMA_PDD_CHANNEL_1, 0x080000);
+
+  /* Reset FoM */
+  GPIO_PDD_SetPortDataOutput(PTD_BASE_PTR, 0x0);
 }
 
 /* END Events */

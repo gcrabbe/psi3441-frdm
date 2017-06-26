@@ -68,6 +68,11 @@ Module "DMA"       (component Init_DMA_VAR0)
                 this method in user code to initialize the module. By default, the method is called by PE automatically; see 
                 "Call Init method" property of the component for more details.
 
+Module "PTD"       (component Init_GPIO_VAR0)
+   - PTD_Init -This method initializes registers of the GPIO module according to the Peripheral Initialization settings. Call 
+                this method in user code to initialize the module. By default, the method is called by PE automatically; see 
+                "Call Init method" property of the component for more details.
+
 Module "Cpu"       (component MKL25Z128LK4)
 
 ===================================================================================

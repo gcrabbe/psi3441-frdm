@@ -40,6 +40,7 @@
 #include "AD1.h"
 #include "TPM0.h"
 #include "DMA.h"
+#include "PTD.h"
 
 #ifdef __cplusplus
 extern "C" {

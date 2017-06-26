@@ -7,7 +7,7 @@
 **     Version     : Component 01.025, Driver 01.04, CPU db: 3.00.000
 **     Datasheet   : KL25P80M48SF0RM, Rev.3, Sep 2012
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 17:59, # CodeGen: 63
+**     Date/Time   : 2017-06-26, 11:37, # CodeGen: 73
 **     Abstract    :
 **
 **     Settings    :
@@ -66,6 +66,7 @@
 #include "DA1.h"
 #include "AD1.h"
 #include "DMA.h"
+#include "PTD.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -250,6 +251,9 @@ void PE_low_level_init(void)
   /* SMC_PMPROT: ??=0,??=0,AVLP=0,??=0,ALLS=0,??=0,AVLLS=0,??=0 */
   SMC_PMPROT = 0x00U;                  /* Setup Power mode protection register */
   /* Common initialization of the CPU registers */
+  /* PORTD_ISFR: ISF=8 */
+  PORTD_ISFR = PORT_ISFR_ISF(0x08);
+  /* Common initialization of the CPU registers */
   /* NVIC_IPR4: PRI_19=0,PRI_18=0,PRI_17=0 */
   NVIC_IPR4 &= (uint32_t)~(uint32_t)(
                 NVIC_IP_PRI_19(0xFF) |
@@ -270,6 +274,12 @@ void PE_low_level_init(void)
                 NVIC_IP_PRI_1(0xFF) |
                 NVIC_IP_PRI_0(0xFF)
                );
+  /* PORTD_PCR3: ISF=0,IRQC=0,PE=0 */
+  PORTD_PCR3 &= (uint32_t)~(uint32_t)(
+                 PORT_PCR_ISF_MASK |
+                 PORT_PCR_IRQC(0x0F) |
+                 PORT_PCR_PE_MASK
+                );
   /* PORTA_PCR20: ISF=0,MUX=7 */
   PORTA_PCR20 = (uint32_t)((PORTA_PCR20 & (uint32_t)~(uint32_t)(
                  PORT_PCR_ISF_MASK
@@ -296,6 +306,12 @@ void PE_low_level_init(void)
   /* ### Call "DMA_Init();" init method in a user code, i.e. in the main code */
 
   /* ### Note:   To enable automatic calling of the "DMA" init code here,
+                 the 'Call Init method' property must be set to 'yes'.
+   */
+  /* ### Init_GPIO "PTD" init code ... */
+  /* ### Call "PTD_Init();" init method in a user code, i.e. in the main code */
+
+  /* ### Note:   To enable automatic calling of the "PTD" init code here,
                  the 'Call Init method' property must be set to 'yes'.
    */
   __EI();

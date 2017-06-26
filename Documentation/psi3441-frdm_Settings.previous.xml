@@ -373,10 +373,10 @@ PE_DEBUGHALT();
         <Clock_gate v="Enabled" />
         <group name="Clock settings">
           <Clock_source v="TPM counter clock" />
-          <Prescaler v="divide by 128" />
-          <Counter_frequency v="187.500 kHz" />
+          <Prescaler v="divide by 1" />
+          <Counter_frequency v="24 MHz" />
           <Modulo_counter v="25000" />
-          <Period v="133.339 ms" />
+          <Period v="1.042 ms" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />
@@ -424,10 +424,10 @@ PE_DEBUGHALT();
         <Clock_gate v="Enabled" />
         <group name="Clock settings">
           <Clock_source v="TPM counter clock" />
-          <Prescaler v="divide by 128" />
-          <Counter_frequency v="187.500 kHz" />
+          <Prescaler v="divide by 1" />
+          <Counter_frequency v="24 MHz" />
           <Modulo_counter v="25000" />
-          <Period v="133.339 ms" />
+          <Period v="1.042 ms" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />
@@ -825,6 +825,50 @@ Autoselect
         </boolgroup>
         <boolgroup name="Channel 2" v="Do not initialize" />
         <boolgroup name="Channel 3" v="Do not initialize" />
+      </group>
+      <group name="Initialization">
+        <Call_Init_method v="no" />
+      </group>
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="PTD" type="Init_GPIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="PTD" />
+      <Device v="PTD" />
+      <group name="Settings">
+        <boolgroup name="Pin 0" v="Do not initialize" />
+        <boolgroup name="Pin 1" v="Do not initialize" />
+        <boolgroup name="Pin 2" v="Do not initialize" />
+        <boolgroup name="Pin 3" v="Initialize">
+          <Pin_direction v="Output" />
+          <Output_value v="1" />
+          <Pull_resistor v="Disabled" />
+          <Interrupt_DMA_request v="Disabled" />
+        </boolgroup>
+        <boolgroup name="Pin 4" v="Do not initialize" />
+        <boolgroup name="Pin 5" v="Do not initialize" />
+        <boolgroup name="Pin 6" v="Do not initialize" />
+        <boolgroup name="Pin 7" v="Do not initialize" />
+      </group>
+      <group name="Pin selection/routing">
+        <boolgroup name="Pin 0" v="Disabled" />
+        <boolgroup name="Pin 1" v="Disabled" />
+        <boolgroup name="Pin 2" v="Disabled" />
+        <boolgroup name="Pin 3" v="Disabled" />
+        <boolgroup name="Pin 4" v="Disabled" />
+        <boolgroup name="Pin 5" v="Disabled" />
+        <boolgroup name="Pin 6" v="Disabled" />
+        <boolgroup name="Pin 7" v="Disabled" />
+      </group>
+      <group name="Interrupts">
+        <boolgroup name="Port interrupt" v="Disabled" />
       </group>
       <group name="Initialization">
         <Call_Init_method v="no" />
