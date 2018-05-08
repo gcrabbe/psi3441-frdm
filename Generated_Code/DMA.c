@@ -6,7 +6,7 @@
 **     Component   : Init_DMA
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-26, 08:59, # CodeGen: 71
+**     Date/Time   : 2018-05-08, 18:23, # CodeGen: 76
 **     Abstract    :
 **          This file implements the DMA (DMA) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -32,7 +32,7 @@
 **                  Address                                : PWMBuffer
 **                  Address increment                      : Enabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 32 Bytes
+**                  Address modulo                         : 128 Bytes
 **                Data destination                         : 
 **                  External object declaration            : 
 **                  Address                                : 0x40038018
@@ -71,7 +71,7 @@
 **                  Address                                : DACBuffer
 **                  Address increment                      : Enabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 32 Bytes
+**                  Address modulo                         : 128 Bytes
 **                Data destination                         : 
 **                  External object declaration            : 
 **                  Address                                : 0x4003F000
@@ -205,24 +205,24 @@ void DMA_Init(void)
   DMA_DSR_BCR0 = DMA_DSR_BCR_BCR(0x00080000);
   /* DMA_DSR_BCR1: ??=0,CE=0,BES=0,BED=0,??=0,REQ=0,BSY=0,DONE=0,BCR=0x00080000 */
   DMA_DSR_BCR1 = DMA_DSR_BCR_BCR(0x00080000);
-  /* DMA_DCR0: EINT=1,ERQ=0,CS=1,AA=0,??=0,??=0,??=0,??=0,EADREQ=0,SINC=1,SSIZE=2,DINC=0,DSIZE=2,START=0,SMOD=2,DMOD=0,D_REQ=0,??=0,LINKCC=0,LCH1=1,LCH2=1 */
+  /* DMA_DCR0: EINT=1,ERQ=0,CS=1,AA=0,??=0,??=0,??=0,??=0,EADREQ=0,SINC=1,SSIZE=2,DINC=0,DSIZE=2,START=0,SMOD=4,DMOD=0,D_REQ=0,??=0,LINKCC=0,LCH1=1,LCH2=1 */
   DMA_DCR0 = DMA_DCR_EINT_MASK |
              DMA_DCR_CS_MASK |
              DMA_DCR_SINC_MASK |
              DMA_DCR_SSIZE(0x02) |
              DMA_DCR_DSIZE(0x02) |
-             DMA_DCR_SMOD(0x02) |
+             DMA_DCR_SMOD(0x04) |
              DMA_DCR_DMOD(0x00) |
              DMA_DCR_LINKCC(0x00) |
              DMA_DCR_LCH1(0x01) |
              DMA_DCR_LCH2(0x01);
-  /* DMA_DCR1: EINT=1,ERQ=0,CS=1,AA=0,??=0,??=0,??=0,??=0,EADREQ=0,SINC=1,SSIZE=2,DINC=0,DSIZE=2,START=0,SMOD=2,DMOD=0,D_REQ=0,??=0,LINKCC=0,LCH1=0,LCH2=0 */
+  /* DMA_DCR1: EINT=1,ERQ=0,CS=1,AA=0,??=0,??=0,??=0,??=0,EADREQ=0,SINC=1,SSIZE=2,DINC=0,DSIZE=2,START=0,SMOD=4,DMOD=0,D_REQ=0,??=0,LINKCC=0,LCH1=0,LCH2=0 */
   DMA_DCR1 = DMA_DCR_EINT_MASK |
              DMA_DCR_CS_MASK |
              DMA_DCR_SINC_MASK |
              DMA_DCR_SSIZE(0x02) |
              DMA_DCR_DSIZE(0x02) |
-             DMA_DCR_SMOD(0x02) |
+             DMA_DCR_SMOD(0x04) |
              DMA_DCR_DMOD(0x00) |
              DMA_DCR_LINKCC(0x00) |
              DMA_DCR_LCH1(0x00) |

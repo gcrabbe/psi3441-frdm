@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 17:59, # CodeGen: 63
+**     Date/Time   : 2018-05-08, 18:23, # CodeGen: 76
 **     Abstract    :
 **          This file implements the TPM (TPM0) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -20,8 +20,8 @@
 **              Clock source                               : TPM counter clock
 **              Prescaler                                  : divide by 1
 **              Counter frequency                          : 24 MHz
-**              Modulo counter                             : 1023
-**              Period                                     : 85.250 us
+**              Modulo counter                             : 256
+**              Period                                     : 21.333 us
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled
 **            Counter reload on trigger                    : Disabled
@@ -32,8 +32,8 @@
 **            Channel 0                                    : Disabled
 **            Channel 1                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : High-true
-**                Channel value register                   : 1023
+**                PWM polarity                             : Low-true
+**                Channel value register                   : 0
 **              Pin                                        : Enabled
 **                Pin                                      : ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1
 **                Pin signal                               : 
@@ -172,15 +172,15 @@ void TPM0_Init(void)
                 TPM_CnSC_ELSA_MASK |
                 0xFFFFFF02U
                );
-  /* TPM0_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=1,ELSA=0,??=0,DMA=0 */
+  /* TPM0_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=0,ELSA=1,??=0,DMA=0 */
   TPM0_C1SC = (uint32_t)((TPM0_C1SC & (uint32_t)~(uint32_t)(
                TPM_CnSC_CHF_MASK |
                TPM_CnSC_CHIE_MASK |
-               TPM_CnSC_ELSA_MASK |
+               TPM_CnSC_ELSB_MASK |
                TPM_CnSC_DMA_MASK |
                0xFFFFFF02U
               )) | (uint32_t)(
-               TPM_CnSC_ELSB_MASK
+               TPM_CnSC_ELSA_MASK
               ));
   /* TPM0_C2SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,MSB=0,MSA=0,ELSB=0,ELSA=0,??=0 */
   TPM0_C2SC &= (uint32_t)~(uint32_t)(
@@ -218,13 +218,13 @@ void TPM0_Init(void)
                 TPM_CnSC_ELSA_MASK |
                 0xFFFFFF02U
                );
-  /* TPM0_C1V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0x03FF */
-  TPM0_C1V = TPM_CnV_VAL(0x03FF);
-  /* TPM0_MOD: MOD=0x03FF */
+  /* TPM0_C1V: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,VAL=0 */
+  TPM0_C1V = TPM_CnV_VAL(0x00);
+  /* TPM0_MOD: MOD=0x0100 */
   TPM0_MOD = (uint32_t)((TPM0_MOD & (uint32_t)~(uint32_t)(
-              TPM_MOD_MOD(0xFC00)
+              TPM_MOD_MOD(0xFEFF)
              )) | (uint32_t)(
-              TPM_MOD_MOD(0x03FF)
+              TPM_MOD_MOD(0x0100)
              ));
   /* TPM0_CNT: COUNT=0 */
   TPM0_CNT &= (uint32_t)~(uint32_t)(TPM_CNT_COUNT(0xFFFF));

@@ -13,9 +13,9 @@
 #include "PWM.h"
 
 /**
- * uint16_t PWMBuffer[16]
+ * uint16_t PWMBuffer[64]
  */
-uint16_t PWMBuffer[16] __attribute__ ((aligned (32)));
+uint16_t PWMBuffer[64] __attribute__ ((aligned (128)));
 
 
 /**
@@ -27,11 +27,12 @@ int TPM0_FixPWM()
 	/* Reset channel mode and clear channel flag */
 	TPM0_C1SC = (uint32_t) (TPM_CnSC_CHF_MASK);
 	/* Re-set channel default value */
-	TPM0_C1V = TPM_CnV_VAL(0x03FF);
+	TPM0_C1V = TPM_CnV_VAL(0x0);
 
 	/* Set center-aligned PWM */
 	/* Note: Time between TPMx_CnSC accesses must be respected */
-	TPM0_C1SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK
+	/* Change TPM_CnSC_ELSA_MASK to TPM_CnSC_ELSB_MASK for inverted polarity */
+	TPM0_C1SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSA_MASK
 			| TPM_CnSC_DMA_MASK);
 
 	return 0;

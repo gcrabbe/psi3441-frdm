@@ -375,8 +375,8 @@ PE_DEBUGHALT();
           <Clock_source v="TPM counter clock" />
           <Prescaler v="divide by 1" />
           <Counter_frequency v="24 MHz" />
-          <Modulo_counter v="25000" />
-          <Period v="1.042 ms" />
+          <Modulo_counter v="6249" />
+          <Period v="260.417 us" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />
@@ -426,8 +426,8 @@ PE_DEBUGHALT();
           <Clock_source v="TPM counter clock" />
           <Prescaler v="divide by 1" />
           <Counter_frequency v="24 MHz" />
-          <Modulo_counter v="25000" />
-          <Period v="1.042 ms" />
+          <Modulo_counter v="6249" />
+          <Period v="260.417 us" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />
@@ -477,8 +477,8 @@ PE_DEBUGHALT();
           <Clock_source v="TPM counter clock" />
           <Prescaler v="divide by 1" />
           <Counter_frequency v="24 MHz" />
-          <Modulo_counter v="1023" />
-          <Period v="85.250 us" />
+          <Modulo_counter v="256" />
+          <Period v="21.333 us" />
         </group>
         <DBG_mode v="TPM counter stopped; output pins remain the same" />
         <Global_time_base v="Disabled" />
@@ -491,8 +491,8 @@ PE_DEBUGHALT();
         <boolgroup name="Channel 0" v="Disabled" />
         <boolgroup name="Channel 1" v="Enabled">
           <enumgroup name="Channel mode" v="Center-aligned PWM">
-            <PWM_polarity v="High-true" />
-            <Channel_value_register v="1023" />
+            <PWM_polarity v="Low-true" />
+            <Channel_value_register v="0" />
           </enumgroup>
           <boolgroup name="Pin" v="Enabled">
             <Pin v="ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1" />
@@ -743,7 +743,7 @@ Autoselect
               <Address v="PWMBuffer" />
               <Address_increment v="Enabled" />
               <Transfer_size v="16-bit" />
-              <Address_modulo v="32 Bytes" />
+              <Address_modulo v="128 Bytes" />
             </group>
             <group name="Data destination">
               <External_object_declaration v="" />
@@ -791,7 +791,7 @@ Autoselect
               <Address v="DACBuffer" />
               <Address_increment v="Enabled" />
               <Transfer_size v="16-bit" />
-              <Address_modulo v="32 Bytes" />
+              <Address_modulo v="128 Bytes" />
             </group>
             <group name="Data destination">
               <External_object_declaration v="" />

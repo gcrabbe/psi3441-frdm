@@ -848,7 +848,7 @@ Autoselect
         <boolgroup name="Pin 2" v="Do not initialize" />
         <boolgroup name="Pin 3" v="Initialize">
           <Pin_direction v="Output" />
-          <Output_value v="1" />
+          <Output_value v="0" />
           <Pull_resistor v="Disabled" />
           <Interrupt_DMA_request v="Disabled" />
         </boolgroup>

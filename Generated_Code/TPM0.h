@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-06-10, 17:59, # CodeGen: 63
+**     Date/Time   : 2018-05-08, 18:23, # CodeGen: 76
 **     Abstract    :
 **          This file implements the TPM (TPM0) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -20,8 +20,8 @@
 **              Clock source                               : TPM counter clock
 **              Prescaler                                  : divide by 1
 **              Counter frequency                          : 24 MHz
-**              Modulo counter                             : 1023
-**              Period                                     : 85.250 us
+**              Modulo counter                             : 256
+**              Period                                     : 21.333 us
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled
 **            Counter reload on trigger                    : Disabled
@@ -32,8 +32,8 @@
 **            Channel 0                                    : Disabled
 **            Channel 1                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : High-true
-**                Channel value register                   : 1023
+**                PWM polarity                             : Low-true
+**                Channel value register                   : 0
 **              Pin                                        : Enabled
 **                Pin                                      : ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1
 **                Pin signal                               : 

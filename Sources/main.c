@@ -80,7 +80,7 @@ int main(void)
   TPM2_Init();
 
   while(AD1_GetCalibrationResultStatus(AD1) != ERR_OK);
-  initRing(&ADCRing, ADCBuffer, 16); /* Discard calibration readings */
+  initRing(&ADCRing, ADCBuffer, 64); /* Discard calibration readings */
 
   LDD_ADC_TSample Ch0 = {0};
   AD1_CreateSampleGroup(AD1, &Ch0, 1);
@@ -88,7 +88,7 @@ int main(void)
   /* PWM initialization */
   /* Note: TPM0_Init implementation is buggy */
   TPM0_Init();
-  TPM0_FixPWM();
+  /* TPM0_FixPWM(); */
 
   /* GPIO initialization */
   PTD_Init();
@@ -123,13 +123,13 @@ int main(void)
       /* At this time, only word size conversion is effected.
        * No suitable FIR has been found that respects both performance and delay
        * constraints. */
-      res = res >> 6; /* 16 to 10 bits */
+      res = res >> 8; /* 16 to 8 bits */
 
       /* Phase delay */
-      /* The phase delay is nominally 120 degrees (5.33 samples).
-       * Note that 1 sample is automatically lost due to processing. */
-      i += 4;   /* 4+1 = 5 sample delay */
-      i &= 0xF; /* Output index modulo 16 */
+      /* The phase delay is nominally 120 degrees (21.33 samples).
+       * Note that 1 sample is always lost, as the PWM register is written on the next trigger event. */
+      i += 20;   /* 20+1 = 21 sample delay */
+      i &= 0x3F; /* Output index modulo 64 */
 
       /* Write to output buffer */
       PWMBuffer[i] = res;

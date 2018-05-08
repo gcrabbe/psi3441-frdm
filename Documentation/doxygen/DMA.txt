@@ -40,10 +40,10 @@ by the component.
     0x01080000
  </td><td>DMA_DSR_BCR1 register, peripheral DMA.</td></tr>
 <tr><td>0x4000810C</td><td>DMA_DCR0</td><td>
-    0xA0642005
+    0xA0644005
  </td><td>DMA_DCR0 register, peripheral DMA.</td></tr>
 <tr><td>0x4000811C</td><td>DMA_DCR1</td><td>
-    0xA0642000
+    0xA0644000
  </td><td>DMA_DCR1 register, peripheral DMA.</td></tr>
 </table>
 <br/>
@@ -419,7 +419,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4000810C</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xA0642005</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xA0644005</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>31</td><td>EINT</td><td>0x01</td><td>Enable interrupt on completion of transfer</td>
@@ -483,7 +483,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4000811C</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xA0642000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xA0644000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>31</td><td>EINT</td><td>0x01</td><td>Enable interrupt on completion of transfer</td>
@@ -527,7 +527,7 @@ registers of the peripheral(s) configured by the component.
 **                  Address                                : PWMBuffer
 **                  Address increment                      : Enabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 32 Bytes
+**                  Address modulo                         : 128 Bytes
 **                Data destination                         : 
 **                  External object declaration            : 
 **                  Address                                : 0x40038018
@@ -566,7 +566,7 @@ registers of the peripheral(s) configured by the component.
 **                  Address                                : DACBuffer
 **                  Address increment                      : Enabled
 **                  Transfer size                          : 16-bit
-**                  Address modulo                         : 32 Bytes
+**                  Address modulo                         : 128 Bytes
 **                Data destination                         : 
 **                  External object declaration            : 
 **                  Address                                : 0x4003F000
