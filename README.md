@@ -62,7 +62,7 @@ A suitable FIR filter that respects both performance and delay constraints has n
 
 Phase delay between input and output waveforms is set at a nominal 120 degrees, corresponding to 21.33 samples.
 
-One sample is always lost as the PWM register can only be updated on the next trigger event. This places a tight constraint on maximum FIR filter delay (20 samples, or order 40).
+One sample is always lost as the PWM register is only updated on the next timer event. This places a tight constraint on maximum FIR filter delay (20 samples, or 41 taps).
 
 The actual phase delay is currently set to 1+20 samples, i.e. 118.125 degrees.
 
