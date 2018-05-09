@@ -88,7 +88,7 @@ int main(void)
   /* PWM initialization */
   /* Note: TPM0_Init implementation is buggy */
   TPM0_Init();
-  /* TPM0_FixPWM(); */
+  TPM0_FixPWM();
 
   /* GPIO initialization */
   PTD_Init();

@@ -31,9 +31,8 @@ int TPM0_FixPWM()
 
 	/* Set center-aligned PWM */
 	/* Note: Time between TPMx_CnSC accesses must be respected */
-	/* Change TPM_CnSC_ELSA_MASK to TPM_CnSC_ELSB_MASK for inverted polarity */
-	TPM0_C1SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSA_MASK
-			| TPM_CnSC_DMA_MASK);
+	/* Change TPM_CnSC_ELSB_MASK to TPM_CnSC_ELSA_MASK for inverted polarity */
+	TPM0_C1SC = (uint32_t) (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK);
 
 	return 0;
 }
