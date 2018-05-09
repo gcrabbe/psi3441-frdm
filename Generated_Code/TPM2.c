@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-05-08, 18:23, # CodeGen: 76
+**     Date/Time   : 2018-05-09, 09:43, # CodeGen: 77
 **     Abstract    :
 **          This file implements the TPM (TPM2) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -18,10 +18,10 @@
 **            Clock gate                                   : Enabled
 **            Clock settings                               : 
 **              Clock source                               : TPM counter clock
-**              Prescaler                                  : divide by 1
-**              Counter frequency                          : 24 MHz
+**              Prescaler                                  : divide by 128
+**              Counter frequency                          : 187.500 kHz
 **              Modulo counter                             : 6249
-**              Period                                     : 260.417 us
+**              Period                                     : 33.333 ms
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled
 **            Counter reload on trigger                    : Disabled
@@ -161,15 +161,15 @@ void TPM2_Init(void)
              ));
   /* TPM2_CNT: COUNT=0 */
   TPM2_CNT &= (uint32_t)~(uint32_t)(TPM_CNT_COUNT(0xFFFF));
-  /* TPM2_SC: DMA=0,TOF=0,TOIE=0,CMOD=1,PS=0 */
+  /* TPM2_SC: DMA=0,TOF=0,TOIE=0,CMOD=1,PS=7 */
   TPM2_SC = (uint32_t)((TPM2_SC & (uint32_t)~(uint32_t)(
              TPM_SC_DMA_MASK |
              TPM_SC_TOF_MASK |
              TPM_SC_TOIE_MASK |
-             TPM_SC_CMOD(0x02) |
-             TPM_SC_PS(0x07)
+             TPM_SC_CMOD(0x02)
             )) | (uint32_t)(
-             TPM_SC_CMOD(0x01)
+             TPM_SC_CMOD(0x01) |
+             TPM_SC_PS(0x07)
             ));
 }
 

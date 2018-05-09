@@ -25,7 +25,7 @@ by the component.
     0x00000080
  </td><td>TPM0_C0SC register, peripheral TPM0.</td></tr>
 <tr><td>0x40038014</td><td>TPM0_C1SC</td><td>
-    0x00000084
+    0x00000088
  </td><td>TPM0_C1SC register, peripheral TPM0.</td></tr>
 <tr><td>0x4003801C</td><td>TPM0_C2SC</td><td>
     0x00000080
@@ -278,15 +278,15 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40038014</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000084</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000088</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>7</td><td>CHF</td><td>0x01</td><td>Channel Flag</td>
 <tr><td>6</td><td>CHIE</td><td>0x00</td><td>Channel Interrupt Enable</td>
 <tr><td>5</td><td>MSB</td><td>0x00</td><td>Channel Mode Select</td>
 <tr><td>4</td><td>MSA</td><td>0x00</td><td>Channel Mode Select</td>
-<tr><td>3</td><td>ELSB</td><td>0x00</td><td>Edge or Level Select</td>
-<tr><td>2</td><td>ELSA</td><td>0x01</td><td>Edge or Level Select</td>
+<tr><td>3</td><td>ELSB</td><td>0x01</td><td>Edge or Level Select</td>
+<tr><td>2</td><td>ELSA</td><td>0x00</td><td>Edge or Level Select</td>
 <tr><td>0</td><td>DMA</td><td>0x00</td><td>DMA Enable</td>
 </tr></table>
 <div class="reghdr1">TPM0_C2SC</div>
@@ -742,7 +742,7 @@ registers of the peripheral(s) configured by the component.
 **            Channel 0                                    : Disabled
 **            Channel 1                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : Low-true
+**                PWM polarity                             : High-true
 **                Channel value register                   : 0
 **              Pin                                        : Enabled
 **                Pin                                      : ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1

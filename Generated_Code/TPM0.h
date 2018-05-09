@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-05-08, 18:23, # CodeGen: 76
+**     Date/Time   : 2018-05-09, 10:18, # CodeGen: 82
 **     Abstract    :
 **          This file implements the TPM (TPM0) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -32,7 +32,7 @@
 **            Channel 0                                    : Disabled
 **            Channel 1                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : Low-true
+**                PWM polarity                             : High-true
 **                Channel value register                   : 0
 **              Pin                                        : Enabled
 **                Pin                                      : ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1

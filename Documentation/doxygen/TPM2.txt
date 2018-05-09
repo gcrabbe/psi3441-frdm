@@ -19,7 +19,7 @@ by the component.
     0x06000000
  </td><td>SIM_SCGC6 register, peripheral TPM2.</td></tr>
 <tr><td>0x4003A000</td><td>TPM2_SC</td><td>
-    0x00000008
+    0x0000000F
  </td><td>TPM2_SC register, peripheral TPM2.</td></tr>
 <tr><td>0x4003A00C</td><td>TPM2_C0SC</td><td>
     0x00000080
@@ -148,7 +148,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4003A000</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000008</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000000F</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>8</td><td>DMA</td><td>0x00</td><td>DMA Enable</td>
@@ -156,7 +156,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>6</td><td>TOIE</td><td>0x00</td><td>Timer Overflow Interrupt Enable</td>
 <tr><td>5</td><td>CPWMS</td><td>0x00</td><td>Center-aligned PWM Select</td>
 <tr><td>3 - 4</td><td>CMOD</td><td>0x00</td><td>Clock Mode Selection</td>
-<tr><td>0 - 2</td><td>PS</td><td>0x00</td><td>Prescale Factor Selection</td>
+<tr><td>0 - 2</td><td>PS</td><td>0x04</td><td>Prescale Factor Selection</td>
 </tr></table>
 <div class="reghdr1">TPM2_C0SC</div>
 <div class="regdiag">
@@ -434,10 +434,10 @@ registers of the peripheral(s) configured by the component.
 **            Clock gate                                   : Enabled
 **            Clock settings                               : 
 **              Clock source                               : TPM counter clock
-**              Prescaler                                  : divide by 1
-**              Counter frequency                          : 24 MHz
+**              Prescaler                                  : divide by 128
+**              Counter frequency                          : 187.500 kHz
 **              Modulo counter                             : 6249
-**              Period                                     : 260.417 us
+**              Period                                     : 33.333 ms
 **            DBG mode                                     : TPM counter stopped; output pins remain the same
 **            Global time base                             : Disabled
 **            Counter reload on trigger                    : Disabled

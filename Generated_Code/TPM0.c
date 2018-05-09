@@ -6,7 +6,7 @@
 **     Component   : Init_TPM
 **     Version     : Component 01.002, Driver 01.02, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-05-08, 18:23, # CodeGen: 76
+**     Date/Time   : 2018-05-09, 10:29, # CodeGen: 83
 **     Abstract    :
 **          This file implements the TPM (TPM0) module initialization
 **          according to the Peripheral Initialization settings, and
@@ -32,7 +32,7 @@
 **            Channel 0                                    : Disabled
 **            Channel 1                                    : Enabled
 **              Channel mode                               : Center-aligned PWM
-**                PWM polarity                             : Low-true
+**                PWM polarity                             : High-true
 **                Channel value register                   : 0
 **              Pin                                        : Enabled
 **                Pin                                      : ADC0_SE5b/PTD1/SPI0_SCK/TPM0_CH1
@@ -172,15 +172,15 @@ void TPM0_Init(void)
                 TPM_CnSC_ELSA_MASK |
                 0xFFFFFF02U
                );
-  /* TPM0_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=0,ELSA=1,??=0,DMA=0 */
+  /* TPM0_C1SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,CHIE=0,ELSB=1,ELSA=0,??=0,DMA=0 */
   TPM0_C1SC = (uint32_t)((TPM0_C1SC & (uint32_t)~(uint32_t)(
                TPM_CnSC_CHF_MASK |
                TPM_CnSC_CHIE_MASK |
-               TPM_CnSC_ELSB_MASK |
+               TPM_CnSC_ELSA_MASK |
                TPM_CnSC_DMA_MASK |
                0xFFFFFF02U
               )) | (uint32_t)(
-               TPM_CnSC_ELSA_MASK
+               TPM_CnSC_ELSB_MASK
               ));
   /* TPM0_C2SC: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CHF=0,MSB=0,MSA=0,ELSB=0,ELSA=0,??=0 */
   TPM0_C2SC &= (uint32_t)~(uint32_t)(
