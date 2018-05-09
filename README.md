@@ -2,7 +2,7 @@
 
 ## Summary
 
-Freescale CodeWarrior 10.7 project for the FRDM-FL25Z [1, 2]. This project models the operation of a three-phase PMSM driver with back-EMF sensing through some MCU navel-gazing.
+Freescale CodeWarrior 10.7 project for the FRDM-FL25Z [1, 2, 3]. This project models the operation of a three-phase PMSM driver with back-EMF sensing through some MCU navel-gazing.
 
 In a nutshell, the MCU's DAC generates a 60 Hz sine wave, which is then sampled by the ADC (a jumper wire is required for this connection). After some signal processing, which may include FIR filters and [adjustable] phase shifters, the processed sine wave is passed to a timer for PWM generation.
 
@@ -21,7 +21,7 @@ System performance is currently limited by PWM carrier frequency. The PWM carrie
 
 However, the output pin is set LOW (turning on the blue LED) when the value in the output compare buffer is higher than the carrier (counter) value. The number of possible values for the output duty cycle is thus roughly equal to the counter modulo. Therefore, there is a fundamental tradeoff between output precision and carrier frequency.
 
-According to Kastha et al. [3], carrier frequency must be several orders of magnitude higher than the output refresh rate, thus limiting ADC and DAC frequencies at well.
+According to Kastha et al. [4], carrier frequency must be several orders of magnitude higher than the output refresh rate, thus limiting ADC and DAC frequencies at well.
 
 
 ### DAC
@@ -30,7 +30,7 @@ The DAC drives a 60 Hz sine wave from a 64-word value table stored in memory wit
 
 The `DMA1_IRQHandler` ISR restarts the DMA channel after a large number of transfers (since it cannot be kept on indefinitely).
 
-**Note:** As described in the KL25Z's Errata 5746 [4], the DMA cycle-steal periodic (PIT) trigger operation is faulty. The TPM triggering described above is the recommended workaround.
+**Note:** As described in the KL25Z's Errata 5746 [5], the DMA cycle-steal periodic (PIT) trigger operation is faulty. The TPM triggering described above is the recommended workaround.
 
 
 ### ADC
@@ -96,10 +96,12 @@ Raising the prescalers of both TPM1 and TPM2 to 128 (from their original value o
 
 ## References
 
-[1] *Kinetis KL25 Sub-Family: Data Sheet*. Freescale Semiconductor. August 2014.
+[1] *FRDM-KL25Z User's Manual*. Freescale Semiconductor. October 2014.
 
-[2] *Kinetis KL25 Sub-Family: Reference Manual*. Freescale Semiconductor. September 2012.
+[2] *Kinetis KL25 Sub-Family: Data Sheet*. Freescale Semiconductor. August 2014.
 
-[3] D. Kastha, D. Prasad, N. K. De, S. Sengupta. Lesson 37: Sine PWM and its Realization. *Power Electronics (Web Course): Lecture Notes*. Indian Institute of Technology Kharagpur. http://nptel.ac.in/downloads/108105066/ (2017-06-07).
+[3] *Kinetis KL25 Sub-Family: Reference Manual*. Freescale Semiconductor. September 2012.
 
-[4] *Mask Set Errata for Mask 2N97F*. Freescale Semiconductor. July 2013.
+[4] D. Kastha, D. Prasad, N. K. De, and S. Sengupta. Lesson 37: Sine PWM and its Realization. *Power Electronics (Web Course): Lecture Notes*. Indian Institute of Technology Kharagpur. http://nptel.ac.in/downloads/108105066/ (2018-05-08).
+
+[5] *Mask Set Errata for Mask 2N97F*. Freescale Semiconductor. July 2013.
