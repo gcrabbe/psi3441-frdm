@@ -128,7 +128,7 @@
     </GenFiles>
     <SignalListFile>Documentation\psi3441-frdm_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>121</ProjectModificationStamp>
+    <ProjectModificationStamp>122</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>true</Generated>
@@ -227,8 +227,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1286163828</HeaderAge>
-    <CodeAge>1286163828</CodeAge>
+    <HeaderAge>1286300432</HeaderAge>
+    <CodeAge>1286300432</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>
@@ -260,8 +260,8 @@
     <GenComponentVersion>01.002</GenComponentVersion>
     <GenDriverVersion>01.02</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1286163828</HeaderAge>
-    <CodeAge>1286163828</CodeAge>
+    <HeaderAge>1286300432</HeaderAge>
+    <CodeAge>1286300432</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>1</GenNumMethods>
     <Init>true</Init>

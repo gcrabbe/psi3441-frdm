@@ -3,8 +3,8 @@
   <Header>
     <Name>psi3441-frdm</Name>
     <SavedBy>Gabriel</SavedBy>
-    <ModificationStamp>121</ModificationStamp>
-    <Date>2018-05-09</Date>
+    <ModificationStamp>122</ModificationStamp>
+    <Date>2018-05-11</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.9.2.RT6_b1446-0504</PEversion>
   </Header>
@@ -4597,12 +4597,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typePrescaler</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>7</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>187.500 kHz</Value>
+        <Value>24 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloCounter</ItemSymbol>
@@ -4614,7 +4614,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>33.333 ms</Value>
+        <Value>260.417 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>
@@ -5728,12 +5728,12 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <TypeSpecNameState>typePrescaler</TypeSpecNameState>
-        <Index>7</Index>
-        <EnumSymbVal>7</EnumSymbVal>
+        <Index>0</Index>
+        <EnumSymbVal>0</EnumSymbVal>
       </ItemState>
       <ItemState>
         <ItemSymbol>CounterFrequency</ItemSymbol>
-        <Value>187.500 kHz</Value>
+        <Value>24 MHz</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ModuloCounter</ItemSymbol>
@@ -5745,7 +5745,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>Period</ItemSymbol>
-        <Value>33.333 ms</Value>
+        <Value>260.417 us</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>BDMMODE</ItemSymbol>

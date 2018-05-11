@@ -500,7 +500,7 @@ PE_DEBUGHALT();
           <group name="Interrupt/DMA">
             <Interrupt v="INT_TPM0" />
             <Channel_interrupt v="Disabled" />
-            <DMA_request v="Enabled" />
+            <DMA_request v="Disabled" />
           </group>
         </boolgroup>
         <boolgroup name="Channel 2" v="Disabled" />
@@ -519,7 +519,7 @@ PE_DEBUGHALT();
           <Interrupt_priority v="0 (Highest)" />
           <ISR_Name v="" />
           <Channels_interrupt_DMA v="See the respective Channel settings" />
-          <Timer_overflow_DMA v="Disabled" />
+          <Timer_overflow_DMA v="Enabled" />
           <Timer_overflow_interrupt v="Disabled" />
         </group>
       </group>
