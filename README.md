@@ -44,7 +44,7 @@ For modularity reasons, even though ADC and DAC frequencies can be identical, di
 
 The TPM0 generates an ADC-generated DMA-driven variable duty-cycle center-aligned PWM with a 46.875 kHz carrier frequency and an 8-bit output resolution. The duty cycle is refreshed at the same frequency, and from the same timer, as the ADC conversion.
 
-![](Documentation/pictures/pwm.png "PWM output (phase delay has been suppressed)")
+![](Documentation/pictures/pwm.png "PWM output")
 
 The `DMA0_IRQHandler` ISR restarts the DMA channel after a large number of transfers (since it cannot be kept on indefinitely).
 
@@ -66,16 +66,18 @@ One sample is always lost as the PWM register is only updated on the next timer 
 
 The actual phase delay is currently set to 1+20 samples, i.e. 118.125 degrees.
 
-![](Documentation/pictures/shift.png "Phase shifter in action")
+![](Documentation/pictures/phase-1.png "Phase delay of 64 samples (360 degrees)")
+
+![](Documentation/pictures/phase-2.png "Phase delay of 21 samples (120 degrees)")
 
 
 ### Figure of merit
 
 Pin 10 of connector J2 (PTD3) is used to output the processor load state: whenever the processor enters an ISR or leaves its idle loop, the output is set. Measuring the pin's duty cycle with the help of an oscilloscope provides a simple, yet effective, figure of merit (FoM).
 
-![](Documentation/pictures/duty-1.png "FoM visualization")
+![](Documentation/pictures/fom-1.png "FoM visualization")
 
-![](Documentation/pictures/duty-2.png "FoM (zoomed in)")
+![](Documentation/pictures/fom-2.png "FoM visualization (zoomed in)")
 
 
 ## Setup
